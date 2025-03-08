@@ -1,9 +1,14 @@
+/* Monda font */
+@import url('https://fonts.googleapis.com/css2?family=Monda:wght@400..700&display=swap');
+
 :root {
-    --primary-color: #3498db;
-    --secondary-color: #2ecc71;
+    --primary-color: #1ef0a6;
+    --secondary-color: ##1becaa;
     --accent-color: #e74c3c;
     --background-color: #ecf0f1;
     --text-color: #2c3e50;
+
+    --logo-color: #003c64;
 }
 
 .exemplo {
