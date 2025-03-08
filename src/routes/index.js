@@ -6,4 +6,5 @@ router.get('/index', (req, res) => {
     res.render('index', { title: 'index' });
 });
 
-module.exports = router
+
+module.exports = router;
