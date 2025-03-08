@@ -98,7 +98,8 @@ header ul li a {
 
 /* contact */
 .title {
-  background: url(/public/images/contact/bg-titulo.jpg) center no-repeat;
+
+  background: url("../assets/images/contact/bg-titulo.jpg") center no-repeat;
   padding: 100px 0;
   background-size: cover;
 }
