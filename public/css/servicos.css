@@ -1,5 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Monda:wght@400..700&display=swap");
 
+/* Red Hat Display font */
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400..700&display=swap');
+
+/* Poppins font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400..700&display=swap');
+
 /* variáveis */
 :root {
   --primary-color: #1ef0a6;
@@ -56,7 +62,6 @@ nav i {
 nav span {
   font-size: 14px;
 }
-
 /* nav */
 
 /* header */
@@ -96,8 +101,9 @@ header ul li a {
   text-transform: uppercase;
 }
 
-/* title */
+/* header */
 
+/* page title */
 .title {
   background: url("../assets/images/contact/bg-titulo.jpg") center no-repeat;
   padding: 100px 0;
@@ -110,70 +116,93 @@ header ul li a {
   font-size: 52px;
   text-align: center;
 }
-/* contact */
 
-.contact-form {
-  padding: 1rem 10rem;
-  margin: 45px 0;
+/* page title */
+
+/* services */
+i {
+  color: var(--icon-color);
+  font-size: 25px;
+}
+
+.services {
   display: flex;
   justify-content: center;
-  width: 100%;
+  padding: 50px 0;
 }
 
-.contact-form .container {
-  display: flex;
-  justify-content: space-between;
+.services .row {
   width: 1170px;
-}
-
-.contact-form-left {
-  width: 41.6667%;
-}
-
-.contact-form-left form {
   display: flex;
-  flex-direction: column;
 }
 
-.contact-form-left form input,
-.contact-form-left form textarea {
-  padding: 0.9rem;
-  font-size: 19px;
-  margin: 0.5rem 0;
-  border: 1px solid var(--text-color);
-  background-color: var(--text-color);
-  border-radius: 8px;
+.services .row .box img {
+  width: 100%;
+  height: 24vh;
+  object-fit: cover;
 }
 
-.contact-form-left form textarea {
-  height: 250px;
-  resize: none;
-}
 
-.contact-form-left form button {
-  padding: 15px;
-  margin-top: 0.5rem;
-  width: 65%;
-  background-color: var(--primary-color);
-  border: 1px solid var(--primary-color);
-  border-radius: 8px;
-  font-size: 19px;
-}
-
-.contact-form-middle {
-  width: 8.33333333%;
-}
-
-.contact-form-right {
-  line-height: 2;
-  width: 50%;
+.services .row .box .box-title {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+}
+
+.services .row .box .box-title h2 {
+  display: flex;
+  align-items: center;
+}
+
+.services .division-border {
+  border-top: 2px solid #d5d3d3;
+  margin-top: 30px;
+  width: 1170px;
+  margin: 50px 0;
+}
+
+.sect-idk {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+.sect-idk h1 {
+  text-transform: uppercase;
+}
+
+.sect-idk .container {
+  width: 1170px;
+  display: flex;
   justify-content: space-between;
 }
+
+.sect-idk .container .left img {
+  width: 27vw;
+  height: 33vh;
+  margin-bottom: 30px;
+}
+
+.sect-idk .container .left p {
+  width: 35vw;
+  margin: 30px 0;
+  /* font-family: "Red Hat Display", sans-serif; */
+  line-height: 25px;
+}
+
+.sect-idk .container .right {
+  display: flex;
+  align-items: end;
+}
+
+.sect-idk .container .right img {
+  width: 19vw;
+  object-fit: contain;
+}
+
+/* services */
 
 /* phrase */
-
 .phrase {
   background: rgb(34, 223, 150);
   background: radial-gradient(
@@ -203,8 +232,9 @@ border-bottom: 4px solid var(--accent-color);
   height: 48px;
 }
 
-/* footer */
+/* phrase */
 
+/* footer */
 footer {
   width: 100%;
   padding: 20px 0;
@@ -217,8 +247,9 @@ footer {
   width: 1170px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: flex-start;
+  padding: 0 20px;
 }
 
 .footer-section {
@@ -251,7 +282,7 @@ footer {
 .contact-btn {
   display: inline-block;
   margin-top: 10px;
-  padding: 12px;
+  padding: 14px;
   border: 1px solid #00c975;
   border-radius: 4px;
   color: #00c975;
@@ -311,3 +342,5 @@ footer {
     max-width: 100%;
   }
 }
+
+/* footer */
