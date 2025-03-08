@@ -1,0 +1,29 @@
+/* Monda font */
+@import url('https://fonts.googleapis.com/css2?family=Monda:wght@400..700&display=swap');
+
+/* Red Hat Display font */
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400..700&display=swap');
+
+/* Poppins font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400..700&display=swap');
+
+:root {
+    --primary-color: #1ef0a6;
+    --secondary-color: #1becaa;
+    --accent-color: #0bc47a;
+  
+    --logo-color: #003c64;
+    --text-color: #ececec;
+    --text-color-stronger: #838383;
+  
+    --background-color-nav: #f2f2f2;
+    --background-color-header: #fff;
+    
+    --icon-color: #22df96;
+  }
+  
+
+.exemplo {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}

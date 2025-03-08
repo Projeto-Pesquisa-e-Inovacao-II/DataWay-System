@@ -16,11 +16,9 @@ var HOST_APP = process.env.APP_HOST;
 var app = express();
 
 var indexRouter = require("./src/routes/index");
+var contatoRouter = require("./src/routes/contato");
+var servicosRouter = require("./src/routes/servicos");
 var usuarioRouter = require("./src/routes/usuarios");
-var avisosRouter = require("./src/routes/avisos");
-var medidasRouter = require("./src/routes/medidas");
-var aquariosRouter = require("./src/routes/aquarios");
-var empresasRouter = require("./src/routes/empresas");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -29,11 +27,12 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(cors());
 
 app.use("/", indexRouter);
+app.use("/contato", contatoRouter);
+app.use("/servicos", servicosRouter);
 app.use("/usuarios", usuarioRouter);
-app.use("/avisos", avisosRouter);
-app.use("/medidas", medidasRouter);
-app.use("/aquarios", aquariosRouter);
-app.use("/empresas", empresasRouter);
+
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
 
 app.listen(PORTA_APP, function () {
     console.log(`

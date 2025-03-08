@@ -6,57 +6,40 @@
 comandos para mysql server
 */
 
-CREATE DATABASE aquatech;
-
-USE aquatech;
-
-CREATE TABLE empresa (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	razao_social VARCHAR(50),
-	cnpj CHAR(14),
-	codigo_ativacao VARCHAR(50)
+CREATE TABLE Empresa (
+    idEmpresa INT PRIMARY KEY AUTO_INCREMENT,
+    email VARCHAR(100) NOT NULL,
+    CNPJ VARCHAR(18) NOT NULL,
+    Senha VARCHAR(255) NOT NULL,
+    telefone VARCHAR(20),
+    representanteLegal VARCHAR(100),
+    razaoSocial VARCHAR(200)
 );
 
-CREATE TABLE usuario (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	nome VARCHAR(50),
-	email VARCHAR(50),
-	senha VARCHAR(50),
-	fk_empresa INT,
-	FOREIGN KEY (fk_empresa) REFERENCES empresa(id)
+CREATE TABLE Endereco (
+    idEndereco INT PRIMARY KEY AUTO_INCREMENT,
+    cep VARCHAR(10),
+    cidade VARCHAR(100),
+    rua VARCHAR(200),
+    estado VARCHAR(50),
+    fkEmpresa INT,
+    FOREIGN KEY (fkEmpresa) REFERENCES Empresa(idEmpresa)
 );
 
-CREATE TABLE aviso (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	titulo VARCHAR(100),
-	descricao VARCHAR(150),
-	fk_usuario INT,
-	FOREIGN KEY (fk_usuario) REFERENCES usuario(id)
+CREATE TABLE DadosPracaPedagio (
+    idDado INT PRIMARY KEY AUTO_INCREMENT,
+    Praca INT NOT NULL,
+    Data DATE NOT NULL,
+    Hora TIME NOT NULL,
+    Tipo INT NOT NULL,
+    fkUsuario INT,
+    FOREIGN KEY (fkUsuario) REFERENCES Empresa(idEmpresa)
 );
 
-create table aquario (
-/* em nossa regra de negócio, um aquario tem apenas um sensor */
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	descricao VARCHAR(300),
-	fk_empresa INT,
-	FOREIGN KEY (fk_empresa) REFERENCES empresa(id)
+CREATE TABLE Notificacoes (
+    idNotificacao INT PRIMARY KEY AUTO_INCREMENT,
+    dataHora DATETIME NOT NULL,
+    mensagem VARCHAR(500) NOT NULL,
+    fkUsuario INT,
+    FOREIGN KEY (fkUsuario) REFERENCES Empresa(idEmpresa)
 );
-
-/* esta tabela deve estar de acordo com o que está em INSERT de sua API do arduino - dat-acqu-ino */
-
-create table medida (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	dht11_umidade DECIMAL,
-	dht11_temperatura DECIMAL,
-	luminosidade DECIMAL,
-	lm35_temperatura DECIMAL,
-	chave TINYINT,
-	momento DATETIME,
-	fk_aquario INT,
-	FOREIGN KEY (fk_aquario) REFERENCES aquario(id)
-);
-
-insert into empresa (razao_social, codigo_ativacao) values ('Empresa 1', 'ED145B');
-insert into empresa (razao_social, codigo_ativacao) values ('Empresa 2', 'A1B2C3');
-insert into aquario (descricao, fk_empresa) values ('Aquário de Estrela-do-mar', 1);
-insert into aquario (descricao, fk_empresa) values ('Aquário de Peixe-dourado', 2);
