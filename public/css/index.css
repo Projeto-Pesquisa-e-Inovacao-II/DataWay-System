@@ -1,3 +1,4 @@
+
 @import url("https://fonts.googleapis.com/css2?family=Monda:wght@400..700&display=swap");
 
 /* Red Hat Display font */
@@ -334,3 +335,69 @@ footer {
 }
 
 /* footer */
+=======
+html {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  
+  body {
+    background-image: url('../assets/images/Found-home.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: "Red Hat Display";
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100%;
+    height: 130vh;
+  }
+  
+  h3, span {
+    color: white;
+  }
+
+nav{
+    display: flex;
+   justify-content: space-between;
+   align-items: center;
+    width: 100%;
+    height: 15%;
+}
+
+.soon img{
+  padding-left: 2rem;
+  width: 300px;
+  height: 118px;
+}
+
+ul{
+    display: flex;
+    flex-direction: row;
+    width: 35%;
+    list-style: none;
+    li{
+        padding: 0 1rem 0 2.5rem;
+        font-size: 25px;
+        a{
+            text-decoration: none;
+            color: #fff;
+           font-weight: bold;
+        }
+    }
+}
+
+.waves{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+  .first-wave {
+    width: 50%;
+    height: 20%;
+    background-color: #25a2bd;
+    z-index: auto; 
+  }
+
+}
