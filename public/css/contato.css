@@ -64,6 +64,12 @@ header {
   background-color: var(--background-color);
 }
 
+header a {
+  text-decoration: none;
+  color: black;
+}
+
+
 header .container {
   display: flex;
   justify-content: space-between;
