@@ -209,6 +209,7 @@ i {
 
 /* phrase */
 .phrase {
+  font-family: "Monda", sans-serif;
   background: rgb(34, 223, 150);
   background: radial-gradient(
     circle,
@@ -241,6 +242,7 @@ border-bottom: 4px solid var(--accent-color);
 
 /* footer */
 footer {
+  font-family: "Monda", sans-serif;
   width: 100%;
   padding: 20px 0;
   display: flex;
@@ -323,6 +325,7 @@ footer {
 }
 
 .logo-container {
+  font-family: 'Red Hat Display', sans-serif;
   width: 100%;
   text-align: center;
   padding: 20px 0;
