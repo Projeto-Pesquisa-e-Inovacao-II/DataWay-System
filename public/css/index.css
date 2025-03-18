@@ -135,6 +135,7 @@ height: 60vh;
       font-size: 25px;
     }
     button{
+      font-family: "Monda", sans-serif;
       background-color: var(--color-button);
       color:var(--text-color);
       font-size: 20px;
@@ -160,6 +161,7 @@ height: 60vh;
 /* services */
 
 .services {
+  font-family: "Monda", sans-serif;
   display: flex;
   justify-content: center;
   width: 100%;
@@ -181,7 +183,7 @@ height: 60vh;
   width: 60%;
   height: 100%;
   .services-title-text{
-    font-size: 50px;
+    font-size: 40px;
     color: #848381;
     .image{
       background-color: black;
@@ -190,7 +192,7 @@ height: 60vh;
     }
   }
   hr{
-    width: 50%;
+    width: 80%;
     height: 2px;
     background-color: #24f1a7;
     border: none;
@@ -215,6 +217,7 @@ height: 60vh;
 
 /* phrase */
 .phrase {
+  font-family: "Monda", sans-serif;
   background: rgb(34, 223, 150);
   color: var(--text-color);
   display: flex;
@@ -234,6 +237,7 @@ border-bottom: 4px solid var(--accent-color);
 
 /* footer */
 footer {
+  font-family: "Monda", sans-serif;
   width: 100%;
   padding: 20px 0;
   display: flex;
@@ -339,6 +343,12 @@ footer {
   .map-container {
     max-width: 100%;
   }
+}
+
+.logo-container {
+  font-family: 'Red Hat Display', sans-serif;
+  color: var(--logo-color);
+  font-size: 30px;
 }
 
 /* footer */
