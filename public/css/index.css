@@ -121,7 +121,7 @@ height: 60vh;
   .title-text{
     margin-top: 3rem;
     font-family: 'Red Hat Display', sans-serif;
-    margin-left: 8rem;
+    margin-left: 11rem;
     width: 45%;
     .title-text-first{
       padding-bottom: 1rem; 
@@ -143,7 +143,7 @@ height: 60vh;
       border-radius: 8px;
       border: none;
       width: 70%;
-      height: 6vh;
+      height: 8vh;
       cursor: pointer;
     }
     button:hover{
