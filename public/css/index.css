@@ -154,9 +154,10 @@ height: 60vh;
       color: var(--text-color);
     }
     .title-text-second{
+      width: 40%;
       font-family: 'Red Hat Display', sans-serif;
       padding-top: 1rem;
-      padding-bottom: 2rem;
+      padding-bottom: 3rem;
       color: var(--text-color);
       font-size: 25px;
     }
