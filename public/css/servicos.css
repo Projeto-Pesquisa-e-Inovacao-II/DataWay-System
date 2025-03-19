@@ -27,7 +27,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Monda", sans-serif;
 }
 
 /* nav */
@@ -37,6 +36,7 @@ nav {
 }
 
 nav .container {
+  font-family: "Monda", sans-serif;
   padding: 1rem 0;
   margin-right: auto;
   margin-left: auto;
@@ -65,11 +65,33 @@ nav span {
 /* nav */
 
 /* header */
+
 header {
   background-color: var(--background-color);
 }
 
+header .logo {
+  font-family: "Red Hat Display", sans-serif !important;
+  color: var(--logo-color);
+  font-size: 2.5rem;
+}
+
+header .logo a {
+  text-decoration: none;
+  color: var(--logo-color);
+}
+
+header {
+  background-color: var(--background-color);
+}
+
+header a {
+  text-decoration: none;
+  color: black;
+}
+
 header .container {
+  font-family: "Monda", sans-serif;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -80,6 +102,7 @@ header .container {
 }
 
 header .logo {
+  font-family: 'Red Hat Display', sans-serif;
   color: var(--logo-color);
   font-size: 2.5rem;
 }
@@ -105,6 +128,7 @@ header ul li a {
 
 /* page title */
 .title {
+  font-family: "Monda", sans-serif;
   background: url("../assets/images/contact/bg-titulo.jpg") center no-repeat;
   padding: 100px 0;
   background-size: cover;
@@ -126,9 +150,17 @@ i {
 }
 
 .services {
+  font-family: "Monda", sans-serif;
   display: flex;
   justify-content: center;
   padding: 50px 0;
+  text-align: justify;
+  font-size: 17px;
+  line-height: 1.6; 
+}
+
+.services p {
+  width: 550px;
 }
 
 .services .row {
@@ -137,11 +169,22 @@ i {
 }
 
 .services .row .box img {
-  width: 100%;
-  height: 24vh;
   object-fit: cover;
+  margin-left: 8=5px;
 }
 
+.services img {
+  width: 550px;
+  height: 150px;
+}
+
+.services1 img {
+  margin-left: 10px;
+}
+
+.servicesleftimagem img {
+  margin-left: 5px;
+}
 
 .services .row .box .box-title {
   display: flex;
@@ -161,10 +204,12 @@ i {
 }
 
 .sect-idk {
+  font-family: "Monda", sans-serif;
   width: 100%;
   display: flex;
   justify-content: center;
   margin-top: 60px;
+  text-align: justify;
 }
 
 .sect-idk h1 {
@@ -188,6 +233,7 @@ i {
   margin: 30px 0;
   /* font-family: "Red Hat Display", sans-serif; */
   line-height: 25px;
+  font-size: 20px;
 }
 
 .sect-idk .container .right {
@@ -204,6 +250,7 @@ i {
 
 /* phrase */
 .phrase {
+  font-family: "Monda", sans-serif;
   background: rgb(34, 223, 150);
   background: radial-gradient(
     circle,
@@ -218,6 +265,7 @@ i {
   align-items: center;
   padding: 70px 15px;
   text-transform: uppercase;
+  margin-top: -133px;
 }
 
 .phrase .container {
@@ -236,6 +284,7 @@ border-bottom: 4px solid var(--accent-color);
 
 /* footer */
 footer {
+  font-family: "Monda", sans-serif;
   width: 100%;
   padding: 20px 0;
   display: flex;
@@ -318,6 +367,7 @@ footer {
 }
 
 .logo-container {
+  font-family: 'Red Hat Display', sans-serif;
   width: 100%;
   text-align: center;
   padding: 20px 0;
@@ -341,6 +391,12 @@ footer {
   .map-container {
     max-width: 100%;
   }
+}
+
+.logo-container {
+  font-family: 'Red Hat Display', sans-serif;
+  color: var(--logo-color);
+  font-size: 30px;
 }
 
 /* footer */
