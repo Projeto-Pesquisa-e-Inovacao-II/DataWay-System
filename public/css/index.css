@@ -89,7 +89,7 @@ header .logo {
   font-family: 'Red Hat Display', sans-serif;
   color: var(--logo-color);
   font-size: 2.5rem;
-  margin-left: 9.5rem;
+  margin-left: 11rem;
 }
 
 header ul {
@@ -119,6 +119,7 @@ background: url('../images/Home/Estrada_Home.png') no-repeat center/cover;
 width: 100%;
 height: 60vh;
   .title-text{
+    margin-top: 3rem;
     font-family: 'Red Hat Display', sans-serif;
     margin-left: 8rem;
     width: 45%;
@@ -161,56 +162,97 @@ height: 60vh;
 /* services */
 
 .services {
+  display: flex;
+  flex-direction: column;
   font-family: "Monda", sans-serif;
   display: flex;
-  justify-content: center;
   width: 100%;
+  align-items: center;
+  margin-top: 4rem;
 }
 .services-content{
   display: flex;
   flex-direction: row;
-  align-items: center;
   width: 90%;
+  padding-bottom: 18rem;
+  gap: 2rem;
   .image{
-    width: 50%;
-    height: 80%;
-    background-color: black;
-    font-size: 20px;
-    color: var(--background-color-header)
+    width: 54%;
+    height: 100%;
+    
   }
+
 }
+
+.image img{
+  width: 100%;
+  }
+
 .services-title{
-  width: 60%;
+  width: 55%;
   height: 100%;
+  margin: 0 0 0 6rem;
+
   .services-title-text{
     font-size: 40px;
     color: #848381;
-    .image{
-      background-color: black;
-      width: 30%;
-      height: 100%;
-    }
   }
   hr{
-    width: 80%;
+    width: 85%;
     height: 2px;
     background-color: #24f1a7;
     border: none;
     margin-bottom: 1rem;
   }
   .services-text-first{
-    width: 80%;
+    width: 100%;
     font-size: 30px;
     padding-bottom: 3rem;
     color: #848381;
   }
   .services-text-second{
-    width: 85%;
+    width: 100%;
     color: #848381;
     padding-bottom: 2rem;
   }
 }
 
+
+.section-img{
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  height: 80%;
+  position: absolute;
+  top: 145%;
+  left: 10.5rem;
+  z-index: 2;
+  margin-top: 4rem;
+  gap: 11rem;
+  .section-image{
+    transition: opacity 0.4s;
+    /* transition-delay: 0.s; */
+    width: 40%;
+    span{
+      font-size: 50px;
+      font-family: "Monda", sans-serif;
+      position: absolute;
+      color: var(--background-color-header);
+      top: 7rem;
+      margin-left: 12rem;
+    }
+  }
+
+  .section-image:hover{
+    cursor: pointer;
+    opacity: 0.9;
+  }
+
+  }
+  .section-image img{
+    width: 126.2%;
+    height: 60%;
+  }
 
 
 /* services */
@@ -224,8 +266,15 @@ height: 60vh;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 70px 15px;
+  padding: 18rem 0 6rem 0;
   text-transform: uppercase;
+  position: relative;
+  z-index: 1;
+  .container{
+    h1{
+      text-align: center;
+    }
+  }
 }
 .phrase span {
 border-bottom: 4px solid var(--accent-color);
@@ -351,4 +400,4 @@ footer {
   font-size: 30px;
 }
 
-/* footer */
+/* footer */  
