@@ -66,6 +66,22 @@ nav span {
 /* nav */
 
 /* header */
+
+header {
+  background-color: var(--background-color);
+}
+
+header .logo {
+  font-family: "Red Hat Display", sans-serif !important;
+  color: var(--logo-color);
+  font-size: 2.5rem;
+}
+
+header .logo a {
+  text-decoration: none;
+  color: var(--logo-color);
+}
+
 header {
   background-color: var(--background-color);
 }
