@@ -139,6 +139,12 @@ i {
   justify-content: center;
   padding: 50px 0;
   text-align: justify;
+  font-size: 17px;
+  line-height: 1.6; 
+}
+
+.services p {
+  width: 550px;
 }
 
 .services .row {
@@ -211,6 +217,7 @@ i {
   margin: 30px 0;
   /* font-family: "Red Hat Display", sans-serif; */
   line-height: 25px;
+  font-size: 20px;
 }
 
 .sect-idk .container .right {
