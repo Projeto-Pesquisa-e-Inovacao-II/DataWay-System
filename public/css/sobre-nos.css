@@ -1,122 +1,126 @@
 @import url("https://fonts.googleapis.com/css2?family=Monda:wght@400..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400..700&display=swap");
 
 /* variáveis */
 :root {
-    --primary-color: #1ef0a6;
-    --secondary-color: #1becaa;
-    --accent-color: #0bc47a;
-  
-    --logo-color: #003c64;
-    --text-color: #ececec;
-    --text-color-stronger: #838383;
-  
-    --background-color-nav: #f2f2f2;
-    --background-color-header: #fff;
-    --icon-color: #22df96;
-  }
+  --primary-color: #1ef0a6;
+  --secondary-color: #1becaa;
+  --accent-color: #0bc47a;
+
+  --logo-color: #003c64;
+  --text-color: #ececec;
+  --text-color-stronger: #838383;
+
+  --background-color-nav: #f2f2f2;
+  --background-color-header: #fff;
+  --icon-color: #22df96;
+}
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+body {
   font-family: "Monda", sans-serif;
 
 }
 
 /* nav */
 nav {
-    background-color: var(--background-color-nav);
-    width: 100%;
-  }
-  
-  nav .container {
-    padding: 1rem 0;
-    margin-right: auto;
-    margin-left: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 1170px;
-  }
-  
-  nav .contact {
-    display: flex;
-  }
-  
-  nav .contact .contact-text {
-    margin: 0px 8px;
-  }
-  
-  nav i {
-    color: var(--icon-color);
-    font-size: 25px;
-  }
-  
-  nav span {
-    font-size: 14px;
-  }
-  
-  /* nav */
-  
-  /* header */
-  header {
-    background-color: var(--background-color);
-  }
-  
-  header a {
-    text-decoration: none;
-    color: black;
-  }
-
-  header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 1170px;
-    margin-right: auto;
-    margin-left: auto;
-    height: 10vh;
-  }
-  
-  header .logo {
-    color: var(--logo-color);
-    font-size: 2.5rem;
-  }
-  
-  header ul {
-    display: flex;
-    list-style: none;
-    margin-left: auto;
-  }
-  
-  header ul li {
-    margin-left: 30px;
-  }
-  
-  header ul li a {
-    text-decoration: none;
-    color: var(--text-color-stronger);
-    font-size: 17px;
-    text-transform: uppercase;
-  }
-
-#capa-titulo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 30vh;
-    background-image: url("../images/capa-sobre-nos.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-
-    p {
-        font-size: 50px;
-        font-weight: bold;
-        color: #03fcba;
-    }
+  background-color: var(--background-color-nav);
+  width: 100%;
 }
 
+nav .container {
+  padding: 1rem 0;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 1170px;
+}
+
+nav .contact {
+  display: flex;
+}
+
+nav .contact .contact-text {
+  margin: 0px 8px;
+}
+
+nav i {
+  color: var(--icon-color);
+  font-size: 25px;
+}
+
+nav span {
+  font-size: 14px;
+}
+
+/* nav */
+
+/* header */
+header {
+  background-color: var(--background-color);
+}
+
+header .logo {
+  font-family: "Red Hat Display", sans-serif !important;
+  color: var(--logo-color);
+  font-size: 2.5rem;
+}
+
+header .logo a {
+  text-decoration: none;
+  color: var(--logo-color);
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 1170px;
+  margin-right: auto;
+  margin-left: auto;
+  height: 10vh;
+}
+
+
+header ul {
+  display: flex;
+  list-style: none;
+  margin-left: auto;
+}
+
+header ul li {
+  margin-left: 30px;
+}
+
+header ul li a {
+  text-decoration: none;
+  color: var(--text-color-stronger);
+  font-size: 17px;
+  text-transform: uppercase;
+}
+
+#capa-titulo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 30vh;
+  background-image: url("../images/capa-sobre-nos.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  p {
+    font-size: 50px;
+    font-weight: bold;
+    color: #03fcba;
+  }
+}
 
 /* background-image: url("../images/capa-sobre-nos.png"); */
 
@@ -126,38 +130,38 @@ nav {
 }
 
 #conteudo-principal {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    width: 1170px;
-    img {
-        width: 27.5vw;
-        margin: 30px;
-        margin-right: 0;
-        height: auto;
-    }
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 1170px;
+  img {
+    width: 27.5vw;
+    margin: 30px;
+    margin-right: 0;
+    height: auto;
+  }
 }
 
 #conteudo {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    margin: 30px;
-    margin-left: 0;
-    .conteudo {
-        text-align: justify;
-        margin: 20px 0;
-        p {
-            font-size: 20px;
-            font-weight: bold;
-        }
-
-        span {
-            font-size: 16px;
-        }
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 30px;
+  margin-left: 0;
+  .conteudo {
+    text-align: justify;
+    margin: 20px 0;
+    p {
+      font-size: 20px;
+      font-weight: bold;
     }
+
+    span {
+      font-size: 16px;
+    }
+  }
 }
 
 .phrase {
@@ -184,7 +188,7 @@ nav {
 }
 
 .phrase span {
-border-bottom: 4px solid var(--accent-color);
+  border-bottom: 4px solid var(--accent-color);
   width: 300px;
   height: 48px;
 }
@@ -192,109 +196,114 @@ border-bottom: 4px solid var(--accent-color);
 /* footer */
 
 footer {
-    width: 100%;
-    padding: 20px 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
+  width: 100%;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-container {
+  width: 1170px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.footer-section {
+  min-width: 250px;
+  padding: 15px;
+}
+
+.footer-section h3 {
+  font-size: 18px;
+  color: #00c975;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.footer-section h3 i {
+  margin-right: 8px;
+}
+
+.footer-section i {
+  color: var(--icon-color);
+}
+
+.footer-section p {
+  color: #666;
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+
+.contact-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 12px;
+  border: 1px solid #00c975;
+  border-radius: 4px;
+  color: #00c975;
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  width: 100%;
+  text-align: center;
+}
+
+.contact-btn:hover {
+  background-color: #00c975;
+  color: #fff;
+}
+
+.map-container {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.map-container img {
+  width: 100%;
+  height: auto;
+}
+
+.footer-divison-border {
+  border-top: 2px solid #d5d3d3;
+  margin-top: 30px;
+  width: 1170px;
+}
+
+.logo-container {
+  width: 100%;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.logo-container img {
+  height: 30px;
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
   .footer-container {
-    width: 1170px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: flex-start;
+    flex-direction: column;
   }
-  
+
   .footer-section {
-    min-width: 250px;
-    padding: 15px;
-  }
-  
-  .footer-section h3 {
-    font-size: 18px;
-    color: #00c975;
-    margin-bottom: 15px;
-    display: flex;
-    align-items: center;
-  }
-  
-  .footer-section h3 i {
-    margin-right: 8px;
-  }
-  
-  .footer-section i {
-    color: var(--icon-color);
-  }
-  
-  .footer-section p {
-    color: #666;
-    margin-bottom: 6px;
-    font-size: 14px;
-  }
-  
-  .contact-btn {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 12px;
-    border: 1px solid #00c975;
-    border-radius: 4px;
-    color: #00c975;
-    text-decoration: none;
-    font-size: 14px;
-    transition: all 0.3s ease;
     width: 100%;
-    text-align: center;
+    margin-bottom: 20px;
   }
-  
-  .contact-btn:hover {
-    background-color: #00c975;
-    color: #fff;
-  }
-  
+
   .map-container {
-    width: 100%;
-    max-width: 300px;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
   }
-  
-  .map-container img {
-    width: 100%;
-    height: auto;
-  }
-  
-  .footer-divison-border {
-    border-top: 2px solid #d5d3d3;
-    margin-top: 30px;
-    width: 1170px;
-  }
-  
-  .logo-container {
-    width: 100%;
-    text-align: center;
-    padding: 20px 0;
-  }
-  
-  .logo-container img {
-    height: 30px;
-    opacity: 0.8;
-  }
-  
-  @media (max-width: 768px) {
-    .footer-container {
-      flex-direction: column;
-    }
-  
-    .footer-section {
-      width: 100%;
-      margin-bottom: 20px;
-    }
-  
-    .map-container {
-      max-width: 100%;
-    }
-  }
-  
+}
+
+.logo-container span {
+  font-family: 'Red Hat Display', sans-serif;
+  color: var(--logo-color);
+  font-size: 30px;
+}
