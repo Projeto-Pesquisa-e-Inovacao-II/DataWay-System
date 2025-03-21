@@ -1,0 +1,113 @@
+/* xs */
+/* @media (min-width: 475px) {} */
+
+/* sm */
+/* @media (min-width: 640px) {} */
+
+/* md */
+@media (max-width: 768px) {
+  .title .title-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .title-text-first {
+    font-size: 45px !important; 
+  }
+
+  .services .services-content {
+    padding-bottom: 6rem;
+  }
+
+  div.section-image:nth-child(1) > span:nth-child(2),
+  div.section-image:nth-child(2) > span:nth-child(2) {
+    font-size: 20px !important;
+  }
+
+  .services .services-content .services-text-first {
+    font-size: 20px !important;
+  }
+
+  .services-title .services-title-text {
+    font-size: 30px !important;
+  }
+}
+
+/* lg */
+@media (max-width: 1024px) {
+  .services .services-content {
+    padding-bottom: 8rem !important;
+  }
+
+  div.section-image:nth-child(1) > span:nth-child(2),
+  div.section-image:nth-child(2) > span:nth-child(2) {
+    font-size: 20px !important;
+  }
+
+  .services .services-content .services-text-first {
+    font-size: 20px !important;
+  }
+
+  .services-title .services-title-text {
+    font-size: 30px !important;
+  }
+}
+
+/* xl */
+@media (max-width: 1280px) {
+  div.title div.title-text div.title-text-first {
+    font-size: 40px;
+  }
+
+  div.title div.title-text div.title-text-second {
+    width: 100%;
+    font-size: 23px !important;
+    text-align: center;
+  }
+
+  div.title div.title-text div.title-text-second {
+    font-size: 20px;
+  }
+
+  div.title div.title-text button {
+    font-size: 17px;
+  }
+
+  .services .services-content {
+    padding-bottom: 10rem;
+  }
+
+  .services .services-content .services-text-first {
+    font-size: 20px;
+  }
+
+  .services-title .services-title-text {
+    font-size: 30px;
+  }
+
+  div.section-image:nth-child(1) > span:nth-child(2),
+  div.section-image:nth-child(2) > span:nth-child(2) {
+    font-size: 30px !important;
+  }
+
+  .phrase {
+    padding: 13rem 0 6rem 0;
+  }
+
+  .phrase .container h1 {
+    font-size: 20px;
+  }
+
+  section.services div.container_image_absolute {
+    bottom: -100px;
+  }
+}
+
+/* 2xl */
+@media (max-width: 1536px) {
+  .services .services-content {
+    padding-bottom: 10rem;
+  }
+}
