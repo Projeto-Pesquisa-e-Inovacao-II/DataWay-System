@@ -129,7 +129,7 @@ header ul li a {
 /* page title */
 .title {
   font-family: "Monda", sans-serif;
-  background: url("../assets/images/contact/bg-titulo.jpg") center no-repeat;
+  background: url("../images/Service/services_title.png") center no-repeat;
   padding: 100px 0;
   background-size: cover;
 }
