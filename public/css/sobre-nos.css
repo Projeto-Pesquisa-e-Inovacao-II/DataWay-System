@@ -30,6 +30,7 @@ body {
 nav {
   background-color: var(--background-color-nav);
   width: 100%;
+  font-family: "Monda", sans-serif;
 }
 
 nav .container {
@@ -39,15 +40,17 @@ nav .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 1170px;
+  width: 65vw;
+  min-width: 700px;
 }
 
 nav .contact {
   display: flex;
 }
 
-nav .contact .contact-text {
+.contact-text {
   margin: 0px 8px;
+  margin-right: 0px;
 }
 
 nav i {
@@ -58,7 +61,6 @@ nav i {
 nav span {
   font-size: 14px;
 }
-
 /* nav */
 
 /* header */
@@ -77,16 +79,32 @@ header .logo a {
   color: var(--logo-color);
 }
 
+header {
+  background-color: var(--background-color);
+}
+
+header a {
+  text-decoration: none;
+  color: black;
+}
+
 header .container {
+  font-family: "Monda", sans-serif;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 1170px;
+  width: 65vw;
   margin-right: auto;
   margin-left: auto;
   height: 10vh;
+  min-width: 700px;
 }
 
+header .logo {
+  font-family: "Red Hat Display", sans-serif;
+  color: var(--logo-color);
+  font-size: 2.5rem;
+}
 
 header ul {
   display: flex;
@@ -104,6 +122,8 @@ header ul li a {
   font-size: 17px;
   text-transform: uppercase;
 }
+
+/* header */
 
 #capa-titulo {
   display: flex;
@@ -123,17 +143,16 @@ header ul li a {
 
 /* background-image: url("../images/capa-sobre-nos.png"); */
 
-#wrapper {
-  display: flex;
-  justify-content: center;
-}
 
 #conteudo-principal {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  width: 1170px;
+  width: 65vw;
+  min-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
   img {
     width: 27.5vw;
     margin: 30px;
@@ -150,7 +169,6 @@ header ul li a {
   margin: 30px;
   margin-left: 0;
   .conteudo {
-    text-align: justify;
     margin: 20px 0;
     p {
       font-size: 20px;
@@ -163,7 +181,10 @@ header ul li a {
   }
 }
 
+/* phrase */
+
 .phrase {
+  font-family: "Monda", sans-serif;
   background: rgb(34, 223, 150);
   background: radial-gradient(
     circle,
@@ -181,13 +202,13 @@ header ul li a {
 }
 
 .phrase .container {
-  width: 1170px;
+  width: 65vw;
   text-transform: uppercase;
   text-align: center;
 }
 
 .phrase span {
-  border-bottom: 4px solid var(--accent-color);
+border-bottom: 4px solid var(--accent-color);
   width: 300px;
   height: 48px;
 }
@@ -195,6 +216,7 @@ header ul li a {
 /* footer */
 
 footer {
+  font-family: "Monda", sans-serif;
   width: 100%;
   padding: 20px 0;
   display: flex;
@@ -203,16 +225,16 @@ footer {
 }
 
 .footer-container {
-  width: 1170px;
+  width: 65vw;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-start;
+  margin-top: 15px;
 }
 
 .footer-section {
   min-width: 250px;
-  padding: 15px;
 }
 
 .footer-section h3 {
@@ -240,7 +262,7 @@ footer {
 .contact-btn {
   display: inline-block;
   margin-top: 10px;
-  padding: 12px;
+  padding: 14px;
   border: 1px solid #00c975;
   border-radius: 4px;
   color: #00c975;
@@ -279,6 +301,7 @@ footer {
   width: 100%;
   text-align: center;
   padding: 20px 0;
+  cursor: pointer;
 }
 
 .logo-container img {
@@ -286,23 +309,9 @@ footer {
   opacity: 0.8;
 }
 
-@media (max-width: 768px) {
-  .footer-container {
-    flex-direction: column;
-  }
-
-  .footer-section {
-    width: 100%;
-    margin-bottom: 20px;
-  }
-
-  .map-container {
-    max-width: 100%;
-  }
-}
-
-.logo-container span {
-  font-family: 'Red Hat Display', sans-serif;
+.logo-container {
+  font-family: "Red Hat Display", sans-serif;
   color: var(--logo-color);
   font-size: 30px;
 }
+/* footer */

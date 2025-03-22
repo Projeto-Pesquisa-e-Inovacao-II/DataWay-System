@@ -260,6 +260,7 @@ i {
 /* services */
 
 /* phrase */
+
 .phrase {
   font-family: "Monda", sans-serif;
   background: rgb(34, 223, 150);
@@ -290,9 +291,8 @@ border-bottom: 4px solid var(--accent-color);
   height: 48px;
 }
 
-/* phrase */
-
 /* footer */
+
 footer {
   font-family: "Monda", sans-serif;
   width: 100%;
@@ -306,14 +306,13 @@ footer {
   width: 65vw;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: flex-start;
-  padding: 0 20px;
+  margin-top: 15px;
 }
 
 .footer-section {
   min-width: 250px;
-  padding: 15px;
 }
 
 .footer-section h3 {
@@ -373,14 +372,14 @@ footer {
 .footer-divison-border {
   border-top: 2px solid #d5d3d3;
   margin-top: 30px;
-  width: 65vw;
+  width: 1170px;
 }
 
 .logo-container {
-  font-family: 'Red Hat Display', sans-serif;
   width: 100%;
   text-align: center;
   padding: 20px 0;
+  cursor: pointer;
 }
 
 .logo-container img {
@@ -388,25 +387,10 @@ footer {
   opacity: 0.8;
 }
 
-@media (max-width: 768px) {
-  .footer-container {
-    flex-direction: column;
-  }
-
-  .footer-section {
-    width: 100%;
-    margin-bottom: 20px;
-  }
-
-  .map-container {
-    max-width: 100%;
-  }
-}
-
 .logo-container {
-  font-family: 'Red Hat Display', sans-serif;
+  font-family: "Red Hat Display", sans-serif;
   color: var(--logo-color);
   font-size: 30px;
 }
-
 /* footer */
+
