@@ -20,7 +20,6 @@
   --background-color-header: #fff;
   --icon-color: #22df96;
 }
-
 /* config */
 
 * {
@@ -33,25 +32,27 @@
 nav {
   background-color: var(--background-color-nav);
   width: 100%;
+  font-family: "Monda", sans-serif;
 }
 
 nav .container {
-  font-family: "Monda", sans-serif;
   padding: 1rem 0;
   margin-right: auto;
   margin-left: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 1170px;
+  width: 65vw;
+  min-width: 700px;
 }
 
 nav .contact {
   display: flex;
 }
 
-nav .contact .contact-text {
+.contact-text {
   margin: 0px 8px;
+  margin-right: 0px;
 }
 
 nav i {
@@ -62,11 +63,9 @@ nav i {
 nav span {
   font-size: 14px;
 }
-
 /* nav */
 
 /* header */
-
 header {
   background-color: var(--background-color);
 }
@@ -91,20 +90,20 @@ header a {
   color: black;
 }
 
-
 header .container {
   font-family: "Monda", sans-serif;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 1170px;
+  width: 65vw;
   margin-right: auto;
   margin-left: auto;
   height: 10vh;
+  min-width: 700px;
 }
 
 header .logo {
-  font-family: 'Red Hat Display', sans-serif;
+  font-family: "Red Hat Display", sans-serif;
   color: var(--logo-color);
   font-size: 2.5rem;
 }
@@ -126,6 +125,8 @@ header ul li a {
   text-transform: uppercase;
 }
 
+/* header */
+
 /* title */
 
 .title {
@@ -146,17 +147,19 @@ header ul li a {
 
 .contact-form {
   font-family: "Monda", sans-serif;
-  padding: 1rem 10rem;
   margin: 45px 0;
   display: flex;
   justify-content: center;
-  width: 100%;
+  width: 65vw;
+  min-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .contact-form .container {
   display: flex;
   justify-content: space-between;
-  width: 1170px;
+  width: 100%;
 }
 
 .contact-form-left {
@@ -189,11 +192,11 @@ header ul li a {
   color: var(--text-color);
   padding: 15px;
   margin-top: 0.5rem;
-  width: 65%;
+  width: 66.6%;
   background-color: var(--primary-color);
   border: 1px solid var(--primary-color);
   border-radius: 8px;
-  font-size: 19px;
+  font-size: 18px;
 }
 
 .contact-form-middle {
@@ -205,7 +208,11 @@ header ul li a {
   width: 50%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-evenly;
+}
+
+.contact-form-right iframe {
+  width: auto;
 }
 
 /* phrase */
@@ -229,7 +236,7 @@ header ul li a {
 }
 
 .phrase .container {
-  width: 1170px;
+  width: 65vw;
   text-transform: uppercase;
   text-align: center;
 }
@@ -252,16 +259,16 @@ footer {
 }
 
 .footer-container {
-  width: 1170px;
+  width: 65vw;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-start;
+  margin-top: 15px;
 }
 
 .footer-section {
   min-width: 250px;
-  padding: 15px;
 }
 
 .footer-section h3 {
@@ -289,7 +296,7 @@ footer {
 .contact-btn {
   display: inline-block;
   margin-top: 10px;
-  padding: 12px;
+  padding: 14px;
   border: 1px solid #00c975;
   border-radius: 4px;
   color: #00c975;
@@ -328,6 +335,7 @@ footer {
   width: 100%;
   text-align: center;
   padding: 20px 0;
+  cursor: pointer;
 }
 
 .logo-container img {
@@ -335,23 +343,9 @@ footer {
   opacity: 0.8;
 }
 
-@media (max-width: 768px) {
-  .footer-container {
-    flex-direction: column;
-  }
-
-  .footer-section {
-    width: 100%;
-    margin-bottom: 20px;
-  }
-
-  .map-container {
-    max-width: 100%;
-  }
-}
-
-.logo-container span {
-  font-family: 'Red Hat Display', sans-serif;
+.logo-container {
+  font-family: "Red Hat Display", sans-serif;
   color: var(--logo-color);
   font-size: 30px;
 }
+/* footer */

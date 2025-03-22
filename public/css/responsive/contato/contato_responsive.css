@@ -1,0 +1,9 @@
+@media (max-width: 1280px) {
+  .contact-form-left {
+    width: 100%;
+  }
+  .contact-form-right {
+    width: 40%;
+  }
+  
+}
