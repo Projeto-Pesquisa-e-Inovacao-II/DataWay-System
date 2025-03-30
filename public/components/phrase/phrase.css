@@ -1,0 +1,28 @@
+.phrase {
+  background: rgb(34, 223, 150);
+  background: radial-gradient(
+    circle,
+    rgba(34, 223, 150, 1) 35%,
+    rgba(30, 239, 167, 1) 94%,
+    rgba(27, 236, 170, 1) 100%
+  );
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 70px 15px;
+  text-transform: uppercase;
+}
+
+.phrase .container {
+  width: 1170px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.phrase span {
+border-bottom: 4px solid var(--accent-color);
+  width: 300px;
+  height: 48px;
+}

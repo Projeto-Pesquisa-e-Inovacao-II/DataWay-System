@@ -20,6 +20,8 @@ var contatoRouter = require("./src/routes/contato");
 var servicosRouter = require("./src/routes/servicos");
 var sobreNosRouter = require("./src/routes/sobre-nos");
 var usuarioRouter = require("./src/routes/usuarios");
+var cadastroRouter = require("./src/routes/cadastro");
+var loginRouter = require("./src/routes/login");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -32,6 +34,8 @@ app.use("/contato", contatoRouter);
 app.use("/servicos", servicosRouter);
 app.use("/sobre-nos", sobreNosRouter);
 app.use("/usuarios", usuarioRouter);
+app.use("/cadastro", cadastroRouter);
+app.use("/login", loginRouter);
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
