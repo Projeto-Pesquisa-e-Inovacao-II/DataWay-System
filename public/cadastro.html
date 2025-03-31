@@ -5,26 +5,90 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>AquaTech | Cadastro</title>
+    <title>Cadastro | DataWay</title>
 
     <script src="./js/sessao.js"></script>
 
     <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="stylesheet" href="./css/cadastro.css" />
   </head>
 
   <body>
-    <!--header inicio-->
+    <div class="container">
+      <div class="wrapper-logo">
+        <div class="logo">
+          <img src="./images/logo1.svg" alt="logo" />
+          <span>Data</span><span style="font-weight: bolder">Way</span>
+        </div>
+      </div>
 
-    <header></header>
-    <!--header fim-->
+      <main>
+        <section class="container-text-login">
+          <div class="login-text">
+            <h1>Criar nova conta</h1>
+            <h2>XXXXXXXXXXXXX</h2>
+          </div>
+          <div class="generic-text">
+            <div class="generic-text-border"></div>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo,
+              accusamus.
+            </p>
+          </div>
+        </section>
 
-    <main>
-      <section></section>
-    </main>
+        <section class="container-form-login">
+          <h1>Criar conta</h1>
+          <div class="container-inputs">
+            <form onsubmit="return entrar()">
+              <div class="input-field">
+                <label for="email_input">Email</label>
+                <input
+                  type="email"
+                  id="email_input"
+                  placeholder="E-mail"
+                  required
+                />
+              </div>
+              <div class="input-field">
+                <label for="senha_input">Password</label>
+                <input
+                  type="password"
+                  id="senha_input"
+                  placeholder="Senha"
+                  required
+                />
+              </div>
+              <div class="input-field">
+                <label for="senha_input">Password</label>
+                <input
+                  type="password"
+                  id="senha_input"
+                  placeholder="Senha"
+                  required
+                />
+              </div>
 
-    <!--footer inicio-->
-    <footer></footer>
-    <!--footer fim-->
+              <div class="input-field">
+                <label for="senha_input">Password</label>
+                <input
+                  type="password"
+                  id="senha_input"
+                  placeholder="Senha"
+                  required
+                />
+              </div>
+            </form>
+          </div>
+          <div class="container-btn">
+            <button type="submit" class="btn-entrar">Cadastrar</button>
+          </div>
+          <div class="container-card-erro" id="cardErro">
+            <p id="mensagem_erro"></p>
+          </div>
+        </section>
+      </main>
+    </div>
   </body>
 </html>
 
