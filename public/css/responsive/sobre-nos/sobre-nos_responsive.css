@@ -1,0 +1,34 @@
+/* 2xl */
+@media (max-width: 1536px) {
+}
+
+/* xl */
+@media (max-width: 1280px) {
+  #conteudo-principal {
+    img {
+      height: 45vh;
+      width: 30.0vw;
+    }
+  }
+}
+
+/* lg */
+@media (max-width: 1024px) {
+  #conteudo-principal {
+    img {
+      display: none;
+    }
+  }
+}
+
+/* md */
+@media (max-width: 768px) {
+}
+
+/* sm */
+@media (max-width: 640px) {
+}
+
+/* xs */
+@media (max-width: 475px) {
+}

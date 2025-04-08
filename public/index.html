@@ -6,37 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Home | DataWay</title>
   <link rel="stylesheet" href="./css/index.css" />
-
+  <link rel="stylesheet" href="./css/responsive/home/home_responsive.css" />
   <!-- fontawesome para icons -->
   <script src="https://kit.fontawesome.com/8aca4bf827.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
   <!-- parte da nav bar -->
-  <nav>
-    <div class="nav container">
-      <div class="contact">
-        <div class="contact-text" style="margin-left: 0">
-          <i class="fa-brands fa-square-whatsapp"></i>
-          <span class="number-phone-contact">(11) 9999-9999</span>
-        </div>
-        <div class="contact-text">
-          <i class="fa-solid fa-envelope"></i>
-          <span class="email-contact">contato@seudominio.com.br</span>
-        </div>
-      </div>
-
-      <div class="opening-hours">
-        <div class="contact-text">
-          <i class="fa-solid fa-clock"></i>
-          <span>Seg a Sex | 9h - 12h e 13h30 - 18h</span>
-        </div>
-      </div>
-    </div>
-  </nav>
-  <!-- parte da nav bar -->
-
-  <!-- parte do header -->
+  
+    <!-- parte do header -->
   <header>
     <div class="header container">
       <div class="logo">
@@ -44,10 +22,10 @@
       </div>
       <div class="pages">
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Sobre Nós</a></li>
-          <li><a href="#">Serviços</a></li>
-          <li><a href="#">Contato</a></li>
+          <li><a href="/">Home</a></li>
+          <li><a href="sobre-nos">Sobre Nós</a></li>
+          <li><a href="servicos">Serviços</a></li>
+          <li><a href="contato">Contato</a></li>
         </ul>
       </div>
     </div>
@@ -57,10 +35,10 @@
   <!-- title -->
   <div class="title">
     <div class="title-text">
-      <div class="title-text-first">Transformamos <b>dados em</b> atitudes estratégicas</div>
+      <div class="title-text-first"><b>Transformamos</b> dados<br> em <b>atitudes estratégicas</b></div>
       <div class="title-text-second">Com a Data<b>Way,</b> suas Decisões se tornam mais rápidos, inteligentes e seguras!
       </div>
-      <button>Conheça nossos Serviços</button>
+      <button onclick="window.location.href='servicos';"><b>CONHEÇA NOSSOS SERVIÇOS</b></button>
     </div>
   </div>
 
@@ -70,7 +48,7 @@
   <section class="services">
     <div class="services-content">
       <div class="services-title">
-        <div class="services-title-text">Seja bem vindo</div>
+        <div class="services-title-text"><b>SEJA BEM-VINDO</b></div>
         <hr>
         <div class="services-text-first">
           Monitoramento e análise de tráfego em tempo real para otimizar sua operação.
@@ -81,18 +59,21 @@
           inteligente para melhorar a eficiência das rodovias e reduzir prejuízos.
         </div>
       </div>
-      <div class="image">Imagem aqui</div>  
+      <div class="image"><img src="./images/Home/pedagio_home.png" alt=""></div>  
     </div>
     
+    <div class="container_image_absolute">
     <div class="section-img">
-      <div class="section-image">
-        <img src="" alt="">
+      <div class="section-image" onclick="window.location.href='servicos';" style="margin-right: 21px;">
+        <img src="./images/Home/serviços_home_cursor.png" alt="">
+        <Span>Serviços</Span>
       </div>
-      <div class="section-image">
-        <img src="" alt="">
+      <div class="section-image" onclick="window.location.href='sobre-nos';" style="margin-left: 21px;">
+        <img src="./images/Home/sobre_home_cursor.png" alt="">
+        <Span>Sobre Nós</Span>
       </div>
     </div>
-
+  </div>
   </section>
 
   <!-- ??? -->
@@ -100,7 +81,7 @@
   <!-- phrase -->
   <section class="phrase">
     <div class="container">
-      <h1>Resultados que fazem a diferença</h1>
+      <h1>TRANFORMAMOS INFORMAÇÕES EM DECISÕES ESTRATÉGICAS PARA UM<BR> TRÁFEGO MAIS SEGURO E RENTÁVEL.</h1>
     </div>
     <span></span>
   </section>
@@ -114,17 +95,17 @@
           <i class="fa-solid fa-phone"></i>
           CONTATO
         </h3>
-        <p>contato@seudominio.com.br</p>
-        <p>(99) 9999-99999</p>
+        <p>dataway.suporte@gmail.com</p>
+        <p>(11) 2718-8029</p>
         <a href="#" class="contact-btn">Entre em Contato</a>
       </div>
 
       <div class="footer-section">
         <h3><i class="fa-solid fa-location-pin"></i>ENDEREÇO</h3>
-        <p>Rua Bento Gonçalves Nº961</p>
+        <p>Rua Haddock Lobo Nº595</p>
         <p>Sala 404</p>
-        <p>Bairro - Centro</p>
-        <p>São Leopoldo - RS</p>
+        <p>Bairro - Cerqueira César</p>
+        <p>São Paulo - SP</p>
       </div>
 
       <iframe
@@ -144,38 +125,11 @@
       <div class="footer-divison-border"></div>
     </div>
 
-    <div class="logo-container">
-      <img src="https://via.placeholder.com/150x30/ffffff/909090?text=ImpactaMidia" alt="Impacta Mídia Logo" />
+    <div class="logo-container" onclick="window.location.href='/';">
+      <span>Data<b>Way</b></span>
     </div>
   </footer>
   <!-- footer -->
-=======
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/index.css">
-</head>
-
-<body>
-    <nav>
-        <div class="soon">
-            <img src="./assets/images/written-logo.svg" alt="">
-        </div>
-        <ul class="center">
-            <li><a href="">Home</a></li>
-            <li><a href="">Sobre nós</a></li>
-            <li><a href="">Contato</a></li>
-        </ul>
-    </nav>
-    </div>
-
-    <div class="waves">
-        <div class="first-wave">
-        </div>
-        <div class="first-wave">
-        </div>
-    </div>
-
 </body>
 
 </html>
