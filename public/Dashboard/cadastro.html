@@ -10,14 +10,14 @@
     <script src="./js/sessao.js"></script>
 
     <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link rel="stylesheet" href="./css/cadastro.css" />
+    <link rel="stylesheet" href="../css/cadastro.css" />
   </head>
 
   <body>
     <div class="container">
       <div class="wrapper-logo">
         <div class="logo">
-          <img src="./images/logo1.svg" alt="logo" />
+          <img src="../images/logo1.svg" alt="logo" />
           <span>Data</span><span style="font-weight: bolder">Way</span>
         </div>
       </div>
@@ -40,7 +40,7 @@
         <section class="container-form-login">
           <h1>Criar conta</h1>
           <div class="container-inputs">
-            <form onsubmit="return entrar()">
+            <form onsubmit="return cadastrar()">
               <div class="input-field">
                 <label for="email_input">Email</label>
                 <input
@@ -51,16 +51,47 @@
                 />
               </div>
               <div class="input-field">
-                <label for="senha_input">Password</label>
+                <label for="rep_legal_input">Representante legal</label>
                 <input
-                  type="password"
-                  id="senha_input"
-                  placeholder="Senha"
+                  type="text"
+                  id="rep_legal_input"
+                  placeholder="Representante legal"
+                  required
+                />
+              </div>
+
+              <div class="input-field">
+                <label for="nome_fantasia_input">Nome fantasia</label>
+                <input
+                  type="text"
+                  id="nome_fantasia_input"
+                  placeholder="Nome fantasia"
+                  required
+                />
+              </div>
+
+
+              <div class="input-field">
+                <label for="telefone_input">Telefone</label>
+                <input
+                  type="text"
+                  id="telefone_input"
+                  placeholder="Telefone"
+                  required
+                />
+              </div>
+
+              <div class="input-field">
+                <label for="cnpj_input">CNPJ</label>
+                <input
+                  type="text"
+                  id="cnpj_input"
+                  placeholder="CNPJ"
                   required
                 />
               </div>
               <div class="input-field">
-                <label for="senha_input">Password</label>
+                <label for="senha_input">Senha</label>
                 <input
                   type="password"
                   id="senha_input"
@@ -70,19 +101,20 @@
               </div>
 
               <div class="input-field">
-                <label for="senha_input">Password</label>
+                <label for="senha_input">Confirmar senha</label>
                 <input
                   type="password"
-                  id="senha_input"
+                  id="confirmacao_senha_input"
                   placeholder="Senha"
                   required
                 />
               </div>
+              <div class="container-btn">
+                <button type="submit" class="btn-entrar">Cadastrar</button>
+              </div>
             </form>
           </div>
-          <div class="container-btn">
-            <button type="submit" class="btn-entrar">Cadastrar</button>
-          </div>
+          
           <div class="container-card-erro" id="cardErro">
             <p id="mensagem_erro"></p>
           </div>
@@ -93,28 +125,23 @@
 </html>
 
 <script>
-  // Array para armazenar empresas cadastradas para validação de código de ativação
-  let listaEmpresasCadastradas = [];
-
   function cadastrar() {
-    // aguardar();
-
     //Recupere o valor da nova input pelo nome do id
     // Agora vá para o método fetch logo abaixo
-    var nomeVar = nome_input.value;
+    var nomeFantasiaVar = nome_fantasia_input.value;
     var emailVar = email_input.value;
+    var CNPJVar = cnpj_input.value;
+    var representanteLegalVar = rep_legal_input.value;
+    var telefoneVar = telefone_input.value;
     var senhaVar = senha_input.value;
     var confirmacaoSenhaVar = confirmacao_senha_input.value;
-    var codigoVar = codigo_input.value;
-    var idEmpresaVincular;
 
     // Verificando se há algum campo em branco
     if (
-      nomeVar == "" ||
+      nomeFantasiaVar == "" ||
       emailVar == "" ||
       senhaVar == "" ||
-      confirmacaoSenhaVar == "" ||
-      codigoVar == ""
+      confirmacaoSenhaVar == ""
     ) {
       cardErro.style.display = "block";
       mensagem_erro.innerHTML =
@@ -123,20 +150,7 @@
       finalizarAguardar();
       return false;
     } else {
-      setInterval(sumirMensagem, 5000);
-    }
-
-    // Verificando se o código de ativação é de alguma empresa cadastrada
-    for (let i = 0; i < listaEmpresasCadastradas.length; i++) {
-      if (listaEmpresasCadastradas[i].codigo_ativacao == codigoVar) {
-        idEmpresaVincular = listaEmpresasCadastradas[i].id;
-        console.log("Código de ativação válido.");
-        break;
-      } else {
-        cardErro.style.display = "block";
-        mensagem_erro.innerHTML = "(Mensagem de erro para código inválido)";
-        finalizarAguardar();
-      }
+      // setInterval(sumirMensagem, 5000);
     }
 
     // Enviando o valor da nova input
@@ -148,13 +162,16 @@
       body: JSON.stringify({
         // crie um atributo que recebe o valor recuperado aqui
         // Agora vá para o arquivo routes/usuario.js
-        nomeServer: nomeVar,
+        nomeFantasiaServer: nomeFantasiaVar,
         emailServer: emailVar,
-        senhaServer: senhaVar,
-        idEmpresaVincularServer: idEmpresaVincular,
+        cnpjServer: CNPJVar,
+        representanteLegalServer: representanteLegalVar,
+        telefoneServer: telefoneVar,
+        senhaServer: senhaVar
       }),
     })
       .then(function (resposta) {
+        console.log(nomeFantasiaVar)
         console.log("resposta: ", resposta);
 
         if (resposta.ok) {
@@ -164,7 +181,7 @@
             "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
 
           setTimeout(() => {
-            window.location = "login.html";
+            window.location = "login";
           }, "2000");
 
           limparFormulario();

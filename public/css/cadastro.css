@@ -120,6 +120,8 @@ main {
 .container-form-login .container-inputs .input-field {
   margin: 20px;
   color: var(--text-color);
+  text-transform: uppercase;
+  font-weight: 600;
 }
 
 .container-form-login .container-inputs .input-field input {
