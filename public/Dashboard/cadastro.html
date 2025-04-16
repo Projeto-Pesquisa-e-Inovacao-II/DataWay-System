@@ -41,76 +41,62 @@
           <h1>Criar conta</h1>
           <div class="container-inputs">
             <form onsubmit="return cadastrar()">
-              <div class="input-field">
-                <label for="email_input">Email</label>
-                <input
-                  type="email"
-                  id="email_input"
-                  placeholder="E-mail"
-                  required
-                />
-              </div>
-              <div class="input-field">
-                <label for="rep_legal_input">Representante legal</label>
-                <input
-                  type="text"
-                  id="rep_legal_input"
-                  placeholder="Representante legal"
-                  required
-                />
-              </div>
+              
+              <!-- empresa -->
+              <div class="input-field ">
+             
+                <div class="input-field ">
+                  <input name="text" class="input" id="razaoSocialInput" placeholder="">
+                  <label class="user-label">Razão social</label>
+                </div>
 
-              <div class="input-field">
-                <label for="nome_fantasia_input">Nome fantasia</label>
-                <input
-                  type="text"
-                  id="nome_fantasia_input"
-                  placeholder="Nome fantasia"
-                  required
-                />
-              </div>
+                <div class="input-field " >
+                  <input name="text" class="input" id="nomeFantasiaInput" placeholder="">
+                  <label class="user-label">Nome Fantasia</label>
+                </div>
+                
+                <div class="input-field ">
+                  <input name="text" class="input" id="estadoImput" placeholder="">
+                  <label class="user-label">Estado</label>
+                </div>
 
+                <div class="input-field ">
+                  <input type="number" name="text" class="input" id="cepInput" placeholder="">
+                  <label class="user-label">CEP</label>
+                </div>
+                
+                <div class="input-field ">
+                <input name="text" type="number" class="input" id="cnpjInput" placeholder="">
+                <label class="user-label" >CNPJ</label>
+              </div>             
+                
+              <div class="input-field " style="display: none;">
+                <input   name="text" class="input" id="emailInput">
+                <label class="user-label" >Email</label>
+              </div>             
+              
+              <div class="input-field" style="display: none;">
+                <input  type="password" name="text" class="input" id="senhaInput">
+                <label class="user-label">Senha</label>
+                <span class="toggle-password" onclick="verSenha('senhaInput', 'senhaIcon')">
+                  <img id="senhaIcon" src="../images/Icon/eye.svg" alt="Mostrar senha">
+                </span>
+              </div>             
+              
+              <div class="input-field" style="display: none;">
+                <input   name="text" type="password" class="input" id="confirmarSenhaInput">
+                <label class="user-label">Confirmar Senha</label>
+                <span class="toggle-password" onclick="verSenha('confirmarSenhaInput', 'confirmarSenhaIcon')">
+                  <img id="confirmarSenhaIcon" src="../images/Icon/eye.svg" alt="Mostrar senha">
+                </span>
+              </div>             
 
-              <div class="input-field">
-                <label for="telefone_input">Telefone</label>
-                <input
-                  type="text"
-                  id="telefone_input"
-                  placeholder="Telefone"
-                  required
-                />
-              </div>
-
-              <div class="input-field">
-                <label for="cnpj_input">CNPJ</label>
-                <input
-                  type="text"
-                  id="cnpj_input"
-                  placeholder="CNPJ"
-                  required
-                />
-              </div>
-              <div class="input-field">
-                <label for="senha_input">Senha</label>
-                <input
-                  type="password"
-                  id="senha_input"
-                  placeholder="Senha"
-                  required
-                />
-              </div>
-
-              <div class="input-field">
-                <label for="senha_input">Confirmar senha</label>
-                <input
-                  type="password"
-                  id="confirmacao_senha_input"
-                  placeholder="Senha"
-                  required
-                />
-              </div>
               <div class="container-btn">
-                <button type="submit" class="btn-entrar">Cadastrar</button>
+                <button type="submit"   class="btn ontinuar1" id="btnContinuar" onclick="validacoes()">Continuar</button>
+                <button type="submit"  style="display: none;" class="btn voltar" id="btnVoltar">voltar</button>
+                <button type="submit"  style="display: none;" class="btn continuar2" id="btnContinuar">Continuar</button>
+                <button type="submit"  style="display: none;" class="btn cadastrar" onclick="cadastrar()">cadastrar</button>
+
               </div>
             </form>
           </div>
@@ -124,77 +110,4 @@
   </body>
 </html>
 
-<script>
-  function cadastrar() {
-    //Recupere o valor da nova input pelo nome do id
-    // Agora vá para o método fetch logo abaixo
-    var nomeFantasiaVar = nome_fantasia_input.value;
-    var emailVar = email_input.value;
-    var CNPJVar = cnpj_input.value;
-    var representanteLegalVar = rep_legal_input.value;
-    var telefoneVar = telefone_input.value;
-    var senhaVar = senha_input.value;
-    var confirmacaoSenhaVar = confirmacao_senha_input.value;
-
-    // Verificando se há algum campo em branco
-    if (
-      nomeFantasiaVar == "" ||
-      emailVar == "" ||
-      senhaVar == "" ||
-      confirmacaoSenhaVar == ""
-    ) {
-      cardErro.style.display = "block";
-      mensagem_erro.innerHTML =
-        "(Mensagem de erro para todos os campos em branco)";
-
-      finalizarAguardar();
-      return false;
-    } else {
-      // setInterval(sumirMensagem, 5000);
-    }
-
-    // Enviando o valor da nova input
-    fetch("/usuarios/cadastrar", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        // crie um atributo que recebe o valor recuperado aqui
-        // Agora vá para o arquivo routes/usuario.js
-        nomeFantasiaServer: nomeFantasiaVar,
-        emailServer: emailVar,
-        cnpjServer: CNPJVar,
-        representanteLegalServer: representanteLegalVar,
-        telefoneServer: telefoneVar,
-        senhaServer: senhaVar
-      }),
-    })
-      .then(function (resposta) {
-        console.log(nomeFantasiaVar)
-        console.log("resposta: ", resposta);
-
-        if (resposta.ok) {
-          cardErro.style.display = "block";
-
-          mensagem_erro.innerHTML =
-            "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
-
-          setTimeout(() => {
-            window.location = "login";
-          }, "2000");
-
-          limparFormulario();
-          finalizarAguardar();
-        } else {
-          throw "Houve um erro ao tentar realizar o cadastro!";
-        }
-      })
-      .catch(function (resposta) {
-        console.log(`#ERRO: ${resposta}`);
-        finalizarAguardar();
-      });
-
-    return false;
-  }
-</script>
+<script src="../js/cadastro.js"></script>
