@@ -1,28 +1,18 @@
-// Variáveis globais
+let empresaSelect = document.getElementById("empresaSelect"); // Corrigido para pegar o elemento, não o valor
+let estadoVar = document.getElementById("estadoInput"); 
+let cepVar = document.getElementById("cepInput");
+let cnpjVar = document.getElementById("cnpjInput");
+let emailVar = document.getElementById("emailInput");
+let senhaVar = document.getElementById("senhaInput");
+let confirmacaoSenhaVar = document.getElementById("confirmarSenhaInput");
 
-const razaoSocialVar = document.getElementById("razaoSocialInput");
-const nomeFantasiaVar = document.getElementById("nomeFantasiaInput");
-const estadolVar = document.getElementById("estadoImput");
-const cepVar = document.getElementById("cepInput");
-const cnpjVar = document.getElementById("cnpjInput");
-const emailVar = document.getElementById("emailInput");
-const senhaVar = document.getElementById("senhaInput");
-const confirmacaoSenhaVar = document.getElementById("confirmacaoSenhaInput");
+let btnContinuar1 = document.getElementById("btnContinuar1");
+let btnVoltar = document.getElementById("btnVoltar");
+let btnCadastrar = document.getElementById("btnCadastrar");
 
-const btnContinuar = document.getElementById("btnContinuar"); 
-const btnVoltar = document.getElementById("btnVoltar"); 
-const btnContinuar2 = document.getElementById("btnContinuar2"); 
-const btnCadastrar = document.getElementById("btnCadastrar");
+let cardErro = document.getElementById("cardErro");
+let mensagemErro = document.getElementById("mensagem_erro");
 
-
-function validacoes(){
-
-if(razaoSocialVar.value == "" | nomeFantasiaVar.value == "" | estadolVar.value == "" | cepVar.value == "" | cnpjVar.value == ""){
-     alert("Mensagem de erro para todos os campos em branco");
-    return false;
-  }
- 
-}
 function togglePasswordVisibility(inputId, iconId) {
   const input = document.getElementById(inputId);
   const icon = document.getElementById(iconId);
@@ -36,72 +26,97 @@ function togglePasswordVisibility(inputId, iconId) {
   }
 }
 
+function passo1() {
+  empresaSelect.parentElement.style.display = "none";
+  estadoVar.parentElement.style.display = "block";
+  cepVar.parentElement.style.display = "block";
+  
+  emailVar.parentElement.style.display = "none";
+  senhaVar.parentElement.style.display = "none";
+  confirmacaoSenhaVar.parentElement.style.display = "none";
+
+  btnContinuar1.style.display = "block";
+  btnVoltar.style.display = "none";
+  btnCadastrar.style.display = "none";
+}
+
+btnVoltar.addEventListener("click", passo1);
+
+function passo2() {
+  empresaSelect.parentElement.style.display = "none";
+  estadoVar.parentElement.style.display = "none";
+  cepVar.parentElement.style.display = "none";
+
+  emailVar.parentElement.style.display = "block";
+  senhaVar.parentElement.style.display = "block";
+  confirmacaoSenhaVar.parentElement.style.display = "block";
+
+  btnContinuar1.style.display = "none";
+  btnVoltar.style.display = "block";
+  btnCadastrar.style.display = "block";
+}
+
+btnContinuar1.addEventListener("click", passo2);
 
 function cadastrar() {
-  // Recupere o valor da nova input pelo nome do id
-  // Agora vá para o método fetch logo abaixo
-  console.log(cnpjVar);
-  var emailVar = email_input.value;
-  var representanteLegalVar = rep_legal_input.value;
-  var telefoneVar = telefone_input.value;
-  var senhaVar = senha_input.value;
-  // Verificando se há algum campo em branco
+  const empresaSelecionada = empresaSelect.value;
+  const estado = estadoVar.value.trim();
+  const email = emailVar.value.trim();
+  const senha = senhaVar.value.trim();
+  const confirmacaoSenha = confirmacaoSenhaVar.value.trim();
+
   if (
-    nomeFantasiaVar == "" ||
-    emailVar == "" ||
-    senhaVar == "" ||
-    confirmacaoSenhaVar == ""
+    !empresaSelecionada || // Verifica se o valor foi selecionado
+    !estado ||
+    !cep ||
+    !cnpj ||
+    !email ||
+    !senha ||
+    !confirmacaoSenha
   ) {
     cardErro.style.display = "block";
-    mensagem_erro.innerHTML =
-      "(Mensagem de erro para todos os campos em branco)";
-
-    finalizarAguardar();
+    mensagemErro.innerHTML = "Por favor, preencha todos os campos.";
     return false;
-  } else {
-    // setInterval(sumirMensagem, 5000);
   }
 
-  // Enviando o valor da nova input
+  if (senha !== confirmacaoSenha) {
+    cardErro.style.display = "block";
+    mensagemErro.innerHTML = "As senhas não coincidem.";
+    return false;
+  }
+
+  // Enviando os dados para o servidor
   fetch("/usuarios/cadastrar", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      // crie um atributo que recebe o valor recuperado aqui
-      // Agora vá para o arquivo routes/usuario.js
-      nomeFantasiaServer: nomeFantasiaVar,
-      emailServer: emailVar,
-      cnpjServer: CNPJVar,
-      representanteLegalServer: representanteLegalVar,
-      telefoneServer: telefoneVar,
-      senhaServer: senhaVar,
+      empresaServer: empresaSelecionada, // Incluído o valor do select
+      estadoServer: estado,
+      cepServer: cep,
+      cnpjServer: cnpj,
+      emailServer: email,
+      senhaServer: senha,
     }),
   })
     .then(function (resposta) {
-      console.log(nomeFantasiaVar);
-      console.log("resposta: ", resposta);
-
       if (resposta.ok) {
         cardErro.style.display = "block";
-
-        mensagem_erro.innerHTML =
-          "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+        mensagemErro.innerHTML =
+          "Cadastro realizado com sucesso! Redirecionando para a tela de login...";
 
         setTimeout(() => {
           window.location = "login";
-        }, "2000");
-
-        limparFormulario();
-        finalizarAguardar();
+        }, 2000);
       } else {
-        throw "Houve um erro ao tentar realizar o cadastro!";
+        throw new Error("Houve um erro ao tentar realizar o cadastro!");
       }
     })
-    .catch(function (resposta) {
-      console.log(`#ERRO: ${resposta}`);
-      finalizarAguardar();
+    .catch(function (erro) {
+      console.error(`#ERRO: ${erro}`);
+      cardErro.style.display = "block";
+      mensagemErro.innerHTML = "Erro ao realizar o cadastro. Tente novamente.";
     });
 
   return false;

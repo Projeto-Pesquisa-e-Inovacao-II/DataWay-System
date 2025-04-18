@@ -17,7 +17,7 @@
     <div class="container">
       <div class="wrapper-logo">
         <div class="logo">
-          <img src="../images/logo1.svg" alt="logo" />
+          <!-- <img src="../images/logo1.svg" alt="logo" /> -->
           <span>Data</span><span style="font-weight: bolder">Way</span>
         </div>
       </div>
@@ -26,7 +26,7 @@
         <section class="container-text-login">
           <div class="login-text">
             <h1>Criar nova conta</h1>
-            <h2>XXXXXXXXXXXXX</h2>
+            <!-- <h2>XXXXXXXXXXXXX</h2> -->
           </div>
           <div class="generic-text">
             <div class="generic-text-border"></div>
@@ -40,23 +40,23 @@
         <section class="container-form-login">
           <h1>Criar conta</h1>
           <div class="container-inputs">
-            <form onsubmit="return cadastrar()">
+            <!-- <form onsubmit="return cadastrar()"> -->
+            <form>
               
               <!-- empresa -->
               <div class="input-field ">
              
                 <div class="input-field ">
-                  <input name="text" class="input" id="razaoSocialInput" placeholder="">
-                  <label class="user-label">Razão social</label>
+                  <select name="" id="empresaSelect">
+                    <option value="#">Selecione a empresa</option>
+                    <option value="1">empresa 1</option>
+                    <option value="2">empresa 2</option>
+                  </select>
                 </div>
 
-                <div class="input-field " >
-                  <input name="text" class="input" id="nomeFantasiaInput" placeholder="">
-                  <label class="user-label">Nome Fantasia</label>
-                </div>
                 
                 <div class="input-field ">
-                  <input name="text" class="input" id="estadoImput" placeholder="">
+                  <input name="text" class="input" id="estadoInput" placeholder="">
                   <label class="user-label">Estado</label>
                 </div>
 
@@ -65,18 +65,14 @@
                   <label class="user-label">CEP</label>
                 </div>
                 
-                <div class="input-field ">
-                <input name="text" type="number" class="input" id="cnpjInput" placeholder="">
-                <label class="user-label" >CNPJ</label>
-              </div>             
                 
               <div class="input-field " style="display: none;">
-                <input   name="text" class="input" id="emailInput">
+                <input name="text" class="input" id="emailInput" placeholder=" ">
                 <label class="user-label" >Email</label>
               </div>             
               
               <div class="input-field" style="display: none;">
-                <input  type="password" name="text" class="input" id="senhaInput">
+                <input type="password" name="text" class="input" id="senhaInput" placeholder=" ">
                 <label class="user-label">Senha</label>
                 <span class="toggle-password" onclick="verSenha('senhaInput', 'senhaIcon')">
                   <img id="senhaIcon" src="../images/Icon/eye.svg" alt="Mostrar senha">
@@ -84,22 +80,39 @@
               </div>             
               
               <div class="input-field" style="display: none;">
-                <input   name="text" type="password" class="input" id="confirmarSenhaInput">
+                <input name="text" type="password" class="input" id="confirmarSenhaInput" placeholder=" ">
                 <label class="user-label">Confirmar Senha</label>
                 <span class="toggle-password" onclick="verSenha('confirmarSenhaInput', 'confirmarSenhaIcon')">
                   <img id="confirmarSenhaIcon" src="../images/Icon/eye.svg" alt="Mostrar senha">
                 </span>
               </div>             
 
-              <div class="container-btn">
-                <button type="submit"   class="btn ontinuar1" id="btnContinuar" onclick="validacoes()">Continuar</button>
-                <button type="submit"  style="display: none;" class="btn voltar" id="btnVoltar">voltar</button>
-                <button type="submit"  style="display: none;" class="btn continuar2" id="btnContinuar">Continuar</button>
-                <button type="submit"  style="display: none;" class="btn cadastrar" onclick="cadastrar()">cadastrar</button>
+              <div class="privacy-policy">
+                <p><b>Termos de Uso e Política de Privacidade</b></p>
+                <div class="privacy-policy-text">ao clicar em "Concordo e Finalizar Cadastro", você concorda com os Termos de 
+                  Uso e a Política de Privacidade da emap. Leia atentamente as condiçõe
+                  <a href="">aqui</a>
+                </div>               
+                <div class="checkbox-container">
+                  <label class="checkbox-label">
+                    <input type="checkbox">
+                    <svg viewBox="0 0 64 64" height="2em" width="2em">
+                      <path d="M 0 16 V 56 A 8 8 90 0 0 8 64 H 56 A 8 8 90 0 0 64 56 V 8 A 8 8 90 0 0 56 0 H 8 A 8 8 90 0 0 0 8 V 16 L 32 48 L 64 16 V 8 A 8 8 90 0 0 56 0 H 8 A 8 8 90 0 0 0 8 V 56 A 8 8 90 0 0 8 64 H 56 A 8 8 90 0 0 64 56 V 16" pathLength="575.0541381835938" class="path"></path>
+                    </svg>
+                  </label>
+                  <p>Eu li e aceito os termos e condições e a política de privacidade</p>
+                </div> 
+              </div>
 
+              <div class="container-btn">
+                
+                <button    class="btn continuar1" id="btnContinuar1">Continuar</button>
+                <button   style="display: none;" class="btn voltar" id="btnVoltar">voltar</button>
+                <button   style="display: none;" class="btn cadastrar" id="btnCadastrar" onclick="cadastrar()">cadastrar</button>
               </div>
             </form>
           </div>
+             </div>
           
           <div class="container-card-erro" id="cardErro">
             <p id="mensagem_erro"></p>
