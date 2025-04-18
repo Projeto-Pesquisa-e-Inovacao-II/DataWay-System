@@ -2,7 +2,33 @@
 /* @media (min-width: 475px) {} */
 
 /* sm */
-/* @media (min-width: 640px) {} */
+@media (max-width: 640px) {
+  .burger {
+    display: block;
+  }
+
+  .burger .burger-line {
+    width: 30px;
+    height: 3px;
+    background-color: black;
+    margin: 10px 0;
+  }
+
+  .burger-menu .burger-menu-content {
+    display: none;
+  }
+
+  .active {
+    display: block;
+  }
+  .active .burger {
+    display: none;
+  }
+
+  .title {
+    height: 70vh;
+  }
+}
 
 /* md */
 @media (max-width: 768px) {
@@ -13,9 +39,11 @@
     flex-direction: column;
   }
 
-  .title-text-first {
-    font-size: 45px !important;
+
+  div.title div.title-text div.title-text-first {
+    font-size: 30px;
   }
+
 
   .services .services-content {
     padding-bottom: 6rem;

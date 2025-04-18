@@ -22,6 +22,7 @@ var sobreNosRouter = require("./src/routes/sobre-nos");
 var usuarioRouter = require("./src/routes/usuarios");
 var cadastroRouter = require("./src/routes/cadastro");
 var loginRouter = require("./src/routes/login");
+var dashboardRouter = require("./src/routes/dashboard");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -31,6 +32,7 @@ app.use(cors());
 
 app.use("/", indexRouter);
 app.use("/contato", contatoRouter);
+app.use("/dashboard", dashboardRouter);
 app.use("/servicos", servicosRouter);
 app.use("/sobre-nos", sobreNosRouter);
 app.use("/usuarios", usuarioRouter);
