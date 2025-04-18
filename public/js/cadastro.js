@@ -1,7 +1,6 @@
 let empresaSelect = document.getElementById("empresaSelect"); // Corrigido para pegar o elemento, não o valor
 let estadoVar = document.getElementById("estadoInput"); 
 let cepVar = document.getElementById("cepInput");
-let cnpjVar = document.getElementById("cnpjInput");
 let emailVar = document.getElementById("emailInput");
 let senhaVar = document.getElementById("senhaInput");
 let confirmacaoSenhaVar = document.getElementById("confirmarSenhaInput");
@@ -61,6 +60,7 @@ btnContinuar1.addEventListener("click", passo2);
 function cadastrar() {
   const empresaSelecionada = empresaSelect.value;
   const estado = estadoVar.value.trim();
+  const cep = cepVar.value.trim();
   const email = emailVar.value.trim();
   const senha = senhaVar.value.trim();
   const confirmacaoSenha = confirmacaoSenhaVar.value.trim();
@@ -69,7 +69,6 @@ function cadastrar() {
     !empresaSelecionada || // Verifica se o valor foi selecionado
     !estado ||
     !cep ||
-    !cnpj ||
     !email ||
     !senha ||
     !confirmacaoSenha
@@ -95,7 +94,6 @@ function cadastrar() {
       empresaServer: empresaSelecionada, // Incluído o valor do select
       estadoServer: estado,
       cepServer: cep,
-      cnpjServer: cnpj,
       emailServer: email,
       senhaServer: senha,
     }),
