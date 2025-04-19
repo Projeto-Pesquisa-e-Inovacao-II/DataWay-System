@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -117,12 +117,45 @@
 
         <div class="graphs">
           <div class="container-left-graphs">
-            <div class="graph-above"></div>
-            <div class="graph-below"></div>
+            <div class="graph-above">
+              <div class="pie-chart" id="pieChardId">
+                <h4>EVASÕES POR CATEGORIA</h4>
+                <canvas id="pieCanvas"></canvas>
+              </div>
+              <div class="radar-chart" id="radarChartId">
+                <h4>EVASÕES POR REGIÃO</h4>
+                <canvas id="radarCanvas"></canvas>
+              </div>
+            </div>
+            <div class="graph-below">
+              <div class="line-left-chart">
+                <h4>COMPORTAMENTO ANUAL</h4>
+                <canvas id="lineLeftCanvas"></canvas>
+              </div>
+            </div>
           </div>
-          <div class="container-right-graphs"></div>
+          <div class="container-right-graphs">
+            <div class="graph-above">
+              <div class="line-chart" id="lineChartId">
+                <h4>AVANÇOS: MANUAL X AUTOMÁTICO</h4>
+                <canvas id="lineCanvas"></canvas>
+              </div>
+            </div>
+            <div class="graph-below">
+              <div class="bar-chart" id="barChartId">
+                <h4>EVASÕES POR DIA DA SEMANA</h4>
+                <canvas id="barCanvas"></canvas>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </div>
   </body>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script type="module" src="../js/dashboard/radar.js"></script>
+  <script type="module" src="../js/dashboard/pie.js"></script>
+  <script type="module" src="../js/dashboard/line.js"></script>
+  <script type="module" src="../js/dashboard/lineLeft.js"></script>
+  <script type="module" src="../js/dashboard/bar.js"></script>
 </html>

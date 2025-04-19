@@ -6,13 +6,13 @@
   --accent-color: #0bc47a;
 
   --logo-color: #003c64;
-  --text-color: #fff;  
+  --text-color: #fff;
   --cards-styling: #0098b1;
 
   --background-color: #050d20;
   --background-color-cards: #232a3c;
   --background-color-aside: #171e31;
-  
+
   --background-color-secondary: #ef6a47;
 }
 
@@ -25,9 +25,8 @@
 }
 
 body {
-    background-color: var(--background-color);
-    color: var(--text-color);
-
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
 
 .container {
@@ -39,22 +38,22 @@ aside {
   flex-direction: column;
   justify-content: space-between;
   height: 100vh;
-  width: 22vw;
+  width: 20vw;
   background-color: var(--background-color-aside);
   padding: 30px;
+  position: fixed;
 }
 
 aside .first-sect {
   display: flex;
   align-items: center;
-    flex-direction: column;
-    justify-content: center;
-  
+  flex-direction: column;
+  justify-content: center;
   padding: 1rem 2rem;
 }
 
 aside .first-sect .user-name {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 .logo .title-aside {
@@ -69,20 +68,20 @@ aside .first-sect .user-name {
 }
 
 aside div.second-secct form div.period {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-    flex-direction: column;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  flex-direction: column;
 }
 
 aside div.second-secct form div.period .period_input {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 aside div.second-secct form div.period .period_input input:first-of-type {
-    margin-right: 20px;  
+  margin-right: 20px;
 }
 
 .second-secct .region {
@@ -99,8 +98,7 @@ aside div.second-secct form div.period .period_input input:first-of-type {
   margin-top: 10px;
   background-color: transparent;
   color: var(--text-color);
-  padding: 0 5px ;
-
+  padding: 0 5px;
 }
 
 .second-secct .search-button {
@@ -113,12 +111,12 @@ aside div.second-secct form div.period .period_input input:first-of-type {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-background-color: var(--background-color-secondary);
-    color: var(--text-color);
-    font-size: 1.2rem;
-    font-weight: bold;
-    transition: all 0.3s ease-in-out;
-    text-transform: uppercase;
+  background-color: var(--background-color-secondary);
+  color: var(--text-color);
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+  text-transform: uppercase;
 }
 
 .other-pages {
@@ -140,7 +138,7 @@ background-color: var(--background-color-secondary);
 .container-dashboard {
   width: 100%;
   margin: 0px 20px;
-  height: 63vh;
+  margin-left: 23vw; /* GAMBIARRRAAAAAAA */
   header {
     display: flex;
     justify-content: space-between;
@@ -150,13 +148,13 @@ background-color: var(--background-color-secondary);
       text-transform: uppercase;
       margin: 30px 0;
       margin-top: 25px;
-        font-weight: bold;
+      font-weight: bold;
     }
 
     i {
-        font-size: 2rem;
-        color: var(--text-color);
-        margin-right: 20px;
+      font-size: 2rem;
+      color: var(--text-color);
+      margin-right: 20px;
     }
   }
 }
@@ -178,29 +176,18 @@ background-color: var(--background-color-secondary);
   font-weight: bold;
 }
 
-  div.cards
-  div.card
-  .card-details
-  div.details-data {
+div.cards div.card .card-details div.details-data {
   display: flex;
 }
 
-  div.cards
-  div.card
-  .card-details
-  div.details-data
-  img {
+div.cards div.card .card-details div.details-data img {
   width: 70px;
   height: 70px;
   border-radius: 50%;
 }
 
-div.cards
-div.card
-.card-details
-div.details-data
-i {
-  font-size: 2rem;    
+div.cards div.card .card-details div.details-data i {
+  font-size: 2rem;
 }
 
 .cards .card .card-details .details-data {
@@ -222,7 +209,6 @@ i {
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
   width: 100%;
-  height: 100%;
 }
 
 .graphs .container-left-graphs,
@@ -231,22 +217,78 @@ i {
 }
 
 .graphs .container-right-graphs {
+  display: flex;
+  flex-direction: column;
+  height: 94vh;
+}
+
+.graphs .container-right-graphs .graph-above,
+.graphs .container-right-graphs .graph-below {
   background-color: var(--background-color-cards);
+  height: 54%;
+}
+
+.graphs .container-right-graphs .graph-below {
+    height: 46vh !important;
+}
+
+.graphs .container-right-graphs .graph-above {
+  margin-bottom: 20px;
+  height: 38.5vh;
 }
 
 .graphs .container-left-graphs {
-  height: 100%;
+  height: 94vh;
   display: grid;
   grid-template-rows: repeat(2, 1fr);
   gap: 20px;
 }
 
-.graphs .container-left-graphs .graph-above,
-.graphs .container-left-graphs .graph-below {
-    background-color: var(--background-color-cards);
+.graphs .container-left-graphs .graph-above {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
 
+.graphs .container-left-graphs .graph-below {
+  background-color: var(--background-color-cards);
+  height: 38.5vh;
 }
 
 .graphs .container-left-graphs .graph-above {
   margin: 0;
+}
+
+.pie-chart,
+.radar-chart {
+  width: 100%;
+  height: 46vh;
+  background-color: var(--background-color-cards);
+}
+
+.line-chart, .line-left-chart {
+  height: 35.6vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.radar-chart h4,
+.pie-chart h4,
+.line-chart h4,
+.bar-chart h4,
+.line-left-chart h4 {
+  margin: 15px;
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+
+.line-chart canvas {
+  margin: 0;
+}
+
+#lineCanvas, #lineLeftCanvas {
+  height: 100% !important;
+  margin: 0 auto;
+  width: 100%;
 }
