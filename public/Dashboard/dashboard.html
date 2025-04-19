@@ -5,12 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard | Dataway</title>
     <link rel="stylesheet" href="../css/dashboard/dashboard.css" />
+    <script
+      src="https://kit.fontawesome.com/8aca4bf827.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <div class="container">
       <aside>
         <div class="logo">
-          <h1 class="title-aside">Dataway</h1>
+          <h1 class="title-aside">
+            <span>Data</span><span style="font-weight: bold">Way</span>
+          </h1>
         </div>
         <div class="first-sect">
           <img
@@ -24,8 +30,10 @@
           <form action="">
             <div class="period">
               <h2>Período</h2>
-              <input type="" name="" id="" />
-              <input type="" name="" id="" />
+              <div class="period_input">
+                <input type="date" name="" id="" />
+                <input type="date" name="" id="" />
+              </div>
             </div>
             <div class="region">
               <h2>Região</h2>
@@ -36,9 +44,7 @@
                 <option value="">Região 3</option>
               </select>
             </div>
-            <button type="submit" class="search-button">
-              <img src="../assets/search-icon.png" alt="search-icon" />
-            </button>
+            <button type="submit" class="search-button">Filtrar</button>
           </form>
         </div>
 
@@ -51,6 +57,7 @@
       <section class="container-dashboard">
         <header>
           <h1>Dashboard</h1>
+          <i class="fa-solid fa-bell"></i>
         </header>
 
         <div class="cards">
@@ -59,55 +66,59 @@
               <h4>Horário Crítico</h4>
 
               <div class="details-data">
-                <img src="https://upload.wikimedia.org/wikipedia/mediawiki/thumb/a/a9/Example.jpg/250px-Example.jpg" alt="">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/mediawiki/thumb/a/a9/Example.jpg/250px-Example.jpg"
+                  alt=""
+                />
                 <h1>21:00</h1>
               </div>
-            
             </div>
           </div>
           <div class="card">
             <div class="card-details">
-              <h4>Horário Crítico</h4>
+              <h4>Impacto financeiro</h4>
 
               <div class="details-data">
-                <img src="https://upload.wikimedia.org/wikipedia/mediawiki/thumb/a/a9/Example.jpg/250px-Example.jpg" alt="">
-                <h1>21:00</h1>
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/mediawiki/thumb/a/a9/Example.jpg/250px-Example.jpg"
+                  alt=""
+                />
+                <h1>150,1K</h1>
               </div>
-            
             </div>
           </div>
           <div class="card">
             <div class="card-details">
-              <h4>Horário Crítico</h4>
+              <h4>categoria mais frequente</h4>
 
               <div class="details-data">
-                <img src="https://upload.wikimedia.org/wikipedia/mediawiki/thumb/a/a9/Example.jpg/250px-Example.jpg" alt="">
-                <h1>21:00</h1>
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/mediawiki/thumb/a/a9/Example.jpg/250px-Example.jpg"
+                  alt=""
+                />
+                <h1>2 eixos</h1>
               </div>
-            
             </div>
           </div>
           <div class="card">
             <div class="card-details">
-              <h4>Horário Crítico</h4>
+              <h4>Região critica</h4>
 
               <div class="details-data">
-                <img src="https://upload.wikimedia.org/wikipedia/mediawiki/thumb/a/a9/Example.jpg/250px-Example.jpg" alt="">
-                <h1>21:00</h1>
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/mediawiki/thumb/a/a9/Example.jpg/250px-Example.jpg"
+                  alt=""
+                />
+                <h1>Sudeste</h1>
               </div>
             </div>
           </div>
-
         </div>
 
         <div class="graphs">
           <div class="container-left-graphs">
-            <div class="graph-above">
-
-            </div>
-            <div class="graph-below">
-              
-            </div>
+            <div class="graph-above"></div>
+            <div class="graph-below"></div>
           </div>
           <div class="container-right-graphs"></div>
         </div>
