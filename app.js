@@ -19,10 +19,10 @@ var indexRouter = require("./src/routes/index");
 var contatoRouter = require("./src/routes/contato");
 var servicosRouter = require("./src/routes/servicos");
 var sobreNosRouter = require("./src/routes/sobre-nos");
-var usuarioRouter = require("./src/routes/usuarios");
 var cadastroRouter = require("./src/routes/cadastro");
 var loginRouter = require("./src/routes/login");
 var dashboardRouter = require("./src/routes/dashboard");
+var perfilRouter = require("./src/routes/perfil");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -32,12 +32,12 @@ app.use(cors());
 
 app.use("/", indexRouter);
 app.use("/contato", contatoRouter);
-app.use("/dashboard", dashboardRouter);
 app.use("/servicos", servicosRouter);
 app.use("/sobre-nos", sobreNosRouter);
-app.use("/usuarios", usuarioRouter);
 app.use("/cadastro", cadastroRouter);
 app.use("/login", loginRouter);
+app.use("/dashboard", dashboardRouter);
+app.use("/perfil", perfilRouter);
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
