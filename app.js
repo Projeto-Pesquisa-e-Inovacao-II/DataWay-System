@@ -23,6 +23,8 @@ var cadastroRouter = require("./src/routes/cadastro");
 var loginRouter = require("./src/routes/login");
 var dashboardRouter = require("./src/routes/dashboard");
 var perfilRouter = require("./src/routes/perfil");
+var suporteRouter = require("./src/routes/suporte");
+var suporteMessageReceivedRouter = require("./src/routes/suporte-message-received");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -37,7 +39,9 @@ app.use("/sobre-nos", sobreNosRouter);
 app.use("/cadastro", cadastroRouter);
 app.use("/login", loginRouter);
 app.use("/dashboard", dashboardRouter);
-app.use("/perfil", perfilRouter);
+app.use("/dashboard/perfil", perfilRouter);
+app.use("/dashboard/suporte", suporteRouter);
+app.use("/dashboard/suporte-mensagem", suporteMessageReceivedRouter);
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));

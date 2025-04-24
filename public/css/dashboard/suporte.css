@@ -45,64 +45,63 @@
   font-weight: bolder;
 }
 
-
 .border_text {
   border-bottom: 5px solid var(--text-color);
   margin-bottom: 13px;
-  width: 100%;    
+  width: 100%;
   margin-left: 20px;
 }
 
-/* profile */
 
+/* suporte */
 
-.profile_sect {
-  display: flex;
-  margin: 50px;
+.suport_sect {
+    margin: 50px;
+
+    h1 {
+        font-size: 2.7rem;
+        font-weight: bolder;
+    }
+
+    .suport_sect_title_main {
+        margin-bottom: 20px;
+    }
+
+    .suport_sect_title_sec {
+        font-weight: normal;
+        margin-bottom: 20px;
+    }
 }
 
-.profile_sect .container_profile_sect {
-  display: flex;
-  width: 40%;
-}
+.message_box {
+    background-color: var(--background-color-cards);
+    padding: 20px;
+    border-radius: 10px;
+    width: 30vw;
 
-.profile_sect .container_profile_sect .left{
-  img {
-    width: 300px;
-    height: 300px;    
-    border-radius: 50%;
-  }
-} 
+    form {
+        .input-field {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            label {
+                font-size: 1.2rem;
+                margin-bottom: 10px;
+                font-weight: bold;
+            }
+            input {
+                padding: 15px;
+                margin-bottom: 20px;
+            }
 
-.profile_sect .container_profile_sect .right{
-  display: flex;
-  flex-direction: column;
-  margin-left: 50px;
-  margin-top: 20px;
-  width: 100%;
-} 
+            textarea {
+                height: 20vh;
+                resize: none;
+            }
 
-.right_span_text {
-  margin-bottom: 30px;
-  margin-top: 4px;
-  font-size: 1.4rem;
-
-}
-
-.right_span_title {
-  font-size: 1.3rem;
-  font-weight: bolder;
-  color: var(--text-color);
-  margin-bottom: 10px;
-}
-
-.edit_profile_data {
-  padding: 10px 15px;
-  border-radius: 10px;
-  border: none;
-  width: 100%;
-  background-color: var(--background-color-secondary);
-  color: var(--text-color);
-  font-size: 1.2rem;
-  font-weight: bolder;
+            input, textarea {
+                background-color: transparent;
+            }
+        }
+    }
 }
