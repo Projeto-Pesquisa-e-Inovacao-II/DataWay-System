@@ -14,6 +14,7 @@
   --background-color-aside: #171e31;
 
   --background-color-secondary: #ef6a47;
+  --background-color-three: #c50c0c;
 }
 
 /* banner */
@@ -63,7 +64,6 @@
 
 .profile_sect .container_profile_sect {
   display: flex;
-  width: 40%;
 }
 
 .profile_sect .container_profile_sect .left{
@@ -96,13 +96,84 @@
   margin-bottom: 10px;
 }
 
-.edit_profile_data {
+.edit_profile_data, .save_profile_data, .delete_profile_data {
   padding: 10px 15px;
   border-radius: 10px;
   border: none;
-  width: 100%;
+  width: 16vw;
   background-color: var(--background-color-secondary);
   color: var(--text-color);
   font-size: 1.2rem;
   font-weight: bolder;
+  cursor: pointer;
+}
+
+.delete_profile_data {
+  background-color: var(--background-color-three);
+  margin-top: 20px;
+
+}
+
+
+.save_profile_data, .delete_profile_data {
+  height: min-content;
+}
+
+.right_span_input {
+  background-color: transparent;
+  color: var(--text-color);
+  margin-top: 4px;
+  margin-bottom: 30px;
+  font-size: 1.38rem;
+  padding: 5px 10px;
+  border: 1px solid var(--text-color);
+}
+
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  margin-bottom: 30px;
+  margin-left: 20px;
+}
+
+.popup {
+  display: none;
+  padding: 20px;
+  border: 1px solid var(--text-color);
+  margin-bottom: 20px;  
+  p {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    margin-top: 10px;
+  }
+
+  p:last-of-type {
+    margin-bottom: 10px;
+  }
+  h2 {
+    font-weight: 600;
+    text-wrap: nowrap;
+  }
+  input {
+    background-color: transparent;
+    font-size: 1.3rem;
+    color: var(--text-color);
+    width: 10vw;
+  }
+}
+
+.form_delete {
+  display: flex;
+  .btn_delete {
+    background-color: var(--background-color-three);
+    color: var(--text-color);
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: none;
+    font-size: 1.2rem;
+    font-weight: bolder;
+    margin-left: 20px;
+    cursor: pointer;
+  }
 }

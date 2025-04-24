@@ -132,4 +132,14 @@ aside div.second-secct form div.period .period_input input:first-of-type {
     transition: all 0.3s ease-in-out;
     text-transform: uppercase;
   }
+
+  .route_page {
+    display: flex;
+    align-items: center;
+    i {
+      margin-right: 15px;
+      font-size: 25px;
+    }
+  }
+  
 }

@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard | Dataway</title>
     <link rel="stylesheet" href="../css/dashboard/dashboard.css" />
+    <link rel="stylesheet" href="../components/dashboard/aside/aside.css" />
+    
     <script
       src="https://kit.fontawesome.com/8aca4bf827.js"
       crossorigin="anonymous"
@@ -49,8 +51,14 @@
         </div>
 
         <div class="other-pages">
-          <a href="./perfil"><h2>Perfil</h2></a>
-          <a href=""><h2>Suporte</h2></a>
+          <div class="route_page">
+            <i class="fa-solid fa-circle-user"></i>
+            <a href="/dashboard/perfil"><h2>Perfil</h2></a>
+          </div>
+          <div class="route_page">
+            <i class="fa-solid fa-headset"></i>
+            <a href="/dashboard/suporte"><h2>Suporte</h2></a>
+          </div>
         </div>
       </aside>
 

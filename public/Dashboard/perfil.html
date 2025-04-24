@@ -9,6 +9,11 @@
       href="../components/dashboard/aside_wth_dash/aside.css"
     />
     <link rel="stylesheet" href="../css/dashboard/perfil.css" />
+
+    <script
+      src="https://kit.fontawesome.com/8aca4bf827.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <div class="container">
@@ -20,9 +25,18 @@
         </div>
 
         <div class="other-pages">
-          <a href="/dashboard"><h2>Dashbaord</h2></a>
-          <a href="/dashboard/perfil"><h2>Perfil</h2></a>
-          <a href="/dashboard/suporte"><h2>Suporte</h2></a>
+          <div class="route_page">
+            <i class="fa-solid fa-chart-line"></i>
+            <a href="/dashboard"><h2>Dashbaord</h2></a>
+          </div>
+          <div class="route_page">
+            <i class="fa-solid fa-circle-user"></i>
+            <a href="/dashboard/perfil"><h2>Perfil</h2></a>
+          </div>
+          <div class="route_page">
+            <i class="fa-solid fa-headset"></i>
+            <a href="/dashboard/suporte"><h2>Suporte</h2></a>
+          </div>
         </div>
       </aside>
 
@@ -54,7 +68,20 @@
               <span class="right_span_title"> Nome: </span>
               <span class="right_span_text">Nomeeeeee</span>
 
-              <button class="edit_profile_data">Editar dados</button>
+              <button onclick="changeTextToInput()" class="edit_profile_data">
+                Editar dados
+              </button>
+            </div>
+            <div class="buttons">
+              <div class="popup" id="popup">
+                <h2>Deseja excluir sua conta?</h2>
+                <p>Digite o código a seguir:</p>
+                <p>1654789</p>
+                <form action="" class="form_delete">
+                  <input type="text" name="" id="" />
+                  <button type="submit" class="btn_delete">Excluir</button>
+                </form>
+              </div>
             </div>
           </div>
         </section>
@@ -62,3 +89,5 @@
     </div>
   </body>
 </html>
+
+<script src="../js/changeUserData.js"></script>

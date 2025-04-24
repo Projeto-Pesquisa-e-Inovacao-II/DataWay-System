@@ -61,5 +61,15 @@ aside {
     transition: all 0.3s ease-in-out;
     text-transform: uppercase;
   }
+
+
+  .route_page {
+    display: flex;
+    align-items: center;
+    i {
+      margin-right: 15px;
+      font-size: 25px;
+    }
+  }
 }
 

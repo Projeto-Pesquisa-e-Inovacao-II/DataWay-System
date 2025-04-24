@@ -5,9 +5,14 @@ const data = {
       label: "My First Dataset",
       data: [300, 50, 100],
       backgroundColor: [
-        "rgb(255, 99, 132)",
-        "rgb(54, 162, 235)",
-        "rgb(255, 205, 86)",
+        'rgb(108, 229, 232)',
+        'rgb(65, 184, 213)',
+        'rgb(45, 139, 186)'
+      ],
+      borderColor: [
+        'rgb(108, 229, 232)',
+        'rgb(65, 184, 213)',
+        'rgb(45, 139, 186)'
       ],
       hoverOffset: 4,
     },

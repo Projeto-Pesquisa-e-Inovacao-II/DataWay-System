@@ -52,56 +52,76 @@
   margin-left: 20px;
 }
 
-
 /* suporte */
 
 .suport_sect {
-    margin: 50px;
+  margin: 50px;
 
-    h1 {
-        font-size: 2.7rem;
-        font-weight: bolder;
-    }
+  h1 {
+    font-size: 2.7rem;
+    font-weight: bolder;
+  }
 
-    .suport_sect_title_main {
-        margin-bottom: 20px;
-    }
+  .suport_sect_title_main {
+    margin-bottom: 20px;
+  }
 
-    .suport_sect_title_sec {
-        font-weight: normal;
-        margin-bottom: 20px;
-    }
+  .suport_sect_title_sec {
+    font-weight: normal;
+    margin-bottom: 20px;
+  }
 }
 
 .message_box {
+  border-radius: 10px;
+  width: 50vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  form {
     background-color: var(--background-color-cards);
-    padding: 20px;
-    border-radius: 10px;
-    width: 30vw;
+    padding: 30px;
 
-    form {
-        .input-field {
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            label {
-                font-size: 1.2rem;
-                margin-bottom: 10px;
-                font-weight: bold;
-            }
-            input {
-                padding: 15px;
-                margin-bottom: 20px;
-            }
+    width: 100%;
+    .input-field {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      label {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+        font-weight: bold;
+      }
+      input {
+        padding: 15px;
+        margin-bottom: 20px;
+      }
 
-            textarea {
-                height: 20vh;
-                resize: none;
-            }
+      textarea {
+        height: 20vh;
+        resize: none;
+      }
 
-            input, textarea {
-                background-color: transparent;
-            }
-        }
+      input,
+      textarea {
+        background-color: transparent;
+      }
     }
+  }
+
+  .edit_profile_data {
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: none;
+    background-color: var(--background-color-secondary);
+    color: var(--text-color);
+    font-size: 1.2rem;
+    font-weight: bolder;
+  }
+
+  button {
+    height: 50px;
+    width: 50%;
+    margin-left: 50px;
+  }
 }
