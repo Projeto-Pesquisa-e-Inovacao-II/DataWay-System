@@ -23,8 +23,9 @@
   width: 100%;
 }
 
+
 .profile_banner {
-  background-image: url("https://media.istockphoto.com/id/1576926531/photo/leadership-concept.jpg?s=612x612&w=0&k=20&c=T2iC7B7S6RKX-xzVXQyRM6QcUitHZH7PVTMMkwuzj9c=");
+  background-image: url("../../images/DashBoard/UTF-8backgound_dash.png");
   background-size: cover;
   height: 25vh;
   width: 100%;
@@ -57,13 +58,29 @@
 /* profile */
 
 
+.triangle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;             
+  aspect-ratio: 552 / 1080;  
+  background-image: url("../../images/DashBoard/UTF-8triangulo_dash.png");
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: auto 100%; 
+}
+
 .profile_sect {
   display: flex;
-  margin: 50px;
+  margin-left: 50px;
+  height: 75vh;
+  justify-content: space-between;
+  position: relative;
 }
 
 .profile_sect .container_profile_sect {
   display: flex;
+  margin-top: 50px;
 }
 
 .profile_sect .container_profile_sect .left{
@@ -77,7 +94,7 @@
 .profile_sect .container_profile_sect .right{
   display: flex;
   flex-direction: column;
-  margin-left: 50px;
+  margin-left: 70px;
   margin-top: 20px;
   width: 100%;
 } 
@@ -133,7 +150,7 @@
   display: flex;
   justify-content: flex-end;
   flex-direction: column;
-  margin-bottom: 30px;
+  margin-bottom: 131px;
   margin-left: 20px;
 }
 
