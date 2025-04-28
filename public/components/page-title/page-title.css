@@ -1,0 +1,12 @@
+.title {
+  background: url("../assets/images/contact/bg-titulo.jpg") center no-repeat;
+  padding: 100px 0;
+  background-size: cover;
+}
+
+.title h1 {
+  color: var(--secondary-color); 
+  text-transform: uppercase;
+  font-size: 52px;
+  text-align: center;
+}

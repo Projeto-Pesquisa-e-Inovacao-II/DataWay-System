@@ -7,6 +7,9 @@
 /* Poppins font */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400..700&display=swap');
 
+/* Montserrat */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 :root {
     --primary-color: #1ef0a6;
     --secondary-color: #1becaa;

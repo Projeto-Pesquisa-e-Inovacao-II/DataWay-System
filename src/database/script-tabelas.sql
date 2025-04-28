@@ -13,17 +13,7 @@ CREATE TABLE Empresa (
     Senha VARCHAR(255) NOT NULL,
     telefone VARCHAR(20),
     representanteLegal VARCHAR(100),
-    razaoSocial VARCHAR(200)
-);
-
-CREATE TABLE Endereco (
-    idEndereco INT PRIMARY KEY AUTO_INCREMENT,
-    cep VARCHAR(10),
-    cidade VARCHAR(100),
-    rua VARCHAR(200),
-    estado VARCHAR(50),
-    fkEmpresa INT,
-    FOREIGN KEY (fkEmpresa) REFERENCES Empresa(idEmpresa)
+    nomeFantasia VARCHAR(200),
 );
 
 CREATE TABLE DadosPracaPedagio (
