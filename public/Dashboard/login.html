@@ -1,76 +1,79 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Login | DataWay</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <script src="../js/sessao.js"></script>
+  <title>Login | DataWay</title>
 
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <script src="../js/sessao.js"></script>
 
-    <link rel="stylesheet" href="../css/login.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
 
-    <!-- fontawesome para icons -->
-    <script
-      src="https://kit.fontawesome.com/8aca4bf827.js"
-      crossorigin="anonymous"
-    ></script>
-  </head>
+  <link rel="stylesheet" href="../css/login.css" />
 
-  <body>
-    <div class="container">
-      <div class="wrapper-logo">
-        <div class="logo">
-          <img src="../images/logo1.svg" alt="logo" />
-          <span>Data</span><span style="font-weight: bolder">Way</span>
-        </div>
+  <!-- fontawesome para icons -->
+  <script src="https://kit.fontawesome.com/8aca4bf827.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="wrapper-logo">
+      <div class="logo">
+        <span>Data</span><span style="font-weight: bolder">Way</span>
       </div>
+    </div>
 
-      <main>
-        <section class="container-text-login">
-          <div class="login-text">
-            <h1>Login</h1>
-            <h2>Entre com seu e-mail e senha para acessar sua conta.</h2>
-          </div>
-          <div class="generic-text">
-            <div class="generic-text-border"></div>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo,
-              accusamus.
-            </p>
-          </div>
-        </section>
-
-        <section class="container-form-login">
+    <main>
+      <section class="container-text-login">
+        <div class="login-text">
           <h1>Login</h1>
-          <div class="container-inputs">
-            <form onsubmit="return entrar()">
+          <h2>Entre com seu e-mail e senha para acessar sua conta.</h2>
+        </div>
+        <div class="generic-text">
+          <div class="generic-text-border"></div>
+          <p>
+            TRANFORMAMOS INFORMAÇÕES EM DECISÕES ESTRATÉGICAS PARA UM
+            TRÁFEGO MAIS SEGURO E RENTÁVEL.
+          </p>
+        </div>
+      </section>
 
-              <div class="input-field ">
-                <input required="" type="email" name="text" class="input">
-                <label class="user-label" for="email_input">email</label>
-              </div>
-              <div class="input-field">
-                <input required="" type="password" name="text" class="input">
-                <label class="user-label" for="senha_input">Senha</label>
-              </div>
+      <section class="container-form-login">
+        <h1>Login</h1>
+       
+        <div class="container-inputs">
+          <div class="input-field">
+            <input name="text" class="input" id="emailInput" placeholder=" ">
+            <label class="user-label" >Email</label>
+          </div>             
+          
+          <div class="input-field" >
+            <input type="password" name="text" class="input" id="senhaInput" placeholder=" ">
+            <label class="user-label">Senha</label>
+            <span class="toggle-password">
+              <img id="senhaIcon" src="../images/Icon/eye.svg" alt="Mostrar senha" onclick="togglePasswordVisibility('senhaInput', 'senhaIcon') ">
+            </span>
+          </div>
 
 
           <div class="container-btn">
-            <button class="btn-entrar"><span>Entrar</span></button>
+            <button class="btn-entrar" id="btnLogin"><span>Entrar</span></button>
           </div>
-            </form>
+          <div class="caminho-cadastro">
+            <a href="/cadastro">Realizar cadastro</a>
           </div>
-          <div class="container-card-erro" id="cardErro">
-            <p id="mensagem_erro"></p>
-          </div>
-        </section>
-      </main>
-    </div>
-  </body>
+        </div>
+        <div id="toast" class="toast hidden">
+          <p id="toastMessage"></p>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+
 </html>
 
 <script src="../js/login.js"></script>
