@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Monda:wght@400..700&display=swap");
+
+/* variáveis */
+:root {
+  --primary-color: #1ef0a6;
+  --secondary-color: #1becaa;
+  --accent-color: #0bc47a; 
+
+  --logo-color: #003c64;
+  --text-color: #ececec;
+  --text-color-stronger: #838383;
+
+  --background-color-nav: #f2f2f2;
+  --background-color-header: #fff;
+  --icon-color: #22df96;
+}
+/* config */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Monda", sans-serif;
+}
+
+/* header */
+header {
+  background-color: var(--background-color);
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 1170px;
+  margin-right: auto;
+  margin-left: auto;
+  height: 10vh;
+}
+
+header .logo {
+  color: var(--logo-color);
+  font-size: 2.5rem;
+}
+
+header ul {
+  display: flex;
+  list-style: none;
+  margin-left: auto;
+}
+
+header ul li {
+  margin-left: 30px;
+}
+
+header ul li a {
+  text-decoration: none;
+  color: var(--text-color-stronger);
+  font-size: 17px;
+  text-transform: uppercase;
+}
