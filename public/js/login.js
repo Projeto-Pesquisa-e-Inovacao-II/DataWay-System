@@ -1,41 +1,39 @@
-function validarEmail(email) {
-  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  return regex.test(email);
+let emailVar = document.getElementById("emailInput");
+let senhaVar = document.getElementById("senhaInput");
+
+
+function togglePasswordVisibility(inputId, iconId) {
+  const input = document.getElementById(inputId);
+  const icon = document.getElementById(iconId);
+
+  if (input.type === "password") {
+    input.type = "text";
+    icon.src = "../images/Icon/eye-slash.svg";
+  } else {
+    input.type = "password";
+    icon.src = "../images/Icon/eye.svg";
+  }
 }
 
-function validarSenha(senha) {
-  const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
-  return regex.test(senha);
-}
+btnLogin.addEventListener("click", function (event) {
+  event.preventDefault();
+  const email = emailInput.value.trim();
+  const senha = senhaInput.value.trim();
 
-function entrar() {
+  let hasError = false;
+
+  if (!email) {
+    showToast("Digite seu e-mail corretamente!", "#ff6347");
+    hasError = true;
+    return;
+  }
+  if (!senha) {
+    showToast("Digite sua senha corretamente!", "#ff6347");
+    hasError = true;
+    return;
+  }
+
   console.log("Iniciando validação de login...");
-
-  var emailVar = email_input.value.trim();
-  var senhaVar = senha_input.value.trim();
-
-  if (emailVar === "" || senhaVar === "") {
-    cardErro.style.display = "block";
-    mensagem_erro.innerHTML = "Por favor, preencha todos os campos.";
-    setTimeout(sumirMensagem, 5000);
-    return false;
-  }
-
-  if (!validarEmail(emailVar)) {
-    cardErro.style.display = "block";
-    mensagem_erro.innerHTML = "Por favor, insira um e-mail válido.";
-    setTimeout(sumirMensagem, 5000);
-    return false;
-  }
-
-  if (!validarSenha(senhaVar)) {
-    cardErro.style.display = "block";
-    mensagem_erro.innerHTML =
-      "A senha deve ter pelo menos 6 caracteres, incluindo uma letra maiúscula, uma letra minúscula, um número e um caractere especial.";
-    setTimeout(sumirMensagem, 5000);
-    return false;
-  }
-
   console.log("FORM LOGIN: ", emailVar);
   console.log("FORM SENHA: ", senhaVar);
 
@@ -62,6 +60,9 @@ function entrar() {
           sessionStorage.NOME_USUARIO = json.nome;
           sessionStorage.ID_USUARIO = json.id;
 
+          
+          showToast("Login realizado com sucesso!", "#7cb15f");
+
           // Redirecionar para o dashboard
           setTimeout(function () {
             window.location = "./dashboard/cards.html";
@@ -69,6 +70,7 @@ function entrar() {
         });
       } else {
         console.log("Houve um erro ao tentar realizar o login!");
+        showToast("E-mail ou senha inválidos!", "#ff6347");
 
         resposta.text().then((texto) => {
           console.error(texto);
@@ -86,8 +88,19 @@ function entrar() {
     });
 
   return false;
-}
+});
 
-function sumirMensagem() {
-  cardErro.style.display = "none";
+function showToast(message, color) {
+  const toast = document.getElementById("toast");
+  const toastMessage = document.getElementById("toastMessage");
+
+  toastMessage.textContent = message;
+  toast.style.backgroundColor = color; // Define a cor do toast dinamicamente
+  toast.classList.remove("hidden");
+  toast.classList.add("visible");
+
+  setTimeout(() => {
+    toast.classList.remove("visible");
+    toast.classList.add("hidden");
+  }, 3000);
 }
