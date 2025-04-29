@@ -1,14 +1,30 @@
-var database = require("../database/config")
+var database = require("../database/config");
 
-function updateUserData(nomeFantasia, representanteLegal, CNPJ, telefone, email, senha) {
-    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function entrar(): ", email, senha)
-    var instrucaoSql = `
-        SELECT idEmpresa, nomeFantasia, email FROM Empresa WHERE email = '${email}' AND senha = '${senha}';
+function updateUserData(
+  email,
+  telefone,
+  representanteLegal,
+  razaoSocial,
+  nomeFantasia,
+  idEmpresa
+) {
+  console.log(
+    "ACESSEI O UPdateUserData MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function entrar(): ",
+    email
+  );
+  var instrucaoSqlUsuario = `
+        UPDATE Usuario SET email = '${email}', telefone = '${telefone}' WHERE idUsuario = '${idEmpresa}';  
     `;
-    console.log("Executando a instrução SQL: \n" + instrucaoSql);
-    return database.executar(instrucaoSql);
+
+  var instrucaoSql = `UPDATE Empresa SET nomeFantasia = '${nomeFantasia}', razaoSocial = '${razaoSocial}', representanteLegal = '${representanteLegal}' WHERE idEmpresa = '${idEmpresa}'`;
+
+  console.log("Executando a instrução SQL: \n" + instrucaoSql + "e" + instrucaoSqlUsuario);
+  return Promise.all([
+    database.executar(instrucaoSqlUsuario),
+    database.executar(instrucaoSql),
+  ]);
 }
 
 module.exports = {
-    updateUserData
+  updateUserData,
 };

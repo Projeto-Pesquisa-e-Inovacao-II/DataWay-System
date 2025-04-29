@@ -26,6 +26,9 @@ var perfilRouter = require("./src/routes/perfil");
 var suporteRouter = require("./src/routes/suporte");
 var suporteMessageReceivedRouter = require("./src/routes/suporte-message-received");
 
+var getUserData = require("./src/routes/getUserData");
+var updateUserData = require("./src/routes/updateUserData");
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
@@ -42,6 +45,9 @@ app.use("/dashboard", dashboardRouter);
 app.use("/dashboard/perfil", perfilRouter);
 app.use("/dashboard/suporte", suporteRouter);
 app.use("/dashboard/suporte-mensagem", suporteMessageReceivedRouter);
+
+app.use("/get_user_data", getUserData);
+app.use("/update_user_data", updateUserData);
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
