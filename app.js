@@ -26,6 +26,8 @@ var perfilRouter = require("./src/routes/perfil");
 var suporteRouter = require("./src/routes/suporte");
 var suporteMessageReceivedRouter = require("./src/routes/suporte-message-received");
 
+
+var deleteUser = require("./src/routes/deleteUserData")
 var getUserData = require("./src/routes/getUserData");
 var updateUserData = require("./src/routes/updateUserData");
 
@@ -48,6 +50,7 @@ app.use("/dashboard/suporte-mensagem", suporteMessageReceivedRouter);
 
 app.use("/get_user_data", getUserData);
 app.use("/update_user_data", updateUserData);
+app.use("/delete_user_data", deleteUser);
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
