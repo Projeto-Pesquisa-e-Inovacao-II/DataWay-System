@@ -3,28 +3,6 @@
 
 /* sm */
 @media (max-width: 640px) {
-  .burger {
-    display: block;
-  }
-
-  .burger .burger-line {
-    width: 30px;
-    height: 3px;
-    background-color: black;
-    margin: 10px 0;
-  }
-
-  .burger-menu .burger-menu-content {
-    display: none;
-  }
-
-  .active {
-    display: block;
-  }
-  .active .burger {
-    display: none;
-  }
-
   .title {
     height: 70vh;
   }
