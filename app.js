@@ -19,9 +19,17 @@ var indexRouter = require("./src/routes/index");
 var contatoRouter = require("./src/routes/contato");
 var servicosRouter = require("./src/routes/servicos");
 var sobreNosRouter = require("./src/routes/sobre-nos");
-var usuarioRouter = require("./src/routes/usuarios");
 var cadastroRouter = require("./src/routes/cadastro");
 var loginRouter = require("./src/routes/login");
+var dashboardRouter = require("./src/routes/dashboard");
+var perfilRouter = require("./src/routes/perfil");
+var suporteRouter = require("./src/routes/suporte");
+var suporteMessageReceivedRouter = require("./src/routes/suporte-message-received");
+
+
+var deleteUser = require("./src/routes/deleteUserData")
+var getUserData = require("./src/routes/getUserData");
+var updateUserData = require("./src/routes/updateUserData");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -33,9 +41,16 @@ app.use("/", indexRouter);
 app.use("/contato", contatoRouter);
 app.use("/servicos", servicosRouter);
 app.use("/sobre-nos", sobreNosRouter);
-app.use("/usuarios", usuarioRouter);
 app.use("/cadastro", cadastroRouter);
 app.use("/login", loginRouter);
+app.use("/dashboard", dashboardRouter);
+app.use("/dashboard/perfil", perfilRouter);
+app.use("/dashboard/suporte", suporteRouter);
+app.use("/dashboard/suporte-mensagem", suporteMessageReceivedRouter);
+
+app.use("/get_user_data", getUserData);
+app.use("/update_user_data", updateUserData);
+app.use("/delete_user_data", deleteUser);
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));

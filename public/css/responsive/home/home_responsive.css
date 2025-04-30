@@ -2,7 +2,11 @@
 /* @media (min-width: 475px) {} */
 
 /* sm */
-/* @media (min-width: 640px) {} */
+@media (max-width: 640px) {
+  .title {
+    height: 70vh;
+  }
+}
 
 /* md */
 @media (max-width: 768px) {
@@ -13,9 +17,11 @@
     flex-direction: column;
   }
 
-  .title-text-first {
-    font-size: 45px !important;
+
+  div.title div.title-text div.title-text-first {
+    font-size: 30px;
   }
+
 
   .services .services-content {
     padding-bottom: 6rem;

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard | Dataway</title>
+    <link rel="stylesheet" href="../css/dashboard/dashboard.css" />
+    <link rel="stylesheet" href="../components/dashboard/aside/aside.css" />
+    
+    <script
+      src="https://kit.fontawesome.com/8aca4bf827.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <aside>
+        <div class="logo">
+          <h1 class="title-aside">
+            <span>Data</span><span style="font-weight: bold">Way</span>
+          </h1>
+        </div>
+        <div class="first-sect">
+          <img
+            src="https://thispersondoesnotexist.com/"
+            alt="user-image"
+            class="user-image"
+          />
+          <h2 class="user-name">User Name</h2>
+        </div>
+        <div class="second-secct">
+          <form action="">
+            <div class="period">
+              <h2>Período</h2>
+              <div class="period_input">
+                <input type="date" name="" id="" />
+                <input type="date" name="" id="" />
+              </div>
+            </div>
+            <div class="region">
+              <h2>Região</h2>
+              <select name="" id="">
+                <option value="">Selecione uma região</option>
+                <option value="">Região 1</option>
+                <option value="">Região 2</option>
+                <option value="">Região 3</option>
+              </select>
+            </div>
+            <button type="submit" class="search-button">Filtrar</button>
+          </form>
+        </div>
+
+        <div class="other-pages">
+          <div class="route_page">
+            <i class="fa-solid fa-circle-user"></i>
+            <a href="/dashboard/perfil"><h2>Perfil</h2></a>
+          </div>
+          <div class="route_page">
+            <i class="fa-solid fa-headset"></i>
+            <a href="/dashboard/suporte"><h2>Suporte</h2></a>
+          </div>
+        </div>
+      </aside>
+
+      <section class="container-dashboard">
+        <header>
+          <h1>Dashboard</h1>
+          <i class="fa-solid fa-bell"></i>
+        </header>
+
+        <div class="cards">
+          <div class="card">
+            <div class="card-details">
+              <h4>Horário Crítico</h4>
+
+              <div class="details-data">
+                <img
+                  src="blob:https://www.canva.com/e6210720-78da-4abc-8d4c-af6f1df80ad8"
+                  alt=""
+                />
+                <h1>21:00</h1>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-details">
+              <h4>Impacto financeiro</h4>
+
+              <div class="details-data">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/mediawiki/thumb/a/a9/Example.jpg/250px-Example.jpg"
+                  alt=""
+                />
+                <h1>150,1K</h1>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-details">
+              <h4>categoria mais frequente</h4>
+
+              <div class="details-data">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/mediawiki/thumb/a/a9/Example.jpg/250px-Example.jpg"
+                  alt=""
+                />
+                <h1>2 eixos</h1>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-details">
+              <h4>Região critica</h4>
+
+              <div class="details-data">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/mediawiki/thumb/a/a9/Example.jpg/250px-Example.jpg"
+                  alt=""
+                />
+                <h1>Sudeste</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="graphs">
+          <div class="container-left-graphs">
+            <div class="graph-above">
+              <div class="pie-chart" id="pieChardId">
+                <h4>EVASÕES POR CATEGORIA</h4>
+                <canvas id="pieCanvas"></canvas>
+              </div>
+              <div class="radar-chart" id="radarChartId">
+                <h4>EVASÕES POR REGIÃO</h4>
+                <canvas id="radarCanvas"></canvas>
+              </div>
+            </div>
+            <div class="graph-below">
+              <div class="line-left-chart">
+                <h4>COMPORTAMENTO ANUAL</h4>
+                <canvas id="lineLeftCanvas"></canvas>
+              </div>
+            </div>
+          </div>
+          <div class="container-right-graphs">
+            <div class="graph-above">
+              <div class="line-chart" id="lineChartId">
+                <h4>AVANÇOS: MANUAL X AUTOMÁTICO</h4>
+                <canvas id="lineCanvas"></canvas>
+              </div>
+            </div>
+            <div class="graph-below">
+              <div class="bar-chart" id="barChartId">
+                <h4>EVASÕES POR DIA DA SEMANA</h4>
+                <canvas id="barCanvas"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script type="module" src="../js/dashboard/radar.js"></script>
+  <script type="module" src="../js/dashboard/pie.js"></script>
+  <script type="module" src="../js/dashboard/line.js"></script>
+  <script type="module" src="../js/dashboard/lineLeft.js"></script>
+  <script type="module" src="../js/dashboard/bar.js"></script>
+</html>
