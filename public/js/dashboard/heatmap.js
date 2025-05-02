@@ -30,13 +30,13 @@ for (let m = 1; m <= 12; m++) {
   for (let d = 1; d <= 7; d++) {
     const v =
       d >= 5
-        ? Math.floor(Math.random() * 5) + 8
-        : Math.floor(Math.random() * 7) + 1;
+        ? Math.floor(Math.random() * 200000) + 300000
+        : Math.floor(Math.random() * 70000) + 10000;
     dataPoints.push({ x: m, y: d, v });
   }
 }
 
-const MAX = 12;
+const MAX = 600000;
 const BASE_COLOR = [40, 225, 230];
 
 const config = {
