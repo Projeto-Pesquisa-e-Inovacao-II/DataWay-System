@@ -18,6 +18,8 @@ const data = {
         "rgba(42, 157, 204, 1)",
       ],
       borderWidth: 1,
+      borderRadius: 4,
+
     },
   ],
 };

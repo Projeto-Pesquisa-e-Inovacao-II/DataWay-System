@@ -267,7 +267,7 @@ div.cards div.card .card-details div.details-data i {
  margin: 0 !important;
 } */
 
-.line-chart, .line-left-chart {
+.line-chart  {
   height: 35.6vh;
   display: flex;
   flex-direction: column;
@@ -278,7 +278,7 @@ div.cards div.card .card-details div.details-data i {
 .horizontal-bar-chart h4,
 .line-chart h4,
 .bar-chart h4,
-.line-left-chart h4 {
+.heat-map-chart h4 {
   margin: 15px;
   margin-bottom: 30px;
   font-weight: 700;
@@ -288,7 +288,7 @@ div.cards div.card .card-details div.details-data i {
   margin: 0;
 }
 
-#lineCanvas, #lineLeftCanvas {
+#lineCanvas, #lineLeftCanvas, #heatMapCanvas {
   height: 100% !important;
   margin: 0 auto;
   width: 100%;
