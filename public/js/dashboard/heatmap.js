@@ -14,18 +14,30 @@ const meses = [
   "Nov",
   "Dez",
 ];
-const dias = ["Seg", "Ter", "Qua", "Qui", "Sex", "Sáb", "Dom"];
+const dias = [
+  "Segunda-feira",
+  "Terça-feira",
+  "Quarta-feira",
+  "Quinta-feira",
+  "Sexta-feira",
+  "Sábado",
+  "Domingo",
+];
 
 const dataPoints = [];
+//provisorio pra gerar os dados
 for (let m = 1; m <= 12; m++) {
   for (let d = 1; d <= 7; d++) {
-    dataPoints.push({
-      x: m,
-      y: d,
-      v: Math.floor(Math.random() * 12) + 1,
-    });
+    const v =
+      d >= 5
+        ? Math.floor(Math.random() * 5) + 8
+        : Math.floor(Math.random() * 7) + 1;
+    dataPoints.push({ x: m, y: d, v });
   }
 }
+
+const MAX = 12;
+const BASE_COLOR = [40, 225, 230];
 
 const config = {
   type: "matrix",
@@ -35,14 +47,20 @@ const config = {
         data: dataPoints,
         borderWidth: 1,
         borderColor: "rgba(0,0,0,0.5)",
-        backgroundColor: "rgba(200,200,0,0.3)",
+        backgroundColor: (ctx) => {
+          const v = ctx.dataset.data[ctx.dataIndex].v;
+          const t = 1 - v / MAX;
+          const [r, g, b] = BASE_COLOR;
+          const alpha = 0.3 + 1 * t;
+          return `rgba(${r},${g},${b},${alpha})`;
+        },
         width: (ctx) => {
           const area = ctx.chart.chartArea;
-          return area ? area.width / 12 - 11 : undefined;
+          return area ? area.width / 12 - 7 : undefined;
         },
         height: (ctx) => {
           const area = ctx.chart.chartArea;
-          return area ? area.height / 7 - 22 : undefined;
+          return area ? area.height / 7 - 20 : undefined;
         },
       },
     ],
@@ -50,23 +68,63 @@ const config = {
 
   options: {
     responsive: true,
+    maintainAspectRatio: false,
     plugins: {
       legend: {
         display: false,
       },
+      tooltip: {
+        callbacks: {
+          title() {
+            return "";
+          },
+          label(ctx) {
+            const v = ctx.raw.v;
+            return `Evasões: ${v}`;
+          },
+        },
+      },
     },
+
     scales: {
       x: {
-        display: false,
-        min: 0.5,
-        max: 12.5,
+        min: 1,
+        max: 12,
         offset: true,
+        grid: {
+          display: false,
+        },
+
+        ticks: {
+          font: {
+            size: 12,
+            weight: "bold",
+          },
+          color: "#fff",
+          padding: 1,
+          callback: function (value) {
+            return meses[value - 1].toUpperCase();
+          },
+        },
       },
       y: {
-        display: false,
-        min: 0.5,
-        max: 7.5,
+        min: 1,
+        max: 7,
         offset: true,
+        grid: {
+          display: false,
+        },
+        ticks: {
+          font: {
+            size: 12,
+            weight: "bold",
+          },
+          color: "#fff",
+          padding: 1,
+          callback: function (value) {
+            return dias[value - 1];
+          },
+        },
       },
     },
   },

@@ -198,7 +198,7 @@ div.cards div.card .card-details div.details-data i {
 
 .cards .card .card-details .details-data h1 {
   display: flex;
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: bolder;
   margin-left: 15px;
 }
@@ -229,7 +229,7 @@ div.cards div.card .card-details div.details-data i {
 }
 
 .graphs .container-right-graphs .graph-below {
-    height: 46vh !important;
+  height: 46vh !important;
 }
 
 .graphs .container-right-graphs .graph-above {
@@ -256,10 +256,11 @@ div.cards div.card .card-details div.details-data i {
   margin: 0;
 }
 
-.horizontal-bar-chart,
-.radar-chart {
+.horizontal-bar-chart {
   width: 100%;
-  height: 46vh;
+  height: 100% !important;
+  display: flex;
+  flex-direction: column;
   background-color: var(--background-color-cards);
 }
 
@@ -267,11 +268,9 @@ div.cards div.card .card-details div.details-data i {
  margin: 0 !important;
 } */
 
-.line-chart  {
-  height: 35.6vh;
+.line-chart {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 }
 
 .radar-chart h4,
@@ -288,8 +287,15 @@ div.cards div.card .card-details div.details-data i {
   margin: 0;
 }
 
-#lineCanvas, #lineLeftCanvas, #heatMapCanvas {
+#lineCanvas,
+#heatMapCanvas {
   height: 100% !important;
   margin: 0 auto;
   width: 100%;
+}
+
+.heat-map-chart {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
