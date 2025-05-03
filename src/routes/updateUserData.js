@@ -9,5 +9,4 @@ router.put("/", function (req, res) {
     updateUserData.updateUserData(req, res, idEmpresa);
 })
 
-
 module.exports = router;

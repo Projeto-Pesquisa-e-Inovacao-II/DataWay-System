@@ -47,6 +47,7 @@ const config = {
 };
 
 const canvas = document.getElementById("barCanvas");
+
 if (canvas) {
   const ctx = canvas.getContext("2d");
   new Chart(ctx, config);
