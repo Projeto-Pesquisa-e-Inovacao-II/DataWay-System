@@ -6,7 +6,6 @@
     <title>Dashboard | Dataway</title>
     <link rel="stylesheet" href="../css/dashboard/dashboard.css" />
     <link rel="stylesheet" href="../components/dashboard/aside/aside.css" />
-    
     <script
       src="https://kit.fontawesome.com/8aca4bf827.js"
       crossorigin="anonymous"
@@ -74,10 +73,7 @@
               <h4>Horário Crítico</h4>
 
               <div class="details-data">
-                <img
-                  src="blob:https://www.canva.com/e6210720-78da-4abc-8d4c-af6f1df80ad8"
-                  alt=""
-                />
+                <img src="../images/DashBoard/relogio.png" alt="" />
                 <h1>21:00</h1>
               </div>
             </div>
@@ -87,37 +83,18 @@
               <h4>Impacto financeiro</h4>
 
               <div class="details-data">
-                <img
-                  src="https://upload.wikimedia.org/wikipedia/mediawiki/thumb/a/a9/Example.jpg/250px-Example.jpg"
-                  alt=""
-                />
+                <img src="../images/DashBoard/dinheiro.png" alt="" />
                 <h1>150,1K</h1>
               </div>
             </div>
           </div>
           <div class="card">
             <div class="card-details">
-              <h4>categoria mais frequente</h4>
+              <h4>Praça mais crítica</h4>
 
               <div class="details-data">
-                <img
-                  src="https://upload.wikimedia.org/wikipedia/mediawiki/thumb/a/a9/Example.jpg/250px-Example.jpg"
-                  alt=""
-                />
-                <h1>2 eixos</h1>
-              </div>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-details">
-              <h4>Região critica</h4>
-
-              <div class="details-data">
-                <img
-                  src="https://upload.wikimedia.org/wikipedia/mediawiki/thumb/a/a9/Example.jpg/250px-Example.jpg"
-                  alt=""
-                />
-                <h1>Sudeste</h1>
+                <img src="../images/DashBoard/cancela.png" alt="" />
+                <h1>Campo Limpo</h1>
               </div>
             </div>
           </div>
@@ -126,19 +103,21 @@
         <div class="graphs">
           <div class="container-left-graphs">
             <div class="graph-above">
-              <div class="pie-chart" id="pieChardId">
+              <div class="horizontal-bar-chart" id="barHorizontalId">
                 <h4>EVASÕES POR CATEGORIA</h4>
-                <canvas id="pieCanvas"></canvas>
+                <canvas id="horizontalBarChart"></canvas>
               </div>
-              <div class="radar-chart" id="radarChartId">
+              <!-- <div class="radar-chart" id="radarChartId">
                 <h4>EVASÕES POR REGIÃO</h4>
                 <canvas id="radarCanvas"></canvas>
-              </div>
+              </div> -->
             </div>
             <div class="graph-below">
-              <div class="line-left-chart">
-                <h4>COMPORTAMENTO ANUAL</h4>
-                <canvas id="lineLeftCanvas"></canvas>
+              <div class="heat-map-chart">
+                <h4>EVASÕES POR DIA X MÊS</h4>
+                <div class="teste" style="height: 30vh">
+                  <canvas id="heatMapCanvas"></canvas>
+                </div>
               </div>
             </div>
           </div>
@@ -146,7 +125,10 @@
             <div class="graph-above">
               <div class="line-chart" id="lineChartId">
                 <h4>AVANÇOS: MANUAL X AUTOMÁTICO</h4>
-                <canvas id="lineCanvas"></canvas>
+                <div class="teste" style="height: 30vh">
+
+                  <canvas id="lineCanvas"></canvas>
+                </div>
               </div>
             </div>
             <div class="graph-below">
@@ -159,11 +141,16 @@
         </div>
       </section>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-chart-matrix@1.2.0/dist/chartjs-chart-matrix.min.js"></script>
+
+    <script src="../js/dashboard/heatmap.js"></script>
   </body>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script type="module" src="../js/dashboard/radar.js"></script>
-  <script type="module" src="../js/dashboard/pie.js"></script>
+  <!-- <script type="module" src="../js/dashboard/radar.js"></script> -->
+  <!-- <script type="module" src="../js/dashboard/pie.js"></script> -->
   <script type="module" src="../js/dashboard/line.js"></script>
-  <script type="module" src="../js/dashboard/lineLeft.js"></script>
+  <!-- <script type="module" src="../js/dashboard/lineLeft.js"></script> -->
   <script type="module" src="../js/dashboard/bar.js"></script>
+  <script type="module" src="../js/dashboard/bar-horizontal.js"></script>
 </html>

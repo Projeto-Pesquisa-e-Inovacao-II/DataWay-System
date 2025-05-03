@@ -1,5 +1,5 @@
 const data = {
-  labels: ["Red", "Blue", "Yellow"],
+  labels: ["PASSEIO", "MOTO", "COMERCIAL"],
   datasets: [
     {
       label: "My First Dataset",
