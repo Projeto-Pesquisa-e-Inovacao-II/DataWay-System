@@ -7,6 +7,7 @@
 
   --logo-color: #003c64;
   --text-color: #fff;
+  --text-color-secondary: #000;
   --cards-styling: #0098b1;
 
   --background-color: #050d20;
@@ -101,6 +102,10 @@ aside div.second-secct form div.period .period_input input:first-of-type {
   padding: 0 5px;
 }
 
+#select-concessao:focus {
+  background-color: var(--text-color-secondary);
+}
+
 .second-secct .search-button {
   margin-top: 20px;
 }
@@ -141,5 +146,4 @@ aside div.second-secct form div.period .period_input input:first-of-type {
       font-size: 25px;
     }
   }
-  
 }

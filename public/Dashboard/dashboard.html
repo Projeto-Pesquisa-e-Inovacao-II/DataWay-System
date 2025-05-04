@@ -37,12 +37,12 @@
               </div>
             </div>
             <div class="region">
-              <h2>Região</h2>
-              <select name="" id="">
-                <option value="">Selecione uma região</option>
-                <option value="">Região 1</option>
-                <option value="">Região 2</option>
-                <option value="">Região 3</option>
+              <h2>Concessão</h2>
+              <select name="" id="select-concessao">
+                <option value="">Selecione uma concessão</option>
+                <option value="">Concessão 1</option>
+                <option value="">Concessão 2</option>
+                <option value="">Concessão 3</option>
               </select>
             </div>
             <button type="submit" class="search-button">Filtrar</button>
@@ -126,7 +126,6 @@
               <div class="line-chart" id="lineChartId">
                 <h4>AVANÇOS: MANUAL X AUTOMÁTICO</h4>
                 <div class="teste" style="height: 30vh">
-
                   <canvas id="lineCanvas"></canvas>
                 </div>
               </div>
@@ -153,4 +152,18 @@
   <!-- <script type="module" src="../js/dashboard/lineLeft.js"></script> -->
   <script type="module" src="../js/dashboard/bar.js"></script>
   <script type="module" src="../js/dashboard/bar-horizontal.js"></script>
+
+  <!-- <script>
+    var selectConcessao = document.getElementById("select-concessao");
+    if (selectConcessao) {
+      selectConcessao.addEventListener("focus", () => {
+        selectConcessao.style.color = "#000";
+      });
+
+      selectConcessao.addEventListener("change", () => {
+        selectConcessao.style.color = "#fff";
+        selectConcessao.blur();
+      });
+    }
+  </script> -->
 </html>
