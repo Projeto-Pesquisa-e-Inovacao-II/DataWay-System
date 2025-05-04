@@ -36,12 +36,18 @@ function autenticar(req, res) {
 
 function cadastrar(req, res) {
   // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
-  var nomeFantasia = req.body.nomeFantasiaServer;
+  var empresaServer = req.body.empresaServer;
+  // var nomeFantasia = req.body.nomeFantasiaServer;
   var representanteLegal = req.body.representanteLegalServer;
   var CPNJ = req.body.cnpjServer;
   var telefone = req.body.telefoneServer;
   var email = req.body.emailServer;
   var senha = req.body.senhaServer;
+  var cep = req.body.cepServer;
+  var estado = req.body.estadoServer;
+
+  console.log(req.body)
+
   console.log("OI");
   // Faça as validações dos valores
   if (email == undefined) {
@@ -50,9 +56,19 @@ function cadastrar(req, res) {
     res.status(400).send("Sua senha está undefined!");
   } else {
     // Passe os valores como parâmetro e vá para o arquivo empresaModel.js
-    console.log(nomeFantasia);
+    // console.log(nomeFantasia);
     empresaModel
-      .cadastrar(nomeFantasia, representanteLegal, CPNJ, telefone, email, senha)
+      .cadastrar(
+        empresaServer,
+        // nomeFantasia,
+        estado,
+        cep,
+        email,
+        senha,
+        representanteLegal,
+        CPNJ,
+        telefone
+      )
       .then(function (resultado) {
         res.json(resultado);
       })

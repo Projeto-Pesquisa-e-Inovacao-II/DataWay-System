@@ -272,7 +272,11 @@ function cadastrar() {
   const email = emailVar.value.trim();
   const senha = senhaVar.value.trim();
   const confirmacaoSenha = confirmacaoSenhaVar.value.trim();
-  
+  const representanteLegal = representanteLegalInput.value.trim();
+  const cnpj = cnpjInput.value.trim();
+  const telefone = telefoneInput.value.trim();
+  // const nomeFantasia = nomeFantasiaInput.value.trim();
+
 
   if (
     !empresaSelecionada || // Verifica se o valor foi selecionado
@@ -305,6 +309,10 @@ function cadastrar() {
       cepServer: cep,
       emailServer: email,
       senhaServer: senha,
+      representanteLegalServer: representanteLegal,
+      cnpjServer: cnpj,
+      telefoneServer: telefone,
+      // nomeFantasiaServer: nomeFantasia,
     }),
   })
     .then(function (resposta) {

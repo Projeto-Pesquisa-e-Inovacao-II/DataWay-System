@@ -34,8 +34,8 @@ btnLogin.addEventListener("click", function (event) {
   }
 
   console.log("Iniciando validação de login...");
-  console.log("FORM LOGIN: ", emailVar);
-  console.log("FORM SENHA: ", senhaVar);
+  console.log("FORM LOGIN: ", email);
+  console.log("FORM SENHA: ", senha);
 
   fetch("/usuarios/autenticar", {
     method: "POST",
@@ -43,8 +43,8 @@ btnLogin.addEventListener("click", function (event) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      emailServer: emailVar,
-      senhaServer: senhaVar,
+      emailServer: email,
+      senhaServer: senha,
     }),
   })
     .then(function (resposta) {
