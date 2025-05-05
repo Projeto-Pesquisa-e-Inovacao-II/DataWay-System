@@ -1,0 +1,148 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --primary-color: #1ef0a6;
+  --secondary-color: #1becaa;
+  --accent-color: #0bc47a;
+
+  --logo-color: #003c64;
+  --text-color: #fff;
+  --cards-styling: #0098b1;
+
+  --background-color: #050d20;
+  --background-color-cards: #232a3c;
+  --background-color-aside: #171e31;
+
+  --background-color-secondary: #ef6a47;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper-details {
+    display: flex;
+    flex-direction: column;
+    margin-left: 440px;
+    height: 80vh;
+    justify-content: space-evenly;
+}
+
+.title {
+  margin-bottom: 20px;
+}
+
+.title h1 {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+.company-subs {
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+
+.wrapper-header {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.wrapper-header h2 {
+  margin: 0;
+  padding: 10px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--text-color);
+  position: relative;
+}
+
+.wrapper-content {
+  display: flex;
+  width: 100%;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0 10px;
+  position: relative;
+}
+
+.content:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 2px;
+  background-color: #ffffff7c;
+}
+
+.content h3 {
+  margin: 0;
+  padding: 10px 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-color);
+  text-align: center;
+}
+
+.concessao {
+    margin-left: 20px;
+}
+
+.form-filter button {
+    padding: 10px;
+    width: 10vw;
+    margin-left: 20px;
+    background-color: var(--background-color-secondary);
+    border: none;
+    border-radius: 5px;
+    color: var(--text-color);
+    font-size: 1.2rem;
+}
+.period,
+.concessao, 
+.form-filter {
+  display: flex;
+  align-items: center;
+
+}
+
+
+.period h2, .concessao label {
+  font-size: 1.4rem;
+}
+
+.period .period_input input {
+  background-color: transparent;
+  color: var(--text-color);
+  margin: 0 10px;
+  padding: 5px;
+
+}
+
+#select-concessao {
+  background-color: transparent;
+  color: var(--text-color);
+  margin: 0 10px;
+  padding: 5px;
+
+}
+
+#select-concessao:focus {
+  background-color: var(--text-color-secondary);
+}

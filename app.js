@@ -25,6 +25,7 @@ var dashboardRouter = require("./src/routes/dashboard");
 var perfilRouter = require("./src/routes/perfil");
 var suporteRouter = require("./src/routes/suporte");
 var suporteMessageReceivedRouter = require("./src/routes/suporte-message-received");
+var indexDashboardRouter = require("./src/routes/indexDashboard");
 
 
 var deleteUser = require("./src/routes/deleteUserData")
@@ -47,10 +48,12 @@ app.use("/dashboard", dashboardRouter);
 app.use("/dashboard/perfil", perfilRouter);
 app.use("/dashboard/suporte", suporteRouter);
 app.use("/dashboard/suporte-mensagem", suporteMessageReceivedRouter);
+app.use("/dashboard/visao-geral", indexDashboardRouter);
 
 app.use("/get_user_data", getUserData);
 app.use("/update_user_data", updateUserData);
 app.use("/delete_user_data", deleteUser);
+
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
