@@ -16,6 +16,10 @@
   --background-color-secondary: #ef6a47;
 }
 
+.first-sect {
+  margin-top: 60px;
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -59,9 +63,8 @@
 .wrapper-header h2 {
   margin: 0;
   padding: 10px;
-  font-family: "Montserrat", sans-serif;
   font-size: 2rem;
-  font-weight: 800;
+  font-weight: bold;
   color: var(--text-color);
   position: relative;
 }
