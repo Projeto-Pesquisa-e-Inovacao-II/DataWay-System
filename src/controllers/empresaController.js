@@ -17,13 +17,14 @@ function autenticar(req, res) {
 
         if (resultadoAutenticar.length == 1) {
           console.log(resultadoAutenticar);
+          res.status(200).json(resultadoAutenticar[0]);
         } else if (resultadoAutenticar.length == 0) {
           res.status(403).send("Email e/ou senha inválido(s)");
         } else {
           res.status(403).send("Mais de um usuário com o mesmo login e senha!");
         }
       })
-      .catch(function (erro) {
+      .catch(function (erro) {resposta
         console.log(erro);
         console.log(
           "\nHouve um erro ao realizar o login! Erro: ",
@@ -37,7 +38,8 @@ function autenticar(req, res) {
 function cadastrar(req, res) {
   // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
   var empresaServer = req.body.empresaServer;
-  // var nomeFantasia = req.body.nomeFantasiaServer;
+  var nomeFantasia = req.body.nomeFantasiaServer;
+  var cidade = req.body.cidadeServer;
   var representanteLegal = req.body.representanteLegalServer;
   var CPNJ = req.body.cnpjServer;
   var telefone = req.body.telefoneServer;
@@ -60,9 +62,10 @@ function cadastrar(req, res) {
     empresaModel
       .cadastrar(
         empresaServer,
-        // nomeFantasia,
+        nomeFantasia,
         estado,
         cep,
+        cidade,
         email,
         senha,
         representanteLegal,

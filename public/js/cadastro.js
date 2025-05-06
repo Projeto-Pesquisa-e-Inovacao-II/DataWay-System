@@ -1,21 +1,24 @@
 let empresaSelect = document.getElementById("empresaSelect");
-let estadoVar = document.getElementById("estadoInput"); 
+let estadoVar = document.getElementById("estadoInput");
 let cepVar = document.getElementById("cepInput");
 let emailVar = document.getElementById("emailInput");
 let senhaVar = document.getElementById("senhaInput");
 let confirmacaoSenhaVar = document.getElementById("confirmarSenhaInput");
-let representanteLegalInput = document.getElementById("representanteLegalInput");
+let representanteLegalInput = document.getElementById(
+  "representanteLegalInput"
+);
 let cnpjInput = document.getElementById("cnpjInput");
 let telefoneInput = document.getElementById("telefoneInput");
 let checkboxPrivacyPolicy = document.getElementById("checkboxPrivacyPolicy");
 let cardRuleSenha = document.getElementById("cardRuleSenha");
+let nomeFantasiaVar = document.getElementById("nomeFantasiaInput");
+let cidadeVar = document.getElementById("cidadeInput");
 
 let privacyPolicy = document.getElementById("privacyPolicy");
 
 let btnContinuar1 = document.getElementById("btnContinuar1");
 let btnVoltar = document.getElementById("btnVoltar");
 let btnCadastrar = document.getElementById("btnCadastrar");
-
 
 function togglePasswordVisibility(inputId, iconId) {
   const input = document.getElementById(inputId);
@@ -49,63 +52,68 @@ function passo1() {
   emailVar.parentElement.style.display = "none";
   senhaVar.parentElement.style.display = "none";
   confirmacaoSenhaVar.parentElement.style.display = "none";
+  
   cardRuleSenha.style.display = "none";
 
   btnContinuar1.style.display = "block";
   btnVoltar.style.display = "none";
   btnCadastrar.style.display = "none";
   privacyPolicy.style.display = "none";
-
 }
 
 btnVoltar.addEventListener("click", passo1);
-btnContinuar1.addEventListener('click', function (event) {
-    event.preventDefault();
+btnContinuar1.addEventListener("click", function (event) {
+  event.preventDefault();
 
-    const empresaSelecionada = empresaSelect.value.trim() !== '';  
-    const representanteLegal = representanteLegalInput.value.trim() !== '';  
-    const estadoValido = estadoVar.value.trim() !== '';
-    const cep = cepVar.value.replace(/-/g, '');
-    const cepValido = cep.length === 8 && /^\d{8}$/.test(cep);
-    const cnpj = cnpjInput.value.replace(/[.\-/]/g, '');
-    const cnpjValido = cnpj.length === 14 && /^\d{14}$/.test(cnpj);
+  const empresaSelecionada = empresaSelect.value.trim() !== "";
+  const nomeFantasia = nomeFantasiaInput.value.trim() !== "";
+  const representanteLegal = representanteLegalInput.value.trim() !== "";
+  const estadoValido = estadoVar.value.trim() !== "";
+  const cep = cepVar.value.replace(/-/g, "");
+  const cepValido = cep.length === 8 && /^\d{8}$/.test(cep);
+  const cnpj = cnpjInput.value.replace(/[.\-/]/g, "");
+  const cnpjValido = cnpj.length === 14 && /^\d{14}$/.test(cnpj);
 
-    let hasError = false;
+  let hasError = false;
 
-    if (!empresaSelecionada) {
-        showToast('Por favor, selecione uma empresa.', "#ff6347");
-        hasError = true;
-        return;
-    }
-    if (!representanteLegal) {
-        showToast('Por favor, insira o nome do representante legal.', "#ff6347");
-        hasError = true;
-        return; 
-    }
+  if (!empresaSelecionada) {
+    showToast("Por favor, selecione uma empresa.", "#ff6347");
+    hasError = true;
+    return;
+  }
+  if (!representanteLegal) {
+    showToast("Por favor, insira o nome do representante legal.", "#ff6347");
+    hasError = true;
+    return;
+  }
+  if (!nomeFantasia) {
+    showToast("Por favor, insira o nome fantasia.", "#ff6347");
+    hasError = true;
+    return;
+  }
 
-    if (!cnpjValido) {
-        showToast('Por favor, insira um CNPJ válido.', "#ff6347");
-        hasError = true;
-        return;
-    }
+  if (!cnpjValido) {
+    showToast("Por favor, insira um CNPJ válido.", "#ff6347");
+    hasError = true;
+    return;
+  }
 
-    if (!estadoValido) {
-        showToast('Por favor, insira o estado.', "#ff6347");
-        hasError = true;
-        return;
-    }
+  if (!estadoValido) {
+    showToast("Por favor, insira o estado.", "#ff6347");
+    hasError = true;
+    return;
+  }
 
-    if (!cepValido) {
-        showToast('Por favor, insira um CEP válido.', "#ff6347");
-        hasError = true;
-        return;
-    }
+  if (!cepValido) {
+    showToast("Por favor, insira um CEP válido.", "#ff6347");
+    hasError = true;
+    return;
+  }
 
-    if (!hasError) {
-        passo2();
-    }
+  if (!hasError) {
+    passo2();
+  }
 });
-
 
 function passo2() {
   empresaSelect.parentElement.style.display = "none";
@@ -113,7 +121,9 @@ function passo2() {
   cepVar.parentElement.style.display = "none";
   cnpjInput.parentElement.style.display = "none";
   representanteLegalInput.parentElement.style.display = "none";
-  
+  nomeFantasiaVar.parentElement.style.display = "none";
+  cidadeVar.parentElement.style.display = "none";
+
   cardRuleSenha.style.display = "block";
   telefoneInput.parentElement.style.display = "block";
   emailVar.parentElement.style.display = "block";
@@ -124,17 +134,19 @@ function passo2() {
   btnVoltar.style.display = "block";
   btnCadastrar.style.display = "block";
   privacyPolicy.style.display = "block";
-} 
+}
 
 function validarSenha(senha) {
-  const temNumero = /\d/; 
+  const temNumero = /\d/;
   const temCaractereEspecial = /[@#]/;
-  const temLetraMaiuscula = /[A-Z]/; 
+  const temLetraMaiuscula = /[A-Z]/;
   const tamanhoMinimo = senha.length >= 6;
 
   const tamanhoMinimoDiv = document.getElementById("tamanhoMinimoDiv");
   const temNumeroDiv = document.getElementById("temNumeroDiv");
-  const temCaractereEspecialDiv = document.getElementById("temCaractereEspecialDiv");
+  const temCaractereEspecialDiv = document.getElementById(
+    "temCaractereEspecialDiv"
+  );
   const temLetraMaiusculaDiv = document.getElementById("temLetraMaiusculaDiv");
 
   if (tamanhoMinimo) {
@@ -169,7 +181,12 @@ function validarSenha(senha) {
     temLetraMaiusculaDiv.classList.remove("valid");
   }
 
-  return tamanhoMinimo && temNumero.test(senha) && temCaractereEspecial.test(senha) && temLetraMaiuscula.test(senha);
+  return (
+    tamanhoMinimo &&
+    temNumero.test(senha) &&
+    temCaractereEspecial.test(senha) &&
+    temLetraMaiuscula.test(senha)
+  );
 }
 
 senhaVar.addEventListener("input", () => validarSenha(senhaVar.value));
@@ -198,7 +215,6 @@ btnCadastrar.addEventListener("click", function (event) {
     return;
   }
 
-  
   if (!validarSenha(senha)) {
     hasError = true;
     return;
@@ -209,7 +225,6 @@ btnCadastrar.addEventListener("click", function (event) {
     hasError = true;
     return;
   }
-
 
   if (!email) {
     showToast("Por favor, insira um email válido.", "#ff6347");
@@ -252,7 +267,7 @@ function mascaraTelefone(telefone) {
 
 function mascaraCEP(cep) {
   cep.value = cep.value
-    .replace(/\D/g, "") 
+    .replace(/\D/g, "")
     .replace(/^(\d{5})(\d)/, "$1-$2")
     .slice(0, 9);
 }
@@ -264,19 +279,19 @@ estadoVar.addEventListener("input", () => {
   estadoVar.value = estadoVar.value.replace(/\d/g, "");
 });
 
-function cadastrar() {
+async function cadastrar() {
   console.log("Cadastrando...");
   const empresaSelecionada = empresaSelect.value;
   const estado = estadoVar.value.trim();
   const cep = cepVar.value.trim();
+  const cidade = cidadeVar.value.trim();
   const email = emailVar.value.trim();
   const senha = senhaVar.value.trim();
   const confirmacaoSenha = confirmacaoSenhaVar.value.trim();
   const representanteLegal = representanteLegalInput.value.trim();
   const cnpj = cnpjInput.value.trim();
   const telefone = telefoneInput.value.trim();
-  // const nomeFantasia = nomeFantasiaInput.value.trim();
-
+  const nomeFantasia = nomeFantasiaVar.value.trim();
 
   if (
     !empresaSelecionada || // Verifica se o valor foi selecionado
@@ -284,16 +299,15 @@ function cadastrar() {
     !cep ||
     !email ||
     !senha ||
-    !confirmacaoSenha
+    !confirmacaoSenha ||
+    !nomeFantasia
   ) {
-    cardErro.style.display = "block";
-    mensagemErro.innerHTML = "Por favor, preencha todos os campos.";
+    
     return false;
   }
 
   if (senha !== confirmacaoSenha) {
-    cardErro.style.display = "block";
-    mensagemErro.innerHTML = "As senhas não coincidem.";
+    
     return false;
   }
 
@@ -304,37 +318,33 @@ function cadastrar() {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      empresaServer: empresaSelecionada, // Incluído o valor do select
+      empresaServer: empresaSelecionada,
       estadoServer: estado,
       cepServer: cep,
+      cidadeServer: cidade,
       emailServer: email,
       senhaServer: senha,
       representanteLegalServer: representanteLegal,
       cnpjServer: cnpj,
       telefoneServer: telefone,
-      // nomeFantasiaServer: nomeFantasia,
+      nomeFantasiaServer: nomeFantasia,
     }),
   })
     .then(function (resposta) {
       if (resposta.ok) {
-        cardErro.style.display = "block";
-        mensagemErro.innerHTML =
-          "Cadastro realizado com sucesso! Redirecionando para a tela de login...";
-
-        setTimeout(() => {
-          window.location = "login";
-        }, 2000);
+        console.log("teste")
       } else {
         throw new Error("Houve um erro ao tentar realizar o cadastro!");
       }
     })
     .catch(function (erro) {
       console.error(`#ERRO: ${erro}`);
-      cardErro.style.display = "block";
-      mensagemErro.innerHTML = "Erro ao realizar o cadastro. Tente novamente.";
     });
 
-  return false;
+    setTimeout(function() {
+      window.location.href = "/login";
+    }, 3000);
+
 }
 
 function showToast(message, color) {

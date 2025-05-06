@@ -58,14 +58,14 @@ btnLogin.addEventListener("click", function (event) {
           console.log(JSON.stringify(json));
           sessionStorage.EMAIL_USUARIO = json.email;
           sessionStorage.NOME_USUARIO = json.nome;
-          sessionStorage.ID_USUARIO = json.id;
+          sessionStorage.ID_USUARIO = json.idUsuario;
 
           
           showToast("Login realizado com sucesso!", "#7cb15f");
 
           // Redirecionar para o dashboard
           setTimeout(function () {
-            window.location = "./dashboard/cards.html";
+            window.location.href = "/dashboard";
           }, 1000);
         });
       } else {
@@ -74,17 +74,11 @@ btnLogin.addEventListener("click", function (event) {
 
         resposta.text().then((texto) => {
           console.error(texto);
-          cardErro.style.display = "block";
-          mensagem_erro.innerHTML = texto;
-          setTimeout(sumirMensagem, 5000);
         });
       }
     })
     .catch(function (erro) {
       console.log(erro);
-      cardErro.style.display = "block";
-      mensagem_erro.innerHTML = "Erro ao conectar ao servidor.";
-      setTimeout(sumirMensagem, 5000);
     });
 
   return false;

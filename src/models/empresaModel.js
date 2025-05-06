@@ -26,10 +26,7 @@ function autenticar(email, senha) {
   //     FOREIGN KEY (Usuario_idUsuario) REFERENCES Usuario(idUsuario)
   // );
   var instrucaoSql = `
-        SELECT Empresa.idEmpresa, Empresa.nomeFantasia, Usuario.email
-        FROM Usuario
-        JOIN Empresa ON Empresa.Usuario_idUsuario = Usuario.idUsuario
-        WHERE Usuario.email = '${email}' AND Usuario.senha = '${senha}';
+        SELECT idUsuario, nome, email FROM Usuario WHERE email = '${email}' AND senha = '${senha}';
     `;
   console.log("Executando a instrução SQL: \n" + instrucaoSql);
   return database.executar(instrucaoSql);
@@ -37,9 +34,10 @@ function autenticar(email, senha) {
 
 async function cadastrar(
   empresaServer,
-  // nomeFantasia,
+  nomeFantasia,
   estado,
   cep,
+  cidade,
   email,
   senha,
   representanteLegal,
@@ -49,9 +47,10 @@ async function cadastrar(
   console.log(
     "ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():",
     empresaServer,
-    // nomeFantasia,
+    nomeFantasia,
     representanteLegal,
     CNPJ,
+    cidade,
     telefone,
     email,
     senha,
@@ -61,7 +60,7 @@ async function cadastrar(
   // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
   //  e na ordem de inserção dos dados.
 
-  await inserirUsuario(email, senha, telefone);
+  await inserirUsuario(email, senha, telefone, representanteLegal);
 
   const usuarioResult = await database.executar(`
     SELECT idUsuario FROM Usuario WHERE email = '${email}' AND senha = '${senha}' AND telefone = '${telefone}';
@@ -73,7 +72,7 @@ async function cadastrar(
     CNPJ,
     representanteLegal,
     empresaServer,
-    // nomeFantasia,
+    nomeFantasia,
     empresaServer,
     idUsuario
   );
@@ -84,17 +83,18 @@ async function cadastrar(
 
   const idEmpresa = empresaResult[0].idEmpresa;
 
-  await inserirEndereco(cep, estado, idEmpresa);
+  await inserirEndereco(cep, estado, cidade, idEmpresa);
 
   return true;
 }
 
-async function inserirUsuario(email, senha, telefone) {
+//representanteLegal aqui seria o 'nome'
+async function inserirUsuario(email, senha, telefone, representanteLegal) {
   var instrucaoSql = `
         INSERT INTO Usuario 
-        (tipoUsuario, email, senha, telefone) 
+        (tipoUsuario, email, senha, telefone, nome) 
         VALUES 
-        ('Empresa', '${email}', '${senha}', '${telefone}');
+        ('Empresa', '${email}', '${senha}', '${telefone}', '${representanteLegal}');
     `;
   return await database.executar(instrucaoSql);
 }
@@ -103,15 +103,15 @@ async function inserirEmpresa(
   CNPJ,
   representanteLegal,
   razaoSocial,
-  // nomeFantasia,
+  nomeFantasia,
   concessionaria,
   Usuario_idUsuario
 ) {
   var instrucaoSql = `
         INSERT INTO Empresa 
-        ( CNPJ, representanteLegal, razaoSocial, concessionaria, Usuario_idUsuario)
+        ( CNPJ, representanteLegal, razaoSocial, nomeFantasia, concessionaria, Usuario_idUsuario)
         VALUES  
-        ('${CNPJ}', '${representanteLegal}', '${razaoSocial}', '${concessionaria}', '${Usuario_idUsuario}');
+        ('${CNPJ}', '${representanteLegal}', '${razaoSocial}', '${nomeFantasia}', '${concessionaria}', '${Usuario_idUsuario}');
     `;
   return await database.executar(instrucaoSql);
 }
@@ -126,12 +126,12 @@ async function inserirEmpresa(
 //   return database.executar(instrucaoSql);
 // }
 
-async function inserirEndereco(cep, estado, idEmpresa) {
+async function inserirEndereco(cep, estado, cidade, idEmpresa) {
   var instrucaoSql = `
         INSERT INTO Endereco 
-        (cep, estado, Empresa_idEmpresa)
+        (cep, estado, cidade, Empresa_idEmpresa)
         VALUES   
-        ('${cep}', '${estado}', '${idEmpresa}');
+        ('${cep}', '${estado}', '${cidade}', '${idEmpresa}');
     `;
   return await database.executar(instrucaoSql);
 }
