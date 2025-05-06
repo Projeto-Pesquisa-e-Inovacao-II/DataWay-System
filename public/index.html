@@ -1,125 +1,186 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home | DataWay</title>
+    <link rel="stylesheet" href="./css/index.css" />
+    <link rel="stylesheet" href="./css/responsive/home/home_responsive.css" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Home | DataWay</title>
-  <link rel="stylesheet" href="./css/index.css" />
-  <link rel="stylesheet" href="./css/responsive/home/home_responsive.css" />
+    <!-- fontawesome para icons -->
+    <script
+      src="https://kit.fontawesome.com/8aca4bf827.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- parte da nav bar -->
 
-  <!-- fontawesome para icons -->
-  <script src="https://kit.fontawesome.com/8aca4bf827.js" crossorigin="anonymous"></script>
-</head>
-<body>
+    <!-- parte do header -->
+    <header>
+      <div class="header container">
+        <div class="logo">
+          <span>Data<b>Way</b></span>
+        </div>
+        <div class="pages">
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="sobre-nos">Sobre Nós</a></li>
+            <li><a href="servicos">Serviços</a></li>
+            <li><a href="contato">Contato</a></li>
+          </ul>
+        </div>
 
-  <!-- parte da nav bar -->
+        <div class="burger" id="burger">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+        </div>
+      </div>
+      <div class="active-header-response" style="display: none;">
+        <div class="active-header-response-container">
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="sobre-nos">Sobre Nós</a></li>
+            <li><a href="servicos">Serviços</a></li>
+            <li><a href="contato">Contato</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <!-- parte do header -->
 
-  <!-- parte do header -->
-  <header>
-    <div class="header container">
-      <div class="logo">
+    <!-- title -->
+    <div class="title">
+      <div class="title-text">
+        <div class="title-text-first">
+          <b>Transformamos dados</b><br />
+          em <b>atitudes estratégicas</b>
+        </div>
+        <div class="title-text-second">
+          Com a <b>DataWay</b>, suas decisões se tornam <b>mais rápidas</b>,
+          <b>inteligentes</b> e <b>seguras</b>!
+        </div>
+        <button onclick="window.location.href='servicos';">
+          <b>CONHEÇA OS NOSSOS SERVIÇOS</b>
+        </button>
+      </div>
+    </div>
+
+    <!-- title -->
+
+    <!-- services -->
+    <section class="services">
+      <div class="services-content">
+        <div class="services-title">
+          <div class="services-title-text"><b>SEJA BEM-VINDO</b></div>
+          <hr />
+          <div class="services-text-first">
+            Monitoramento e Análise de Tráfego em Tempo Real para otimizar sua
+            operação.
+          </div>
+          <div class="services-text-second">
+            Nossa plataforma transforma dados complexos em insights valiosos,
+            permitindo que sua equipe tome decisões mais rápidas e eficazes.
+            Conte com uma gestão inteligente para melhorar a eficiência das suas
+            rodovias e reduzir prejuízos.
+          </div>
+        </div>
+        <div class="image">
+          <img src="./images/Home/pedagio_home.png" alt="" />
+        </div>
+      </div>
+
+      <div class="container_image_absolute">
+        <div class="section-img">
+          <div
+            class="section-image"
+            onclick="window.location.href='servicos';"
+            style="margin-right: 21px"
+          >
+            <img src="./images/Home/serviços_home_cursor.png" alt="" />
+            <span>Serviços</span>
+          </div>
+          <div
+            class="section-image"
+            onclick="window.location.href='sobre-nos';"
+            style="margin-left: 21px"
+          >
+            <img src="./images/Home/sobre_home_cursor.png" alt="" />
+            <span>Sobre Nós</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ??? -->
+
+    <!-- phrase -->
+    <section class="phrase">
+      <div class="container">
+        <h1>
+          TRANFORMAMOS INFORMAÇÕES EM DECISÕES ESTRATÉGICAS PARA UM<br />
+          TRÁFEGO MAIS SEGURO E RENTÁVEL.
+        </h1>
+      </div>
+      <span></span>
+    </section>
+    <!-- phrase -->
+
+    <!-- footer -->
+    <footer>
+      <div class="footer-container">
+        <div class="footer-section">
+          <h3>
+            <i class="fa-solid fa-phone"></i>
+            CONTATO
+          </h3>
+          <p>dataway.suporte@gmail.com</p>
+          <p>(11) 2718-8029</p>
+          <a href="contato" class="contact-btn">Entre em Contato</a>
+        </div>
+
+        <div class="footer-section">
+          <h3><i class="fa-solid fa-location-pin"></i>ENDEREÇO</h3>
+          <p>Rua Haddock Lobo Nº595</p>
+          <p>Sala 404</p>
+          <p>Bairro - Cerqueira César</p>
+          <p>São Paulo - SP</p>
+        </div>
+
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.2874821816163!2d-46.66418892388385!3d-23.558116361474564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59d2b063f663%3A0xc567c0d16d0bc582!2sS%C3%A3o%20Paulo%20Tech%20School!5e0!3m2!1sen!2sbr!4v1741438308289!5m2!1sen!2sbr"
+          width="270"
+          height="150"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+
+      <div class="logo-container" onclick="window.location.href='/';">
         <span>Data<b>Way</b></span>
       </div>
-      <div class="pages">
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="sobre-nos">Sobre Nós</a></li>
-          <li><a href="servicos">Serviços</a></li>
-          <li><a href="contato">Contato</a></li>
-        </ul>
-      </div>
-    </div>
-  </header>
-  <!-- parte do header -->
-
-  <!-- title -->
-  <div class="title">
-    <div class="title-text">
-      <div class="title-text-first"><b>Transformamos dados</b><br> em <b>atitudes estratégicas</b></div>
-      <div class="title-text-second">Com a <b>DataWay</b>, suas decisões se tornam <b>mais rápidas</b>, <b>inteligentes</b> e <b>seguras</b>!
-      </div>
-      <button onclick="window.location.href='servicos';"><b>CONHEÇA OS NOSSOS SERVIÇOS</b></button>
-    </div>
-  </div>
-
-  <!-- title -->
-
-  <!-- services -->
-  <section class="services">
-    <div class="services-content">
-      <div class="services-title">
-        <div class="services-title-text"><b>SEJA BEM-VINDO</b></div>
-        <hr>
-        <div class="services-text-first">
-          Monitoramento e Análise de Tráfego em Tempo Real para otimizar sua operação.
-        </div>
-        <div class="services-text-second">
-          Nossa plataforma transforma dados complexos em insights valiosos, permitindo
-          que sua equipe tome decisões mais rápidas e eficazes. Conte com uma gestão
-          inteligente para melhorar a eficiência das suas rodovias e reduzir prejuízos.
-        </div>
-      </div>
-      <div class="image"><img src="./images/Home/pedagio_home.png" alt=""></div>  
-    </div>
-    
-    <div class="container_image_absolute">
-    <div class="section-img">
-      <div class="section-image" onclick="window.location.href='servicos';" style="margin-right: 21px;">
-        <img src="./images/Home/serviços_home_cursor.png" alt="">
-        <Span>Serviços</Span>
-      </div>
-      <div class="section-image" onclick="window.location.href='sobre-nos';" style="margin-left: 21px;">
-        <img src="./images/Home/sobre_home_cursor.png" alt="">
-        <Span>Sobre Nós</Span>
-      </div>
-    </div>
-  </div>
-  </section>
-
-  <!-- ??? -->
-
-  <!-- phrase -->
-  <section class="phrase">
-    <div class="container">
-      <h1>TRANFORMAMOS INFORMAÇÕES EM DECISÕES ESTRATÉGICAS PARA UM<BR> TRÁFEGO MAIS SEGURO E RENTÁVEL.</h1>
-    </div>
-    <span></span>
-  </section>
-  <!-- phrase -->
-
-  <!-- footer -->
-  <footer>
-    <div class="footer-container">
-      <div class="footer-section">
-        <h3>
-          <i class="fa-solid fa-phone"></i>
-          CONTATO
-        </h3>
-        <p>dataway.suporte@gmail.com</p>
-        <p>(11) 2718-8029</p>
-        <a href="contato" class="contact-btn">Entre em Contato</a>
-      </div>
-
-      <div class="footer-section">
-        <h3><i class="fa-solid fa-location-pin"></i>ENDEREÇO</h3>
-        <p>Rua Haddock Lobo Nº595</p>
-        <p>Sala 404</p>
-        <p>Bairro - Cerqueira César</p>
-        <p>São Paulo - SP</p>
-      </div>
-
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.2874821816163!2d-46.66418892388385!3d-23.558116361474564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59d2b063f663%3A0xc567c0d16d0bc582!2sS%C3%A3o%20Paulo%20Tech%20School!5e0!3m2!1sen!2sbr!4v1741438308289!5m2!1sen!2sbr"
-        width="270" height="150" style="border: 0" allowfullscreen="" loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </div>
-
-    <div class="logo-container" onclick="window.location.href='/';">
-      <span>Data<b>Way</b></span>
-    </div>
-  </footer>
-  <!-- footer -->
-</body>
-
+    </footer>
+    <!-- footer -->
+  </body>
 </html>
+<script>
+  const burger = document.getElementById("burger");
+  const pagesHeader = document.querySelector(".active-header-response");
+
+  burger.addEventListener("click", () => {
+    pagesHeader.style.display =
+      pagesHeader.style.display === "flex" ? "none" : "flex";
+  });
+
+  // Adiciona um evento de clique a cada link do menu
+  const links = document.querySelectorAll(".pages ul li a");
+  links.forEach((link) => {
+    link.addEventListener("click", () => {
+      pages.classList.remove("active");
+      burger.classList.remove("active");
+    });
+  });
+</script>
