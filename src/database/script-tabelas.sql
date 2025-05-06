@@ -17,7 +17,8 @@ CREATE TABLE Usuario (
     foto VARCHAR(255),
     email VARCHAR(100) UNIQUE NOT NULL,
     senha VARCHAR(255) NOT NULL,
-    telefone VARCHAR(20) NOT NULL
+    telefone VARCHAR(20) NOT NULL,
+    nome VARCHAR(100) NOT NULL
 );
 
 CREATE TABLE Empresa (
@@ -48,14 +49,6 @@ CREATE TABLE Notificacoes (
     FOREIGN KEY (Usuario_idUsuario) REFERENCES Usuario(idUsuario)
 );
 
-CREATE TABLE Funcionario (
-    idFuncionario INT PRIMARY KEY AUTO_INCREMENT,
-    Nome VARCHAR(100) NOT NULL,
-    Usuario_idUsuario INT NOT NULL,
-    Empresa_idEmpresa INT NOT NULL,
-    FOREIGN KEY (Usuario_idUsuario) REFERENCES Usuario(idUsuario),
-    FOREIGN KEY (Empresa_idEmpresa) REFERENCES Empresa(idEmpresa)
-);
 
 CREATE TABLE DadosPracaPedagio (
     idDadosPracaPedagio INT PRIMARY KEY AUTO_INCREMENT,
