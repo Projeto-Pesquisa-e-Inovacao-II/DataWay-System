@@ -24,8 +24,10 @@
 
 body {
   background-image: url("../images/DashBoard/Backgound_login.png");
-  background-size: cover;
+  background-size: cover; /* Garante que a imagem cubra toda a área */
   background-repeat: no-repeat;
+  background-position: center; /* Centraliza a imagem */
+  height: 140vh; /* Faz o body ocupar toda a altura da viewport */
 }
 
 .container {
@@ -59,7 +61,7 @@ main {
 
 .container-text-login {
   
-  margin-top: 1rem;
+  margin-top: 9rem;
   display: flex;
   flex-direction: column;
   gap: 5rem;
