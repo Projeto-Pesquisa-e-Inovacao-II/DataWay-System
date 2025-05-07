@@ -19,7 +19,6 @@ function autenticar(email, senha) {
   //     idEmpresa INT PRIMARY KEY AUTO_INCREMENT,
   //     CNPJ CHAR(18) UNIQUE NULL,
   //     representanteLegal VARCHAR(100) NULL,
-  //     razaoSocial VARCHAR(150) NULL,
   //     nomeFantasia VARCHAR(100) NULL,
   //     concessionaria VARCHAR(100),
   //     Usuario_idUsuario INT NULL,
@@ -35,9 +34,8 @@ function autenticar(email, senha) {
 async function cadastrar(
   empresaServer,
   nomeFantasia,
-  estado,
+  numero,
   cep,
-  cidade,
   email,
   senha,
   representanteLegal,
@@ -50,25 +48,16 @@ async function cadastrar(
     nomeFantasia,
     representanteLegal,
     CNPJ,
-    cidade,
+    numero,
     telefone,
     email,
     senha,
     cep,
-    estado
   );
   // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
   //  e na ordem de inserção dos dados.
-
-  await inserirEmpresa(
-    CNPJ,
-    representanteLegal,
-    empresaServer,
-    nomeFantasia,
-    empresaServer,
-  );
-
   await inserirUsuario(email, senha, telefone, representanteLegal);
+
 
   const usuarioResult = await database.executar(`
     SELECT idUsuario FROM Usuario WHERE email = '${email}' AND senha = '${senha}' AND telefone = '${telefone}';
@@ -76,13 +65,23 @@ async function cadastrar(
 
   const idUsuario = usuarioResult[0].idUsuario;
 
+  await inserirEmpresa(
+    CNPJ,
+    representanteLegal,
+    empresaServer,
+    nomeFantasia,
+    empresaServer,
+    idUsuario
+  );
+
+
   const empresaResult = await database.executar(`
-    SELECT idEmpresa FROM Empresa WHERE CNPJ = '${CNPJ}' AND representanteLegal = '${representanteLegal}' AND razaoSocial = '${empresaServer}' AND concessionaria = '${empresaServer}';
+    SELECT idEmpresa FROM Empresa WHERE CNPJ = '${CNPJ}' AND representanteLegal = '${representanteLegal}' AND concessionaria = '${empresaServer}';
   `);
 
   const idEmpresa = empresaResult[0].idEmpresa;
 
-  await inserirEndereco(cep, estado, cidade, idEmpresa);
+  await inserirEndereco(cep, numero, idEmpresa);
 
   return true;
 }
@@ -101,15 +100,15 @@ async function inserirUsuario(email, senha, telefone, representanteLegal) {
 async function inserirEmpresa(
   CNPJ,
   representanteLegal,
-  razaoSocial,
   nomeFantasia,
   concessionaria,
+  idUsuario
 ) {
   var instrucaoSql = `
         INSERT INTO Empresa 
-        ( CNPJ, representanteLegal, razaoSocial, nomeFantasia, concessionaria)
+        ( CNPJ, representanteLegal, nomeFantasia, concessionaria, Usuario_idUsuario)
         VALUES  
-        ('${CNPJ}', '${representanteLegal}', '${razaoSocial}', '${nomeFantasia}', '${concessionaria}');
+        ('${CNPJ}', '${representanteLegal}', '${nomeFantasia}', '${concessionaria}', '${idUsuario}');
     `;
   return await database.executar(instrucaoSql);
 }
@@ -123,12 +122,12 @@ async function inserirEmpresa(
 //   return database.executar(instrucaoSql);
 // }
 
-async function inserirEndereco(cep, estado, cidade, idEmpresa) {
+async function inserirEndereco(cep, numero, idEmpresa) {
   var instrucaoSql = `
         INSERT INTO Endereco 
-        (cep, estado, cidade, Empresa_idEmpresa)
+        (cep, numero, Empresa_idEmpresa)
         VALUES   
-        ('${cep}', '${estado}', '${cidade}', '${idEmpresa}');
+        ('${cep}', '${numero}', '${idEmpresa}');
     `;
   return await database.executar(instrucaoSql);
 }

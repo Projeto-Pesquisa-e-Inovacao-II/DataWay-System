@@ -1,5 +1,5 @@
 let empresaSelect = document.getElementById("empresaSelect");
-let estadoVar = document.getElementById("estadoInput");
+let numeroVar = document.getElementById("numeroInput");
 let cepVar = document.getElementById("cepInput");
 let emailVar = document.getElementById("emailInput");
 let senhaVar = document.getElementById("senhaInput");
@@ -12,7 +12,6 @@ let telefoneInput = document.getElementById("telefoneInput");
 let checkboxPrivacyPolicy = document.getElementById("checkboxPrivacyPolicy");
 let cardRuleSenha = document.getElementById("cardRuleSenha");
 let nomeFantasiaVar = document.getElementById("nomeFantasiaInput");
-let cidadeVar = document.getElementById("cidadeInput");
 
 let privacyPolicy = document.getElementById("privacyPolicy");
 
@@ -43,7 +42,7 @@ document.getElementById("confirmarSenhaIcon").addEventListener("click", () => {
 
 function passo1() {
   empresaSelect.parentElement.style.display = "block";
-  estadoVar.parentElement.style.display = "block";
+  numeroVar.parentElement.style.display = "block";
   cepVar.parentElement.style.display = "block";
   cnpjInput.parentElement.style.display = "block";
   representanteLegalInput.parentElement.style.display = "block";
@@ -68,7 +67,7 @@ btnContinuar1.addEventListener("click", function (event) {
   const empresaSelecionada = empresaSelect.value.trim() !== "";
   const nomeFantasia = nomeFantasiaInput.value.trim() !== "";
   const representanteLegal = representanteLegalInput.value.trim() !== "";
-  const estadoValido = estadoVar.value.trim() !== "";
+  const numeroValido = numeroVar.value.trim() !== "";
   const cep = cepVar.value.replace(/-/g, "");
   const cepValido = cep.length === 8 && /^\d{8}$/.test(cep);
   const cnpj = cnpjInput.value.replace(/[.\-/]/g, "");
@@ -98,8 +97,8 @@ btnContinuar1.addEventListener("click", function (event) {
     return;
   }
 
-  if (!estadoValido) {
-    showToast("Por favor, insira o estado.", "#ff6347");
+  if (!numeroValido) {
+    showToast("Por favor, insira o numero.", "#ff6347");
     hasError = true;
     return;
   }
@@ -117,12 +116,11 @@ btnContinuar1.addEventListener("click", function (event) {
 
 function passo2() {
   empresaSelect.parentElement.style.display = "none";
-  estadoVar.parentElement.style.display = "none";
+  numeroVar.parentElement.style.display = "none";
   cepVar.parentElement.style.display = "none";
   cnpjInput.parentElement.style.display = "none";
   representanteLegalInput.parentElement.style.display = "none";
   nomeFantasiaVar.parentElement.style.display = "none";
-  cidadeVar.parentElement.style.display = "none";
 
   cardRuleSenha.style.display = "block";
   telefoneInput.parentElement.style.display = "block";
@@ -275,16 +273,12 @@ function mascaraCEP(cep) {
 cnpjInput.addEventListener("input", () => mascaraCNPJ(cnpjInput));
 telefoneInput.addEventListener("input", () => mascaraTelefone(telefoneInput));
 cepVar.addEventListener("input", () => mascaraCEP(cepVar));
-estadoVar.addEventListener("input", () => {
-  estadoVar.value = estadoVar.value.replace(/\d/g, "");
-});
 
 async function cadastrar() {
   console.log("Cadastrando...");
   const empresaSelecionada = empresaSelect.value;
-  const estado = estadoVar.value.trim();
+  const numero = numeroVar.value.trim();
   const cep = cepVar.value.trim();
-  const cidade = cidadeVar.value.trim();
   const email = emailVar.value.trim();
   const senha = senhaVar.value.trim();
   const confirmacaoSenha = confirmacaoSenhaVar.value.trim();
@@ -295,7 +289,7 @@ async function cadastrar() {
 
   if (
     !empresaSelecionada || // Verifica se o valor foi selecionado
-    !estado ||
+    !numero ||
     !cep ||
     !email ||
     !senha ||
@@ -319,9 +313,8 @@ async function cadastrar() {
     },
     body: JSON.stringify({
       empresaServer: empresaSelecionada,
-      estadoServer: estado,
+      numeroServer: numero,
       cepServer: cep,
-      cidadeServer: cidade,
       emailServer: email,
       senhaServer: senha,
       representanteLegalServer: representanteLegal,
