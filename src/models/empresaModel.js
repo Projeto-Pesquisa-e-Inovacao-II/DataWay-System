@@ -77,7 +77,7 @@ async function cadastrar(
   const idUsuario = usuarioResult[0].idUsuario;
 
   const empresaResult = await database.executar(`
-    SELECT idEmpresa FROM Empresa WHERE CNPJ = '${CNPJ}' AND representanteLegal = '${representanteLegal}' AND razaoSocial = '${empresaServer}' AND concessionaria = '${empresaServer}' AND Usuario_idUsuario = '${idUsuario}';
+    SELECT idEmpresa FROM Empresa WHERE CNPJ = '${CNPJ}' AND representanteLegal = '${representanteLegal}' AND razaoSocial = '${empresaServer}' AND concessionaria = '${empresaServer}';
   `);
 
   const idEmpresa = empresaResult[0].idEmpresa;
