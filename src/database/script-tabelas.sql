@@ -13,10 +13,12 @@ use dataway;
 
 CREATE TABLE Usuario (
     idUsuario INT PRIMARY KEY AUTO_INCREMENT,
-    tipoUsuario ENUM('Admin', 'Empresa', 'Funcionario'),
-    email VARCHAR(100) UNIQUE NULL,
-    senha VARCHAR(255) NULL,
-    telefone VARCHAR(20) NULL
+    tipoUsuario ENUM('Empresa', 'Funcionario'),
+    foto VARCHAR(255),
+    email VARCHAR(100) UNIQUE NOT NULL,
+    senha VARCHAR(255) NOT NULL,
+    telefone VARCHAR(20) NOT NULL,
+    nome VARCHAR(100) NOT NULL
 );
 
 CREATE TABLE Empresa (
@@ -50,14 +52,6 @@ CREATE TABLE Notificacoes (
     FOREIGN KEY (Usuario_idUsuario) REFERENCES Usuario(idUsuario)
 );
 
-CREATE TABLE Funcionario (
-    idFuncionario INT PRIMARY KEY AUTO_INCREMENT,
-    Nome VARCHAR(100) NULL,
-    Usuario_idUsuario INT NULL,
-    Empresa_idEmpresa INT NULL,
-    FOREIGN KEY (Usuario_idUsuario) REFERENCES Usuario(idUsuario),
-    FOREIGN KEY (Empresa_idEmpresa) REFERENCES Empresa(idEmpresa)
-);
 
 CREATE TABLE DadosPracaPedagio (
     idDadosPracaPedagio INT PRIMARY KEY AUTO_INCREMENT,
