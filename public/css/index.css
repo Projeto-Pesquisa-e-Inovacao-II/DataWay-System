@@ -103,6 +103,9 @@ header .container {
   margin-left: auto;
   height: 10vh;
   min-width: 700px;
+  .pages{
+    margin-left: 24rem;
+  }
 }
 
 header .logo {
@@ -129,10 +132,7 @@ header ul li a {
 }
 
 
-.burger {
-  display: none !important;
-  cursor: pointer;
-}
+
 
 /* header */
 
