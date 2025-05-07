@@ -110,7 +110,7 @@ header .logo {
 header ul {
   display: flex;
   list-style: none;
-  margin-left: auto;
+  margin-left: auto
 }
 
 header ul li {

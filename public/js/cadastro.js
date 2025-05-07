@@ -7,6 +7,8 @@ let confirmacaoSenhaVar = document.getElementById("confirmarSenhaInput");
 let representanteLegalInput = document.getElementById(
   "representanteLegalInput"
 );
+let numero = document.getElementById("numeroInput");
+let logradouro = document.getElementById("logradouroInput");
 let cnpjInput = document.getElementById("cnpjInput");
 let telefoneInput = document.getElementById("telefoneInput");
 let checkboxPrivacyPolicy = document.getElementById("checkboxPrivacyPolicy");
@@ -47,6 +49,9 @@ function passo1() {
   cepVar.parentElement.style.display = "block";
   cnpjInput.parentElement.style.display = "block";
   representanteLegalInput.parentElement.style.display = "block";
+  numero.parentElement.style.display = "block";
+  logradouro.parentElement.style.display = "block";
+  cidadeVar.parentElement.style.display = "block";
 
   telefoneInput.parentElement.style.display = "none";
   emailVar.parentElement.style.display = "none";
@@ -66,50 +71,51 @@ btnContinuar1.addEventListener("click", function (event) {
   event.preventDefault();
 
   const empresaSelecionada = empresaSelect.value.trim() !== "";
-  const nomeFantasia = nomeFantasiaInput.value.trim() !== "";
+  const nomeFantasia = nomeFantasiaVar.value.trim() !== "";
   const representanteLegal = representanteLegalInput.value.trim() !== "";
   const estadoValido = estadoVar.value.trim() !== "";
   const cep = cepVar.value.replace(/-/g, "");
   const cepValido = cep.length === 8 && /^\d{8}$/.test(cep);
   const cnpj = cnpjInput.value.replace(/[.\-/]/g, "");
   const cnpjValido = cnpj.length === 14 && /^\d{14}$/.test(cnpj);
+  const numeroValido = numero.value.trim() !== "";
+  const logradouroValido = logradouro.value.trim() !== "";
 
   let hasError = false;
 
   if (!empresaSelecionada) {
     showToast("Por favor, selecione uma empresa.", "#ff6347");
     hasError = true;
-    return;
   }
   if (!representanteLegal) {
     showToast("Por favor, insira o nome do representante legal.", "#ff6347");
     hasError = true;
-    return;
   }
   if (!nomeFantasia) {
     showToast("Por favor, insira o nome fantasia.", "#ff6347");
     hasError = true;
-    return;
   }
-
   if (!cnpjValido) {
     showToast("Por favor, insira um CNPJ válido.", "#ff6347");
     hasError = true;
-    return;
   }
-
   if (!estadoValido) {
     showToast("Por favor, insira o estado.", "#ff6347");
     hasError = true;
-    return;
   }
-
   if (!cepValido) {
     showToast("Por favor, insira um CEP válido.", "#ff6347");
     hasError = true;
-    return;
   }
-
+  if (!logradouroValido) {
+    showToast("Por favor, insira o logradouro.", "#ff6347");
+    hasError = true;
+  }
+  
+  if (!numeroValido) {
+    showToast("Por favor, insira o número.", "#ff6347");
+    hasError = true;
+  }
   if (!hasError) {
     passo2();
   }
@@ -123,6 +129,8 @@ function passo2() {
   representanteLegalInput.parentElement.style.display = "none";
   nomeFantasiaVar.parentElement.style.display = "none";
   cidadeVar.parentElement.style.display = "none";
+  numero.parentElement.style.display = "none";
+  logradouro.parentElement.style.display = "none";
 
   cardRuleSenha.style.display = "block";
   telefoneInput.parentElement.style.display = "block";
