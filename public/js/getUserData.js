@@ -5,8 +5,8 @@ const razaoSocialVar = document.getElementById("razaoSocial");
 const telefoneVar = document.getElementById("telefone");
 
 function getUserData() {
-    const email = "contato@empresa1.com";
-    fetch(`/get_user_data?email=${encodeURIComponent(email)}`)
+    const idUsuario = sessionStorage.ID_USUARIO;
+    fetch(`/get_user_data?idUsuario=${encodeURIComponent(idUsuario)}`)
         .then(response => response.json())
         .then(data => {
             emailVar.innerHTML = data[0].email;
