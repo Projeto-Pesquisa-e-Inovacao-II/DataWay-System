@@ -68,7 +68,6 @@ async function cadastrar(
   await inserirEmpresa(
     CNPJ,
     representanteLegal,
-    empresaServer,
     nomeFantasia,
     empresaServer,
     idUsuario
@@ -108,7 +107,7 @@ async function inserirEmpresa(
         INSERT INTO Empresa 
         ( CNPJ, representanteLegal, nomeFantasia, concessionaria, Usuario_idUsuario)
         VALUES  
-        ('${CNPJ}', '${representanteLegal}', '${nomeFantasia}', '${concessionaria}', '${idUsuario}');
+        ('${CNPJ}', '${representanteLegal}', '${nomeFantasia}', '${concessionaria}', ${idUsuario});
     `;
   return await database.executar(instrucaoSql);
 }
