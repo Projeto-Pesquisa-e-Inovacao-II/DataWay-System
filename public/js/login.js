@@ -65,7 +65,7 @@ btnLogin.addEventListener("click", function (event) {
 
           // Redirecionar para o dashboard
           setTimeout(function () {
-            window.location.href = "/dashboard";
+            window.location.href = "/dashboard/visao-geral";
           }, 1000);
         });
       } else {

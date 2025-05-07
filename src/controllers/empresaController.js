@@ -86,12 +86,21 @@ function cadastrar(req, res) {
   }
 }
 
-function deletar(idEmpresa) {
+function deletar(req, res) {
+  const idEmpresa = req.params.idEmpresa;
   if (idEmpresa == undefined) {
     res.status(400).send("Seu id está undefined!");
   } else {
     // Passe os valores como parâmetro e vá para o arquivo empresaModel.js
-    empresaModel.deletar(idEmpresa);
+    empresaModel
+      .deletar(idEmpresa)
+      .then((resultado) => {
+        res.status(200).json({ sucesso: true, resultado });
+      })
+      .catch((error) => {
+        console.error(error);
+        res.status(500).json({ erro: "Erro ao deletar empresa." });
+      });
   }
 }
 module.exports = {

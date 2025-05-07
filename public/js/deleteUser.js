@@ -1,10 +1,14 @@
-function deleteUser() {
+function deleteUser(event) {
+  event.preventDefault();
+  numberConfirm = document.getElementById("numberConfirm").value;
+  if (numberConfirm != "1654789") {
+    alert("Coloque o número correto para confirmar a exclusão do usuário.");
+    return;
+  }
   const id = 1;
-  fetch(`/delete_user_data`, {
+  fetch(`/delete_user_data/${id}`, {
     method: "DELETE",
-    headers: {
-      "Content-Type": "application/json",
-    },
+    headers: { "Content-Type": "application/json" },
   })
     .then((response) => {
       if (response.ok) {

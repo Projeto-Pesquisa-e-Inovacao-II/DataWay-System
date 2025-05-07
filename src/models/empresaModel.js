@@ -141,11 +141,59 @@ function deletar(idEmpresa) {
     "ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():",
     idEmpresa
   );
-  var instrucaoSql = `
-        DELETE FROM Empresa WHERE idEmpresa = '${idEmpresa}';
-    `;
-  console.log("Executando a instrução SQL: \n" + instrucaoSql);
-  return database.executar(instrucaoSql);
+//verificar id usuario de empresa, guarda delete de endereço e de empresa. executa verificação de id, deleta endereço, deleta empresa e deleta usuario
+  const sqlSelectUsuario = `SELECT Usuario_idUsuario FROM Empresa WHERE idEmpresa = ${idEmpresa};`;
+
+  const sqlDeleteEndereco = `DELETE FROM Endereco WHERE Empresa_idEmpresa = ${idEmpresa};`;
+
+  const sqlDeleteEmpresa = `DELETE FROM Empresa WHERE idEmpresa = ${idEmpresa};`;
+
+  console.log("Executando a instrução SQL de seleção: \n" + sqlSelectUsuario);
+
+  return database.executar(sqlSelectUsuario).then((resultado) => {
+
+    if (resultado.length === 0) {
+      throw new Error("Empresa não encontrada!");
+    }
+
+    const idUsuario = resultado[0].Usuario_idUsuario;
+    if (!idUsuario) {
+      throw new Error("ID de usuário não encontrado para esta empresa!");
+    }
+
+    console.log("ID do Usuário encontrado:", idUsuario);
+
+    console.log(
+      "Executando a instrução SQL de deleção do endereco: \n" +
+        sqlDeleteEndereco
+    );
+    
+    return database
+      .executar(sqlDeleteEndereco)
+      .then((resultadoEndereco) => {
+        console.log("Endereços deletados:", resultadoEndereco);
+
+        console.log(
+          "Executando a instrução SQL de deleção da empresa: \n" +
+            sqlDeleteEmpresa
+        );
+    
+        return database.executar(sqlDeleteEmpresa);
+      })
+      .then((resultadoEmpresa) => {
+        console.log("Empresa deletada:", resultadoEmpresa);
+
+        const sqlDeleteUsuario = `DELETE FROM Usuario WHERE idUsuario = ${idUsuario};`;
+        console.log(
+          "Executando a instrução SQL de deleção do usuário: \n" +
+            sqlDeleteUsuario
+        );
+        return database.executar(sqlDeleteUsuario);
+      })
+      .then((resultadoUsuario) => {
+        console.log("Usuário deletado:", resultadoUsuario);
+      });
+  });
 }
 
 module.exports = {
