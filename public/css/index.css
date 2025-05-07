@@ -9,18 +9,18 @@
 
 /* variáveis */
 :root {
-  --primary-color: #1ef0a6;
-  --secondary-color: #1becaa;
-  --accent-color: #0bc47a;
+  --primary-color: rgb(12, 99, 204);
+  --secondary-color: rgb(12, 99, 204);
+  --accent-color: rgb(12, 99, 204);
 
   --logo-color: #003c64;
   --text-color: #ececec;
   --text-color-stronger: #838383;
 
-  --background-color-nav: #f2f2f2;
-  --background-color-header: #fff;
-  --icon-color: #22df96;
-  --color-button: #20f3a5;
+  --background-color-nav: #ffffff;
+  --background-color-header: #ffffff;
+  --icon-color: #1e7cf0;
+  --color-button: #1e7cf0;
 }
 
 /* config */
@@ -128,19 +128,13 @@ header ul li a {
   text-transform: uppercase;
 }
 
-
-.burger {
-  display: none !important;
-  cursor: pointer;
-}
-
 /* header */
 
 /* page title */
 .title {
   display: flex;
   background: url("../images/Home/Estrada_Home.png") no-repeat center/cover;
-  width: 100vw;
+  width: 100%;
   height: 60vh;
   .title-text {
     margin-top: 3rem;
@@ -176,7 +170,7 @@ header ul li a {
       cursor: pointer;
     }
     button:hover {
-      background: linear-gradient(90deg, #20f3a5 0%, #1bad5f 100%);
+      background: linear-gradient(90deg, #1e7cf0 0%, #0c63cc 100%);
     }
     button:active {
       transform: translate(0em, 0.2em);
@@ -233,7 +227,7 @@ header ul li a {
   hr {
     width: 85%;
     height: 2px;
-    background-color: #24f1a7;
+    background-color: #1e7cf0;
     border: none;
     margin-bottom: 1rem;
   }
@@ -256,12 +250,9 @@ header ul li a {
   width: 65vw;
   margin-right: auto;
   margin-left: auto;
-  min-width: 700px;
   .section-image {
     transition: 0.4s;
     display: flex;
-    width: 100%;
-    position: relative;
     justify-content: center;
     align-items: center;
     span {
@@ -286,7 +277,7 @@ header ul li a {
 /* phrase */
 .phrase {
   font-family: "Monda", sans-serif;
-  background: rgb(34, 223, 150);
+  background: #1e7cf0;
   color: var(--text-color);
   display: flex;
   flex-direction: column;
@@ -336,7 +327,7 @@ footer {
 
 .footer-section h3 {
   font-size: 18px;
-  color: #00c975;
+  color: #5096ec;
   margin-bottom: 15px;
   display: flex;
   align-items: center;
@@ -360,9 +351,9 @@ footer {
   display: inline-block;
   margin-top: 10px;
   padding: 14px;
-  border: 1px solid #00c975;
+  border: 1px solid #5096ec;
   border-radius: 4px;
-  color: #00c975;
+  color: #5096ec;
   text-decoration: none;
   font-size: 14px;
   transition: all 0.3s ease;
@@ -371,7 +362,7 @@ footer {
 }
 
 .contact-btn:hover {
-  background-color: #00c975;
+  background-color: #5096ec;
   color: #fff;
 }
 
@@ -412,3 +403,192 @@ footer {
   font-size: 30px;
 }
 /* footer */
+
+/* Responsividade para tablets e dispositivos menores */
+@media (max-width: 1024px) {
+  header .container {
+    width: 90%;
+    min-width: unset;
+    flex-wrap: wrap;
+    height: auto;
+  }
+
+  header ul {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 0;
+    gap: 10px;
+  }
+
+  header ul li {
+    margin-left: 0;
+  }
+
+  .title {
+    height: 50vh;
+  }
+
+  .title .title-text {
+    margin-left: 2rem;
+    margin-right: 2rem;
+    text-align: center;
+  }
+
+  .title .title-text-first {
+    font-size: 35px;
+  }
+
+  .title .title-text-second {
+    font-size: 18px;
+    width: 100%;
+  }
+
+  .services-content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 5rem;
+  }
+
+  .services-title {
+    width: 100%;
+    text-align: center;
+  }
+
+  .services-title-text {
+    font-size: 30px;
+  }
+
+  .services-text-first,
+  .services-text-second {
+    font-size: 18px;
+  }
+
+  .image {
+    width: 100%;
+  }
+
+  .section-img {
+    gap: 1rem;
+  }
+
+  .section-image {
+    width: 90%;
+  }
+
+  .phrase {
+    padding: 10rem 0 4rem 0;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .footer-section {
+    text-align: center;
+  }
+
+  iframe {
+    width: 100%;
+  }
+
+  .burger {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .burger:hover {
+    cursor: pointer;
+  }
+
+  .line {
+    width: 30px;
+    height: 4px;
+    border-radius: 2px;
+    background-color: #000;
+  }
+
+  .line:nth-child(2) {
+    margin: 5px 0;
+  }
+
+  .pages {
+    display: none;
+  }
+
+  .active-header-response {
+    font-family: "Monda", sans-serif;
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    right: 0;
+    width: 30%;
+    background-color: var(--background-color-header);
+    padding: 2rem;
+    z-index: 10;
+    border-radius: 0 0 0 10px;
+  }
+}
+/* Responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+  header .logo {
+    font-size: 1.8rem;
+  }
+
+  header ul {
+    gap: 5px;
+  }
+
+  header ul li a {
+    font-size: 14px;
+  }
+
+  .title {
+    height: 40vh;
+  }
+
+  .title .title-text-first {
+    font-size: 28px;
+  }
+
+  .title .title-text-second {
+    font-size: 16px;
+  }
+
+  button {
+    font-size: 16px;
+    width: 80%;
+    height: 6vh;
+  }
+
+  .services-content {
+    padding-bottom: 3rem;
+  }
+
+  .services-title-text {
+    font-size: 24px;
+  }
+
+  .services-text-first,
+  .services-text-second {
+    font-size: 16px;
+  }
+
+  .phrase {
+    padding: 8rem 0 3rem 0;
+  }
+
+  .footer-container {
+    width: 90%;
+  }
+
+  .footer-divison-border {
+    width: 100%;
+  }
+
+  .logo-container {
+    font-size: 20px;
+  }
+}

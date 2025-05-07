@@ -3,17 +3,18 @@
 
 /* variáveis */
 :root {
-  --primary-color: #1ef0a6;
-  --secondary-color: #1becaa;
-  --accent-color: #0bc47a;
+  --primary-color: #1e7cf0;
+  --secondary-color: #5096ec;
+  --accent-color: #0c63cc;
 
   --logo-color: #003c64;
   --text-color: #ececec;
   --text-color-stronger: #838383;
 
-  --background-color-nav: #f2f2f2;
-  --background-color-header: #fff;
-  --icon-color: #22df96;
+  --background-color-nav: #ffffff;
+  --background-color-header: #ffffff;
+  --icon-color: #1e7cf0;
+  --color-button: #1e7cf0;
 }
 
 * {
@@ -123,6 +124,7 @@ header ul li a {
   text-transform: uppercase;
 }
 
+
 /* header */
 
 #capa-titulo {
@@ -137,7 +139,7 @@ header ul li a {
   p {
     font-size: 50px;
     font-weight: bold;
-    color: #03fcba;
+    color: #FFF;
   }
 }
 
@@ -185,13 +187,7 @@ header ul li a {
 
 .phrase {
   font-family: "Monda", sans-serif;
-  background: rgb(34, 223, 150);
-  background: radial-gradient(
-    circle,
-    rgba(34, 223, 150, 1) 35%,
-    rgba(30, 239, 167, 1) 94%,
-    rgba(27, 236, 170, 1) 100%
-  );
+  background: #1e7cf0;
   color: var(--text-color);
   display: flex;
   flex-direction: column;
@@ -239,7 +235,7 @@ footer {
 
 .footer-section h3 {
   font-size: 18px;
-  color: #00c975;
+  color: #5096ec;
   margin-bottom: 15px;
   display: flex;
   align-items: center;
@@ -263,9 +259,9 @@ footer {
   display: inline-block;
   margin-top: 10px;
   padding: 14px;
-  border: 1px solid #00c975;
+  border: 1px solid #5096ec;
   border-radius: 4px;
-  color: #00c975;
+  color: #5096ec;
   text-decoration: none;
   font-size: 14px;
   transition: all 0.3s ease;
@@ -274,7 +270,7 @@ footer {
 }
 
 .contact-btn:hover {
-  background-color: #00c975;
+  background-color: #5096ec;
   color: #fff;
 }
 
@@ -314,4 +310,10 @@ footer {
   color: var(--logo-color);
   font-size: 30px;
 }
-/* footer */
+
+.pages {
+  margin-left: auto;
+  display: flex;
+  justify-content: flex-end;
+  float: right;
+}

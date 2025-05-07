@@ -38,6 +38,22 @@
             <li><a href="contato">Contato</a></li>
           </ul>
         </div>
+      
+        <div class="burger" id="burger">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+        </div>
+      </div>
+      <div class="active-header-response"  style="display: none;">
+        <div class="active-header-response-container">
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="sobre-nos">Sobre Nós</a></li>
+            <li><a href="servicos">Serviços</a></li>
+            <li><a href="contato">Contato</a></li>
+          </ul>
+        </div>
       </div>
     </header>
     <!-- parte do header  -->
@@ -125,18 +141,22 @@
     <!-- ??? -->
     <section class="sect-idk">
       <div class="container">
-        <div class="left">
-          <h1><b>Referência no mercado</b></h1>
-          <p>
-            Somos referência em soluções de análise de dados para o setor de
-            rodovias e pedágios, oferecendo tecnologia inovadora para otimizar
-            suas operações e impulsionar decisões estratégicas.
-          </p>
+        <div class="center">
+        <h1><b>Referência no mercado</b></h1>
+        <p>
+          Somos referência em soluções de análise de dados para o setor de
+          rodovias e pedágios, oferecendo tecnologia inovadora para otimizar
+          suas operações e impulsionar decisões estratégicas.
+        </p>
+      </div>
+      <div class="conteiner-images">  
+      <div class="left">
           <img src="./images/Service/lider.png" alt="" class="first-image-idk"/>
         </div>
         <div class="right">
           <img src="./images/Service/celular.png" alt="" />
         </div>
+      </div>
       </div>
     </section>
 
@@ -161,7 +181,7 @@
           </h3>
           <p>dataway.suporte@gmail.com</p>
           <p>(11) 2718-8029</p>
-          <a href="#" class="contact-btn">Entre em Contato</a>
+          <a href="contato" class="contact-btn">Entre em Contato</a>
         </div>
 
         <div class="footer-section">
@@ -181,19 +201,6 @@
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
         ></iframe>
-
-        <div class="footer-section">
-          <h3>
-            <i class="fa-solid fa-headphones"></i>
-            ATENDIMENTO
-          </h3>
-          <p>De Segunda à Sexta-Feira</p>
-          <p>Manhã - 9h às 12h</p>
-          <p>Tarde - 13h30 - 18h</p>
-        </div>
-        <div class="footer-divison-border"></div>
-      </div>
-
       <div class="logo-container">
         <span>Data<b>Way</b></span>
       </div>
@@ -201,3 +208,22 @@
     <!-- footer -->
   </body>
 </html>
+
+<script>
+  const burger = document.getElementById("burger");
+  const pagesHeader = document.querySelector(".active-header-response");
+
+  burger.addEventListener("click", () => {
+    pagesHeader.style.display =
+      pagesHeader.style.display === "flex" ? "none" : "flex";
+  });
+
+  // Adiciona um evento de clique a cada link do menu
+  const links = document.querySelectorAll(".pages ul li a");
+  links.forEach((link) => {
+    link.addEventListener("click", () => {
+      pages.classList.remove("active");
+      burger.classList.remove("active");
+    });
+  });
+</script>
