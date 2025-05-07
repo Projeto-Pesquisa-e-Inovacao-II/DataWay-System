@@ -6,40 +6,63 @@
 comandos para mysql server
 */
 
+create database dataway;
+use dataway;
+	
+
+
+CREATE TABLE Usuario (
+    idUsuario INT PRIMARY KEY AUTO_INCREMENT,
+    tipoUsuario ENUM('Empresa', 'Funcionario'),
+    foto VARCHAR(255),
+    email VARCHAR(100) UNIQUE NOT NULL,
+    senha VARCHAR(255) NOT NULL,
+    telefone VARCHAR(20) NOT NULL,
+    nome VARCHAR(100) NOT NULL
+);
+
 CREATE TABLE Empresa (
     idEmpresa INT PRIMARY KEY AUTO_INCREMENT,
-    email VARCHAR(100) NOT NULL,
-    CNPJ VARCHAR(18) NOT NULL,
-    Senha VARCHAR(255) NOT NULL,
-    telefone VARCHAR(20),
-    representanteLegal VARCHAR(100),
-    razaoSocial VARCHAR(200)
+    CNPJ CHAR(18) UNIQUE NULL,
+    representanteLegal VARCHAR(100) NULL,
+    razaoSocial VARCHAR(150) NULL,
+    nomeFantasia VARCHAR(100) NULL,
+    concessionaria VARCHAR(100),
+    Usuario_idUsuario INT NULL,
+    FOREIGN KEY (Usuario_idUsuario) REFERENCES Usuario(idUsuario)
 );
 
 CREATE TABLE Endereco (
     idEndereco INT PRIMARY KEY AUTO_INCREMENT,
-    cep VARCHAR(10),
+    numero VARCHAR(10),
+    bairro VARCHAR(50),
+    cep CHAR(9),
     cidade VARCHAR(100),
-    rua VARCHAR(200),
     estado VARCHAR(50),
-    fkEmpresa INT,
-    FOREIGN KEY (fkEmpresa) REFERENCES Empresa(idEmpresa)
-);
-
-CREATE TABLE DadosPracaPedagio (
-    idDado INT PRIMARY KEY AUTO_INCREMENT,
-    Praca INT NOT NULL,
-    Data DATE NOT NULL,
-    Hora TIME NOT NULL,
-    Tipo INT NOT NULL,
-    fkUsuario INT,
-    FOREIGN KEY (fkUsuario) REFERENCES Empresa(idEmpresa)
+    Empresa_idEmpresa INT,
+    FOREIGN KEY (Empresa_idEmpresa) REFERENCES Empresa(idEmpresa)
 );
 
 CREATE TABLE Notificacoes (
-    idNotificacao INT PRIMARY KEY AUTO_INCREMENT,
-    dataHora DATETIME NOT NULL,
-    mensagem VARCHAR(500) NOT NULL,
-    fkUsuario INT,
-    FOREIGN KEY (fkUsuario) REFERENCES Empresa(idEmpresa)
+    idNotificacoes INT PRIMARY KEY AUTO_INCREMENT,
+    dataHora DATETIME NULL DEFAULT CURRENT_TIMESTAMP,
+    mensagem TEXT NULL,
+    tipoDestinatario ENUM('Usuario', 'Empresa', 'Funcionario'),
+    Usuario_idUsuario INT NULL,
+    FOREIGN KEY (Usuario_idUsuario) REFERENCES Usuario(idUsuario)
+);
+
+
+CREATE TABLE DadosPracaPedagio (
+    idDadosPracaPedagio INT PRIMARY KEY AUTO_INCREMENT,
+    praca VARCHAR(100) NULL,
+    lote VARCHAR(50) NULL,
+    data DATE NULL,
+    hora TIME NULL,
+    valor DECIMAL(10,2) NULL,
+    sentido VARCHAR(50),
+    tpCampo INT,
+    quantidade INT NULL,
+    Categoria VARCHAR(50),
+    Empresa_idEmpresa INT NULL
 );

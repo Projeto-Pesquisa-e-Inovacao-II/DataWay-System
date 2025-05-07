@@ -38,6 +38,22 @@
             <li><a href="contato">Contato</a></li>
           </ul>
         </div>
+      
+        <div class="burger" id="burger">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+        </div>
+      </div>
+      <div class="active-header-response"  style="display: none;">
+        <div class="active-header-response-container">
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="sobre-nos">Sobre Nós</a></li>
+            <li><a href="servicos">Serviços</a></li>
+            <li><a href="contato">Contato</a></li>
+          </ul>
+        </div>
       </div>
     </header>
     <!-- parte do header  -->
@@ -192,3 +208,22 @@
     <!-- footer -->
   </body>
 </html>
+
+<script>
+  const burger = document.getElementById("burger");
+  const pagesHeader = document.querySelector(".active-header-response");
+
+  burger.addEventListener("click", () => {
+    pagesHeader.style.display =
+      pagesHeader.style.display === "flex" ? "none" : "flex";
+  });
+
+  // Adiciona um evento de clique a cada link do menu
+  const links = document.querySelectorAll(".pages ul li a");
+  links.forEach((link) => {
+    link.addEventListener("click", () => {
+      pages.classList.remove("active");
+      burger.classList.remove("active");
+    });
+  });
+</script>

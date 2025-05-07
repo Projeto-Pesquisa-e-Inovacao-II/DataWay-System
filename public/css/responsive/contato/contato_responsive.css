@@ -5,5 +5,87 @@
   .contact-form-right {
     width: 40%;
   }
+}
+
+@media (max-width: 1024px) {
   
+  .burger {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .burger:hover {
+    cursor: pointer;
+  }
+
+  .line {
+    width: 30px;
+    height: 4px;
+    border-radius: 2px;
+    background-color: #000;
+  }
+
+  .line:nth-child(2) {
+    margin: 5px 0;
+  }
+
+  .pages {
+    display: none;
+  }
+
+  .active-header-response {
+    font-family: "Monda", sans-serif;
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    right: 0;
+    width: 30%;
+    background-color: var(--background-color-header);
+    padding: 2rem;
+    z-index: 10;
+    border-radius: 0 0 0 10px;
+    .active-header-response-container ul{
+      flex-direction: column;
+    }
+  }
+
+  .contact-form-left {
+    width: 100%;
+  }
+  .contact-form-right {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .title{
+    width: 100%;
+  }
+
+  .pages ul {
+    flex-direction: column;
+  }
+
+  .pages ul li {
+    margin: 10px 0;
+  }
+
+  .contact-form-right{
+    display: none;
+  }
+
+  footer {
+    flex-direction: column; /* Alinha os elementos do footer verticalmente */
+    align-items: center; /* Centraliza os elementos */
+  }
+
+  .footer-section-map {
+    order: 3; /* Garante que o mapa fique abaixo dos outros elementos */
+    width: 100%; /* Ajusta a largura para ocupar o espaço disponível */
+    text-align: center; /* Centraliza o conteúdo, se necessário */
+  }
+
+  .footer-section {
+    margin-bottom: 20px; /* Adiciona espaçamento entre as seções */
+  }
 }

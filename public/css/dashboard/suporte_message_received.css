@@ -1,0 +1,93 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --primary-color: #1ef0a6;
+  --secondary-color: #1becaa;
+  --accent-color: #0bc47a;
+
+  --logo-color: #003c64;
+  --text-color: #fff;
+  --cards-styling: #0098b1;
+
+  --background-color: #050d20;
+  --background-color-cards: #232a3c;
+  --background-color-aside: #171e31;
+
+  --background-color-secondary: #ef6a47;
+}
+
+/* banner */
+
+.wrapper_profile {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile_banner {
+  background-image: url("https://media.istockphoto.com/id/1576926531/photo/leadership-concept.jpg?s=612x612&w=0&k=20&c=T2iC7B7S6RKX-xzVXQyRM6QcUitHZH7PVTMMkwuzj9c=");
+  background-size: cover;
+  height: 25vh;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  padding: 30px;
+  padding-right: 0;
+}
+
+.text_banner {
+  color: var(--text-color);
+  display: flex;
+  width: fit-content;
+  text-wrap: nowrap;
+}
+
+.text_banner h1 {
+  font-size: 3rem;
+  font-weight: bolder;
+}
+
+.border_text {
+  border-bottom: 5px solid var(--text-color);
+  margin-bottom: 13px;
+  width: 100%;
+  margin-left: 20px;
+}
+
+/* suporte */
+
+.suport_sect {
+  margin: auto 50px;
+
+  h1 {
+    font-size: 3rem;
+    font-weight: bolder;
+  }
+
+  .suport_sect_title_main {
+    margin-bottom: 30px;
+  }
+
+  .suport_sect_title_sec {
+    font-size: 2.1rem;
+    width: 38%;
+    font-weight: normal;
+    margin: 40px 0;
+  }
+
+  .edit_profile_data {
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: none;
+    background-color: var(--background-color-secondary);
+    color: var(--text-color);
+    font-size: 1.2rem;
+    font-weight: bolder;
+    cursor: pointer;
+    margin-top: 20px;
+    text-decoration: none;
+  }
+}
+
+

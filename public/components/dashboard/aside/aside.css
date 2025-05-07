@@ -1,0 +1,150 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --primary-color: #1ef0a6;
+  --secondary-color: #1becaa;
+  --accent-color: #0bc47a;
+
+  --logo-color: #003c64;
+  --text-color: #fff;
+  --text-color-secondary: #000;
+  --cards-styling: #0098b1;
+
+  --background-color: #050d20;
+  --background-color-cards: #232a3c;
+  --background-color-aside: #171e31;
+
+  --background-color-secondary: #ef6a47;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.container {
+  display: flex;
+}
+
+aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  width: 20vw;
+  background-color: var(--background-color-aside);
+  padding: 30px;
+  position: fixed;
+}
+
+aside .first-sect {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem 2rem;
+}
+
+aside .first-sect .user-name {
+  margin-top: 20px;
+}
+
+.logo .title-aside {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.user-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 100px;
+  object-fit: cover;
+}
+
+aside div.second-secct form div.period {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  flex-direction: column;
+}
+
+aside div.second-secct form div.period .period_input {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+aside div.second-secct form div.period .period_input input:first-of-type {
+  margin-right: 20px;
+}
+
+.second-secct .region {
+  margin-top: 20px;
+}
+
+.second-secct .region select {
+  width: 100%;
+}
+
+.second-secct form .region select,
+.second-secct form .period .period_input input {
+  height: 30px;
+  margin-top: 10px;
+  background-color: transparent;
+  color: var(--text-color);
+  padding: 0 5px;
+}
+
+#select-concessao:focus {
+  background-color: var(--text-color-secondary);
+}
+
+.second-secct .search-button {
+  margin-top: 20px;
+}
+
+.second-secct .search-button {
+  width: 100%;
+  height: 50px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: var(--background-color-secondary);
+  color: var(--text-color);
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+  text-transform: uppercase;
+}
+
+.other-pages {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: bold;
+    font-size: 16px;
+    padding: 10px 0;
+    transition: all 0.3s ease-in-out;
+    text-transform: uppercase;
+  }
+
+  .route_page {
+    display: flex;
+    align-items: center;
+    i {
+      margin-right: 15px;
+      font-size: 25px;
+    }
+  }
+}

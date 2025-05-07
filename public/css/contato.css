@@ -125,6 +125,7 @@ header ul li a {
   text-transform: uppercase;
 }
 
+
 /* header */
 
 /* title */
@@ -255,8 +256,8 @@ footer {
   width: 100%;
   padding: 20px 0;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .footer-container {
@@ -266,6 +267,7 @@ footer {
   justify-content: space-between;
   align-items: flex-start;
   margin-top: 15px;
+  flex-direction: row;
 }
 
 .footer-section {
@@ -274,7 +276,7 @@ footer {
 
 .footer-section h3 {
   font-size: 18px;
-  color:rgb(30, 124, 240);
+  color: rgb(30, 124, 240);
   margin-bottom: 15px;
   display: flex;
   align-items: center;
@@ -298,9 +300,9 @@ footer {
   display: inline-block;
   margin-top: 10px;
   padding: 14px;
-  border: 1px solid rgb(12, 99, 204);
+  border: 1px solid rgb(30, 124, 240);
   border-radius: 4px;
-  color: rgb(12, 99, 204);
+  color: rgb(30, 124, 240);
   text-decoration: none;
   font-size: 14px;
   transition: all 0.3s ease;
@@ -309,7 +311,7 @@ footer {
 }
 
 .contact-btn:hover {
-  background-color: rgb(12, 99, 204);
+  background-color: rgb(30, 124, 240);
   color: #fff;
 }
 
@@ -350,3 +352,4 @@ footer {
   font-size: 30px;
 }
 /* footer */
+
