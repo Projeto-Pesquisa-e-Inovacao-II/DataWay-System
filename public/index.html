@@ -1,46 +1,68 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home | DataWay</title>
+    <link rel="stylesheet" href="./css/index.css" />
+    <link rel="stylesheet" href="./css/responsive/home/home_responsive.css" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Home | DataWay</title>
-  <link rel="stylesheet" href="./css/index.css" />
-  <link rel="stylesheet" href="./css/responsive/home/home_responsive.css" />
-  <!-- fontawesome para icons -->
-  <script src="https://kit.fontawesome.com/8aca4bf827.js" crossorigin="anonymous"></script>
-</head>
-<body>
-  <header>
-    <div class="header container">
-      <div class="logo">
-        <span>Data<b>Way</b></span>
+    <!-- fontawesome para icons -->
+    <script
+      src="https://kit.fontawesome.com/8aca4bf827.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- parte da nav bar -->
+
+    <!-- parte do header -->
+    <header>
+      <div class="header container">
+        <div class="logo">
+          <span>Data<b>Way</b></span>
+        </div>
+        <div class="pages">
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="sobre-nos">Sobre Nós</a></li>
+            <li><a href="servicos">Serviços</a></li>
+            <li><a href="contato">Contato</a></li>
+          </ul>
+        </div>
+
+        <div class="burger" id="burger">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+        </div>
       </div>
-      <div class="pages">
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="sobre-nos">Sobre Nós</a></li>
-          <li><a href="servicos">Serviços</a></li>
-          <li><a href="contato">Contato</a></li>
-        </ul>
+      <div class="active-header-response" style="display: none;">
+        <div class="active-header-response-container">
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="sobre-nos">Sobre Nós</a></li>
+            <li><a href="servicos">Serviços</a></li>
+            <li><a href="contato">Contato</a></li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </header>
-  <!-- parte do header -->
+    </header>
+    <!-- parte do header -->
 
     <!-- title -->
     <div class="title">
       <div class="title-text">
         <div class="title-text-first">
-          <b>Transformamos</b> dados<br />
+          <b>Transformamos dados</b><br />
           em <b>atitudes estratégicas</b>
         </div>
         <div class="title-text-second">
-          Com a Data<b>Way,</b> suas Decisões se tornam mais rápidos,
-          inteligentes e seguras!
+          Com a <b>DataWay</b>, suas decisões se tornam <b>mais rápidas</b>,
+          <b>inteligentes</b> e <b>seguras</b>!
         </div>
         <button onclick="window.location.href='servicos';">
-          <b>CONHEÇA NOSSOS SERVIÇOS</b>
+          <b>CONHEÇA OS NOSSOS SERVIÇOS</b>
         </button>
       </div>
     </div>
@@ -54,13 +76,13 @@
           <div class="services-title-text"><b>SEJA BEM-VINDO</b></div>
           <hr />
           <div class="services-text-first">
-            Monitoramento e análise de tráfego em tempo real para otimizar sua
+            Monitoramento e Análise de Tráfego em Tempo Real para otimizar sua
             operação.
           </div>
           <div class="services-text-second">
             Nossa plataforma transforma dados complexos em insights valiosos,
             permitindo que sua equipe tome decisões mais rápidas e eficazes.
-            Conte com uma gestão inteligente para melhorar a eficiência das
+            Conte com uma gestão inteligente para melhorar a eficiência das suas
             rodovias e reduzir prejuízos.
           </div>
         </div>
@@ -115,7 +137,7 @@
           </h3>
           <p>dataway.suporte@gmail.com</p>
           <p>(11) 2718-8029</p>
-          <a href="#" class="contact-btn">Entre em Contato</a>
+          <a href="contato" class="contact-btn">Entre em Contato</a>
         </div>
 
         <div class="footer-section">
@@ -135,23 +157,44 @@
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
         ></iframe>
-
-        <div class="footer-section">
-          <h3>
-            <i class="fa-solid fa-headphones"></i>
-            ATENDIMENTO
-          </h3>
-          <p>De Segunda à Sexta-Feira</p>
-          <p>Manhã - 9h às 12h</p>
-          <p>Tarde - 13h30 - 18h</p>
-        </div>
-        <div class="footer-divison-border"></div>
       </div>
 
       <div class="logo-container" onclick="window.location.href='/';">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home | DataWay</title>
+  <link rel="stylesheet" href="./css/index.css" />
+  <link rel="stylesheet" href="./css/responsive/home/home_responsive.css" />
+  <!-- fontawesome para icons -->
+  <script src="https://kit.fontawesome.com/8aca4bf827.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header>
+    <div class="header container">
+      <div class="logo">
         <span>Data<b>Way</b></span>
       </div>
     </footer>
     <!-- footer -->
   </body>
 </html>
+<script>
+  const burger = document.getElementById("burger");
+  const pagesHeader = document.querySelector(".active-header-response");
+
+  burger.addEventListener("click", () => {
+    pagesHeader.style.display =
+      pagesHeader.style.display === "flex" ? "none" : "flex";
+  });
+
+  // Adiciona um evento de clique a cada link do menu
+  const links = document.querySelectorAll(".pages ul li a");
+  links.forEach((link) => {
+    link.addEventListener("click", () => {
+      pages.classList.remove("active");
+      burger.classList.remove("active");
+    });
+  });
+</script>
+    

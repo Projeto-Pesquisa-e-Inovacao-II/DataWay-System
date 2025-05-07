@@ -8,9 +8,9 @@
 
 /* variáveis */
 :root {
-  --primary-color: #1ef0a6;
-  --secondary-color: #1becaa;
-  --accent-color: #0bc47a;
+  --primary-color: rgb(30, 124, 240);
+  --secondary-color: rgb(30, 124, 240);
+  --accent-color: rgb(30, 124, 240);
 
   --logo-color: #003c64;
   --text-color: #ececec;
@@ -18,7 +18,7 @@
 
   --background-color-nav: #f2f2f2;
   --background-color-header: #fff;
-  --icon-color: #22df96;
+  --icon-color: rgb(30, 124, 240);
 }
 
 /* config */
@@ -137,7 +137,7 @@ header ul li a {
 }
 
 .title h1 {
-  color: var(--secondary-color);
+  color: #fff;
   text-transform: uppercase;
   font-size: 52px;
   text-align: center;
@@ -147,7 +147,7 @@ header ul li a {
 
 /* services */
 i {
-  color: var(--icon-color);
+  color: rgb(30, 124, 240);
   font-size: 25px;
 }
 
@@ -171,8 +171,6 @@ i {
   width: 65vw;
   display: flex;
   justify-content: space-between;
-  min-width: 700px;
-  flex-wrap: wrap;
 }
 
 .services .row .box {
@@ -221,12 +219,22 @@ i {
 }
 
 .sect-idk .container {
+  display: flex;
+  flex-direction: column;
   width: 65vw;
   display: flex;
   justify-content: space-between;
   min-width: 700px;
   margin-left: auto;
   margin-right: auto;
+  .center{
+    width: 45%;
+  }
+  .conteiner-images{
+    display: flex;
+  flex-direction: row;
+  align-items: center;
+  }
 }
 
 .sect-idk .container .left {
@@ -240,7 +248,6 @@ i {
 
 .sect-idk .container .left p {
   margin: 30px 0;
-  /* font-family: "Red Hat Display", sans-serif; */
   line-height: 25px;
   font-size: 20px;
 }
@@ -263,13 +270,7 @@ i {
 
 .phrase {
   font-family: "Monda", sans-serif;
-  background: rgb(34, 223, 150);
-  background: radial-gradient(
-    circle,
-    rgba(34, 223, 150, 1) 35%,
-    rgba(30, 239, 167, 1) 94%,
-    rgba(27, 236, 170, 1) 100%
-  );
+  background: rgb(30, 124, 240);
   color: var(--text-color);
   display: flex;
   flex-direction: column;
@@ -286,7 +287,7 @@ i {
 }
 
 .phrase span {
-border-bottom: 4px solid var(--accent-color);
+border-bottom: 4px solid rgb(12, 99, 204);
   width: 300px;
   height: 48px;
 }
@@ -298,8 +299,8 @@ footer {
   width: 100%;
   padding: 20px 0;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .footer-container {
@@ -309,6 +310,7 @@ footer {
   justify-content: space-between;
   align-items: flex-start;
   margin-top: 15px;
+  flex-direction: row;
 }
 
 .footer-section {
@@ -317,7 +319,7 @@ footer {
 
 .footer-section h3 {
   font-size: 18px;
-  color: #00c975;
+  color: rgb(30, 124, 240);
   margin-bottom: 15px;
   display: flex;
   align-items: center;
@@ -328,7 +330,7 @@ footer {
 }
 
 .footer-section i {
-  color: var(--icon-color);
+  color: rgb(30, 124, 240);
 }
 
 .footer-section p {
@@ -341,9 +343,9 @@ footer {
   display: inline-block;
   margin-top: 10px;
   padding: 14px;
-  border: 1px solid #00c975;
+  border: 1px solid rgb(30, 124, 240);
   border-radius: 4px;
-  color: #00c975;
+  color: rgb(30, 124, 240);
   text-decoration: none;
   font-size: 14px;
   transition: all 0.3s ease;
@@ -352,7 +354,7 @@ footer {
 }
 
 .contact-btn:hover {
-  background-color: #00c975;
+  background-color: rgb(30, 124, 240);
   color: #fff;
 }
 
