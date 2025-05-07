@@ -1,0 +1,192 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --primary-color: #1ef0a6;
+  --secondary-color: #1becaa;
+  --accent-color: #0bc47a;
+
+  --logo-color: #003c64;
+  --text-color: #fff;
+  --cards-styling: #0098b1;
+
+  --background-color: #050d20;
+  --background-color-cards: #232a3c;
+  --background-color-aside: #171e31;
+
+  --background-color-secondary: #ef6a47;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+}
+
+/* dashboard */
+.container-dashboard {
+  width: 100%;
+  margin: 0px 20px;
+  margin-left: 23vw; /* GAMBIARRRAAAAAAA */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    h1 {
+      font-size: 2.5rem;
+      text-transform: uppercase;
+      margin: 30px 0;
+      margin-top: 25px;
+      font-weight: bold;
+    }
+
+    i {
+      font-size: 2rem;
+      color: var(--text-color);
+      margin-right: 20px;
+    }
+  }
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 2fr);
+  gap: 20px;
+}
+
+.cards .card {
+  background-color: var(--background-color-cards);
+  border-left: 10px solid var(--cards-styling);
+}
+
+.cards .card h4 {
+  text-transform: uppercase;
+  margin: 15px;
+  font-weight: bold;
+}
+
+div.cards div.card .card-details div.details-data {
+  display: flex;
+}
+
+div.cards div.card .card-details div.details-data img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+
+div.cards div.card .card-details div.details-data i {
+  font-size: 2rem;
+}
+
+.cards .card .card-details .details-data {
+  display: flex;
+  align-items: center;
+  margin: 25px 15px;
+}
+
+.cards .card .card-details .details-data h1 {
+  display: flex;
+  font-size: 2.5rem;
+  font-weight: bolder;
+  margin-left: 15px;
+}
+
+.graphs {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  width: 100%;
+}
+
+.graphs .container-left-graphs,
+.graphs .container-right-graphs {
+  height: 100%;
+}
+
+.graphs .container-right-graphs {
+  display: flex;
+  flex-direction: column;
+  height: 94vh;
+}
+
+.graphs .container-right-graphs .graph-above,
+.graphs .container-right-graphs .graph-below {
+  background-color: var(--background-color-cards);
+  height: 54%;
+}
+
+.graphs .container-right-graphs .graph-below {
+  height: 46vh !important;
+}
+
+.graphs .container-right-graphs .graph-above {
+  margin-bottom: 20px;
+  height: 38.5vh;
+}
+
+.graphs .container-left-graphs {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.graphs .container-left-graphs .graph-above {
+  display: flex;
+}
+
+.graphs .container-left-graphs .graph-below {
+  background-color: var(--background-color-cards);
+  height: 38.5vh;
+}
+
+.graphs .container-left-graphs .graph-above {
+  margin: 0;
+}
+
+.horizontal-bar-chart {
+  width: 100%;
+  height: 100% !important;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background-color-cards);
+}
+
+/* .horizontal-bar-chart *{
+ margin: 0 !important;
+} */
+
+.line-chart {
+  display: flex;
+  flex-direction: column;
+}
+
+.radar-chart h4,
+.horizontal-bar-chart h4,
+.line-chart h4,
+.bar-chart h4,
+.heat-map-chart h4 {
+  margin: 15px;
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+
+.line-chart canvas {
+  margin: 0;
+}
+
+
+#lineCanvas,
+#heatMapCanvas {
+  height: 100% !important;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.heat-map-chart {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
