@@ -6,7 +6,47 @@
   .title {
     height: 70vh;
   }
+
+
+
 }
+
+
+.active-header-response {
+  position: fixed;         /* fica fixo na tela */
+  top: 38.5px;               /* desce um pouco do topo (ajuste conforme seu header) */
+  right: 0;                /* cola na lateral direita */
+  width: 70vw;             /* ocupa 70% da tela, ajustável */
+  max-width: 320px;        /* garante que não fique gigante */
+  background-color: white;
+  box-shadow: -2px 0 6px rgba(0,0,0,0.1);
+  z-index: 999;            /* fica sobre tudo */
+  display: none;           /* controlado pelo JS */
+}
+
+.active-header-response.ativo {
+  display: block;          /* classe que o JS pode aplicar para mostrar */
+}
+
+
+/*
+
+arrumar
+
+
+.active-header-response {
+  position: absolute;
+  right: 0;
+  top: 60px;
+  width: 200px;
+  background-color: white;
+  z-index: 10;
+}
+
+/*
+
+
+
 
 /* md */
 @media (max-width: 768px) {
@@ -18,8 +58,12 @@
   }
 
 
+
   div.title div.title-text div.title-text-first {
     font-size: 30px;
+
+    padding: 20px;
+
   }
 
 
@@ -72,7 +116,7 @@
   .title {
     & .title-text {
       & button {
-        height: 4.5vh;
+        height: 8.5vh;
       }
     }
   }
@@ -83,13 +127,13 @@
 
   div.title div.title-text div.title-text-second {
     width: 100%;
+    padding: 20px;
     font-size: 23px !important;
     text-align: center;
+
   }
 
-  div.title div.title-text div.title-text-second {
-    font-size: 20px;
-  }
+
 
   div.title div.title-text button {
     font-size: 17px;
@@ -101,11 +145,15 @@
 
   .services .services-content .services-text-first {
     font-size: 20px;
+    padding: 20px;
   }
 
   .services-title .services-title-text {
     font-size: 30px;
   }
+
+div.section-img{
+width:500px}
 
   div.section-image:nth-child(1) > span:nth-child(2),
   div.section-image:nth-child(2) > span:nth-child(2) {
@@ -114,20 +162,54 @@
 
   .phrase {
     padding: 13rem 0 6rem 0;
+    width: 700px;
   }
 
   .phrase .container h1 {
     font-size: 20px;
   }
 
+.img-botao{
+width: 500px;
+height: 150px}
+
+
+
   section.services div.container_image_absolute {
     bottom: -100px;
+
   }
 }
 
 /* 2xl */
 @media (max-width: 1536px) {
+
+body {
+  width: 700px;
+}
+
+
   .services .services-content {
     padding-bottom: 10rem;
   }
+
+h3 {
+margin-left:4.1rem}
+
+
+
+
+
+
+
+
+
+
+
 }
+
+
+
+
+
+
