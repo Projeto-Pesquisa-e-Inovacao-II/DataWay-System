@@ -1,13 +1,4 @@
 @media (max-width: 1024px) {
-  .burger {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .burger:hover {
-    cursor: pointer;
-  }
-
   .line {
     width: 30px;
     height: 4px;
@@ -23,29 +14,20 @@
     display: none;
   }
 
-  .active-header-response {
-    font-family: "Monda", sans-serif;
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    right: 0;
-    width: 30%;
-    background-color: var(--background-color-header);
-    padding: 2rem;
-    z-index: 10;
-    border-radius: 0 0 0 10px;
-    .active-header-response-container ul{
-      flex-direction: column;
-    }
+  .sect-idk .container .right img {
+    width: 30vw;
+    object-fit: contain;
   }
 }
 
-
 @media (max-width: 768px) {
-  .title{
+  .title {
     width: 100%;
   }
 
+  .services .row .box {
+    width: auto !important;
+  }
   .pages ul {
     flex-direction: column;
     align-items: center;
@@ -57,9 +39,8 @@
   }
 
   .services .row {
-    width: 80%;
-    flex-direction: row;
-    align-items: center;
+    width: 100%;
+    display: block !important;
   }
 
   .services .box {
@@ -76,6 +57,10 @@
   .servicesrightimagem img {
     width: 100%;
     height: auto;
+  }
+
+  .sect-idk {
+    display: none !important;
   }
 
   .sect-idk .container {
@@ -118,7 +103,7 @@
 
 /* Estilos para telas menores que 480px (dispositivos muito pequenos) */
 @media (max-width: 480px) {
-  .title{
+  .title {
     width: 100%;
   }
   .title h1 {
@@ -134,11 +119,10 @@
     font-size: 1.2rem;
   }
 
-  .row{
+  .row {
     display: flex;
     gap: 5px;
     margin: 0 auto;
     flex-direction: column;
-  
   }
 }

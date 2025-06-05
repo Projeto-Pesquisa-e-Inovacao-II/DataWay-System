@@ -10,21 +10,7 @@
   .title {
     height: 65vh;
   }
-  .active-header-response {
-    position: fixed; /* fica fixo na tela */
-    top: 38.5px; /* desce um pouco do topo (ajuste conforme seu header) */
-    right: 0; /* cola na lateral direita */
-    width: 70vw; /* ocupa 70% da tela, ajustável */
-    max-width: 320px; /* garante que não fique gigante */
-    background-color: white;
-    box-shadow: -2px 0 6px rgba(0, 0, 0, 0.1);
-    z-index: 999; /* fica sobre tudo */
-    display: none; /* controlado pelo JS */
-  }
 
-  .active-header-response.ativo {
-    display: block; /* classe que o JS pode aplicar para mostrar */
-  }
 
   .section-img,
   html body section.services div.services-content div.image {
@@ -83,17 +69,6 @@ arrumar
     font-size: 30px !important;
   }
 
-  header .logo {
-    font-size: 1.8rem;
-  }
-
-  header ul {
-    gap: 5px;
-  }
-
-  header ul li a {
-    font-size: 14px;
-  }
 
   .title .title-text-first {
     font-size: 28px;
@@ -241,8 +216,9 @@ arrumar
     margin-left: 4.1rem;
   }
 
-  .burger,
-  .active-header-response {
-    display: none;
-  }
+
+}
+
+@media (min-width: 1536px) {
+
 }
