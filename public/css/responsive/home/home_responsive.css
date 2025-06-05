@@ -11,7 +11,6 @@
     height: 65vh;
   }
 
-
   .section-img,
   html body section.services div.services-content div.image {
     display: none !important;
@@ -69,7 +68,6 @@ arrumar
     font-size: 30px !important;
   }
 
-
   .title .title-text-first {
     font-size: 28px;
   }
@@ -120,6 +118,13 @@ arrumar
     padding-bottom: 8rem !important;
   }
 
+  .services-content {
+    .image {
+      width: 100%;
+    }
+  }
+
+
   div.section-image:nth-child(1) > span:nth-child(2),
   div.section-image:nth-child(2) > span:nth-child(2) {
     font-size: 20px !important;
@@ -136,6 +141,23 @@ arrumar
   .burger {
     display: flex !important;
   }
+  section.services div.container_image_absolute {
+    position: relative;
+  }
+
+  .section-img {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .section-image {
+    margin: 0 !important;
+  }
+
+    .services .services-content {
+    padding-bottom: 0rem !important;
+  }
+
 }
 
 /* xl */
@@ -200,10 +222,6 @@ arrumar
   .phrase .container h1 {
     font-size: 20px;
   }
-
-  section.services div.container_image_absolute {
-    bottom: -100px;
-  }
 }
 
 /* 2xl */
@@ -215,10 +233,7 @@ arrumar
   h3 {
     margin-left: 4.1rem;
   }
-
-
 }
 
 @media (min-width: 1536px) {
-
 }
