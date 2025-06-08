@@ -72,7 +72,6 @@ btnContinuar1.addEventListener("click", function (event) {
   const empresaSelecionada = empresaSelect.value.trim() !== "";
   const nomeFantasia = nomeFantasiaVar.value.trim() !== "";
   const representanteLegal = representanteLegalInput.value.trim() !== "";
-  const numeroValido = numeroVar.value.trim() !== "";
   const cep = cepVar.value.replace(/-/g, "");
   const cepValido = cep.length === 8 && /^\d{8}$/.test(cep);
   const cnpj = cnpjInput.value.replace(/[.\-/]/g, "");
