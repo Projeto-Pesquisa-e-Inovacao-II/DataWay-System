@@ -1,19 +1,22 @@
 const emailVar = document.getElementById("email");
 const nomeFantasiaVar = document.getElementById("nomeFantasia");
 const representanteLegalVar = document.getElementById("representanteLegal");
-const razaoSocialVar = document.getElementById("razaoSocial");
 const telefoneVar = document.getElementById("telefone");
 
-function getUserData() {
+async function getUserData() {
     const idUsuario = sessionStorage.ID_USUARIO;
     fetch(`/get_user_data?idUsuario=${encodeURIComponent(idUsuario)}`)
         .then(response => response.json())
         .then(data => {
-            emailVar.innerHTML = data[0].email;
-            nomeFantasiaVar.innerHTML = data[0].nomeFantasia;
-            razaoSocialVar.innerHTML = data[0].razaoSocial;
-            representanteLegalVar.innerHTML = data[0].representanteLegal;
-            telefoneVar.innerHTML = data[0].telefone;
+            if (data && data.length > 0) {
+                const user = data[0];
+                emailVar.innerHTML = user.email;
+                nomeFantasiaVar.innerHTML = user.nomeFantasia;
+                representanteLegalVar.innerHTML = user.representanteLegal;
+                telefoneVar.innerHTML = user.telefone;
+            } else {
+                console.warn("Nenhum dado de usuário encontrado.");
+            }
         })
         .catch(error => console.error('Error fetching user data:', error));
 }

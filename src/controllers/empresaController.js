@@ -39,14 +39,13 @@ function cadastrar(req, res) {
   // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
   var empresaServer = req.body.empresaServer;
   var nomeFantasia = req.body.nomeFantasiaServer;
-  var cidade = req.body.cidadeServer;
+  var numero = req.body.numeroServer;
   var representanteLegal = req.body.representanteLegalServer;
   var CPNJ = req.body.cnpjServer;
   var telefone = req.body.telefoneServer;
   var email = req.body.emailServer;
   var senha = req.body.senhaServer;
   var cep = req.body.cepServer;
-  var estado = req.body.estadoServer;
 
   console.log(req.body)
 
@@ -63,9 +62,8 @@ function cadastrar(req, res) {
       .cadastrar(
         empresaServer,
         nomeFantasia,
-        estado,
+        numero,
         cep,
-        cidade,
         email,
         senha,
         representanteLegal,

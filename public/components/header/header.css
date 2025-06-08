@@ -2,25 +2,18 @@
 
 /* variáveis */
 :root {
-  --primary-color: #1ef0a6;
-  --secondary-color: #1becaa;
-  --accent-color: #0bc47a; 
+  --primary-color: rgb(12, 99, 204);
+  --secondary-color: rgb(12, 99, 204);
+  --accent-color: rgb(12, 99, 204);
 
   --logo-color: #003c64;
   --text-color: #ececec;
   --text-color-stronger: #838383;
 
-  --background-color-nav: #f2f2f2;
-  --background-color-header: #fff;
-  --icon-color: #22df96;
-}
-/* config */
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Monda", sans-serif;
+  --background-color-nav: #ffffff;
+  --background-color-header: #ffffff;
+  --icon-color: #1e7cf0;
+  --color-button: #1e7cf0;
 }
 
 /* header */
@@ -28,17 +21,40 @@ header {
   background-color: var(--background-color);
 }
 
-header .container {
+header .logo {
+  font-family: "Red Hat Display", sans-serif !important;
+  color: var(--logo-color);
+  font-size: 2.5rem;
+}
+
+header .logo a {
+  text-decoration: none;
+  color: var(--logo-color);
+}
+
+header {
+  background-color: var(--background-color);
+}
+
+header a {
+  text-decoration: none;
+  color: black;
+}
+
+.wrapper-header {
+  font-family: "Monda", sans-serif;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 1170px;
+  width: 65vw;
   margin-right: auto;
   margin-left: auto;
   height: 10vh;
+  min-width: 350px;
 }
 
 header .logo {
+  font-family: "Red Hat Display", sans-serif;
   color: var(--logo-color);
   font-size: 2.5rem;
 }
@@ -58,4 +74,116 @@ header ul li a {
   color: var(--text-color-stronger);
   font-size: 17px;
   text-transform: uppercase;
+}
+
+.burger {
+  display: none;
+}
+
+/* header */
+
+/* sm */
+@media (max-width: 640px) {
+  .active-header-response {
+    position: fixed;
+    right: 0;
+    width: 70vw;
+    max-width: 320px;
+    background-color: white;
+    box-shadow: -2px 0 6px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+    display: none;
+  }
+
+  .active-header-response.ativo {
+    display: block; /* classe que o JS pode aplicar para mostrar */
+  }
+}
+
+/* md */
+@media (max-width: 768px) {
+  header .logo {
+    font-size: 1.8rem;
+  }
+
+  header ul {
+    gap: 5px;
+  }
+
+  header ul li a {
+    font-size: 14px;
+  }
+
+  .contact-form-middle {
+    display: none;
+  }
+}
+
+/* lg */
+@media (max-width: 1024px) {
+  .burger {
+    display: flex !important;
+  }
+
+  .line {
+    width: 30px;
+    height: 4px;
+    border-radius: 2px;
+    background-color: #000;
+  }
+  .line:nth-child(2) {
+    margin: 5px 0;
+  }
+  header ul {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 0;
+    gap: 10px;
+  }
+
+  .pages {
+    display: none;
+  }
+
+  header ul li {
+    margin-left: 0;
+  }
+
+  .active-header-response {
+    font-family: "Monda", sans-serif;
+    display: none;
+
+    flex-direction: column;
+    position: absolute;
+    right: 0;
+    width: 30%;
+    background-color: var(--background-color-header);
+    padding: 2rem;
+    z-index: 10;
+    border-radius: 0 0 0 10px;
+  }
+
+  .burger {
+    display: flex !important;
+    flex-direction: column;
+  }
+
+  .burger:hover {
+    cursor: pointer;
+  }
+}
+
+/* 2xl */
+@media (max-width: 1536px) {
+  .burger,
+  .active-header-response {
+    display: none;
+  }
+}
+
+@media (min-width: 1536px) {
+  .burger,
+  .active-header-response {
+    display: none;
+  }
 }
