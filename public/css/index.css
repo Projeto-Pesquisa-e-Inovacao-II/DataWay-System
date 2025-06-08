@@ -318,6 +318,7 @@ footer {
 
 /* Responsividade para tablets e dispositivos menores */
 @media (max-width: 1024px) {
+
   .title .title-text {
     margin-left: 2rem;
     margin-right: 2rem;
@@ -384,6 +385,7 @@ footer {
     width: 100%;
   }
 
+
   .line {
     width: 30px;
     height: 4px;
@@ -398,7 +400,4 @@ footer {
   .pages {
     display: none;
   }
-}
-/* Responsividade para dispositivos móveis */
-@media (max-width: 768px) {
-}
+

@@ -8,7 +8,9 @@
 /* sm */
 @media (max-width: 640px) {
   .title {
+
 height: 90vh;
+
   }
 
   .section-img,
