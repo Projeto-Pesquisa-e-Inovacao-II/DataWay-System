@@ -89,7 +89,7 @@ function showToast(message, color) {
   const toastMessage = document.getElementById("toastMessage");
 
   toastMessage.textContent = message;
-  toast.style.backgroundColor = color; // Define a cor do toast dinamicamente
+  toast.style.backgroundColor = color;
   toast.classList.remove("hidden");
   toast.classList.add("visible");
 

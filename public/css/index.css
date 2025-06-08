@@ -12,11 +12,18 @@
   --primary-color: rgb(12, 99, 204);
   --secondary-color: rgb(12, 99, 204);
   --accent-color: rgb(12, 99, 204);
+  --primary-color: rgb(12, 99, 204);
+  --secondary-color: rgb(12, 99, 204);
+  --accent-color: rgb(12, 99, 204);
 
   --logo-color: #003c64;
   --text-color: #ececec;
   --text-color-stronger: #838383;
 
+  --background-color-nav: #ffffff;
+  --background-color-header: #ffffff;
+  --icon-color: #1e7cf0;
+  --color-button: #1e7cf0;
   --background-color-nav: #ffffff;
   --background-color-header: #ffffff;
   --icon-color: #1e7cf0;

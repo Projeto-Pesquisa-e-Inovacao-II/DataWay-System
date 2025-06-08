@@ -52,7 +52,7 @@ arrumar
   }
 
   .services .services-content {
-    padding-bottom: 6rem;
+    padding-bottom: 8rem !important;
   }
 
   div.section-image:nth-child(1) > span:nth-child(2),
@@ -115,7 +115,7 @@ arrumar
 /* lg */
 @media (max-width: 1024px) {
   .services .services-content {
-    padding-bottom: 8rem !important;
+    padding-bottom: 6rem;
   }
 
   .services-content {

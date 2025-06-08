@@ -86,6 +86,28 @@
 
   footer .footer-container {
     flex-direction: column;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .sect-idk .left,
+  .sect-idk .right {
+    width: 90%;
+    text-align: center;
+  }
+
+  .sect-idk .first-image-idk {
+    width: 100%;
+    height: auto;
+  }
+
+  .phrase h1 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  footer .footer-container {
+    flex-direction: column;
     align-items: center;
   }
 
