@@ -1,13 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Monda:wght@400..700&display=swap");
 
 /* Red Hat Display font */
-@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400..700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400..700&display=swap");
 
 /* Poppins font */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400..700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400..700&display=swap");
 
 /* variáveis */
 :root {
+  --primary-color: rgb(30, 124, 240);
+  --secondary-color: rgb(30, 124, 240);
+  --accent-color: rgb(30, 124, 240);
   --primary-color: rgb(30, 124, 240);
   --secondary-color: rgb(30, 124, 240);
   --accent-color: rgb(30, 124, 240);
@@ -19,6 +22,7 @@
   --background-color-nav: #f2f2f2;
   --background-color-header: #fff;
   --icon-color: rgb(30, 124, 240);
+  --icon-color: rgb(30, 124, 240);
 }
 
 /* config */
@@ -28,108 +32,6 @@
   padding: 0;
   box-sizing: border-box;
 }
-
-/* nav */
-nav {
-  background-color: var(--background-color-nav);
-  width: 100%;
-  font-family: "Monda", sans-serif;
-}
-
-nav .container {
-  padding: 1rem 0;
-  margin-right: auto;
-  margin-left: auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 65vw;
-  min-width: 700px;
-}
-
-nav .contact {
-  display: flex;
-}
-
-.contact-text {
-  margin: 0px 8px;
-  margin-right: 0px;
-}
-
-nav i {
-  color: var(--icon-color);
-  font-size: 25px;
-}
-
-nav span {
-  font-size: 14px;
-}
-/* nav */
-
-/* header */
-header {
-  background-color: var(--background-color);
-}
-
-header .logo {
-  font-family: "Red Hat Display", sans-serif !important;
-  color: var(--logo-color);
-  font-size: 2.5rem;
-}
-
-header .logo a {
-  text-decoration: none;
-  color: var(--logo-color);
-}
-
-header {
-  background-color: var(--background-color);
-}
-
-header a {
-  text-decoration: none;
-  color: black;
-}
-
-header .container {
-  font-family: "Monda", sans-serif;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 65vw;
-  margin-right: auto;
-  margin-left: auto;
-  height: 10vh;
-  min-width: 700px;
-  .pages{
-    margin-left: 24rem;
-  }
-}
-
-header .logo {
-  font-family: "Red Hat Display", sans-serif;
-  color: var(--logo-color);
-  font-size: 2.5rem;
-}
-
-header ul {
-  display: flex;
-  list-style: none;
-  margin-left: auto;
-}
-
-header ul li {
-  margin-left: 30px;
-}
-
-header ul li a {
-  text-decoration: none;
-  color: var(--text-color-stronger);
-  font-size: 17px;
-  text-transform: uppercase;
-}
-
-/* header */
 
 /* page title */
 .title {
@@ -141,6 +43,7 @@ header ul li a {
 
 .title h1 {
   color: #fff;
+  color: #fff;
   text-transform: uppercase;
   font-size: 52px;
   text-align: center;
@@ -151,6 +54,7 @@ header ul li a {
 /* services */
 i {
   color: rgb(30, 124, 240);
+  color: rgb(30, 124, 240);
   font-size: 25px;
 }
 
@@ -159,11 +63,15 @@ i {
   display: flex;
   justify-content: center;
   padding: 50px 0;
-  line-height: 1.6; 
+  line-height: 1.6;
   width: 65vw;
-  min-width: 700px;
+  min-width: 350px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.services .container {
+  width: 100%;
 }
 
 .services p {
@@ -224,19 +132,22 @@ i {
 .sect-idk .container {
   display: flex;
   flex-direction: column;
+  display: flex;
+  flex-direction: column;
   width: 65vw;
   display: flex;
   justify-content: space-between;
   min-width: 700px;
   margin-left: auto;
   margin-right: auto;
-  .center{
+  .center {
     width: 45%;
   }
-  .conteiner-images{
+  .conteiner-images {
     display: flex;
-  flex-direction: row;
-  align-items: center;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
   }
 }
 
@@ -274,6 +185,7 @@ i {
 .phrase {
   font-family: "Monda", sans-serif;
   background: rgb(30, 124, 240);
+  background: rgb(30, 124, 240);
   color: var(--text-color);
   display: flex;
   flex-direction: column;
@@ -290,7 +202,7 @@ i {
 }
 
 .phrase span {
-border-bottom: 4px solid rgb(12, 99, 204);
+  border-bottom: 4px solid rgb(12, 99, 204);
   width: 300px;
   height: 48px;
 }
@@ -304,6 +216,8 @@ footer {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .footer-container {
@@ -314,6 +228,7 @@ footer {
   align-items: flex-start;
   margin-top: 15px;
   flex-direction: row;
+  flex-direction: row;
 }
 
 .footer-section {
@@ -322,6 +237,7 @@ footer {
 
 .footer-section h3 {
   font-size: 18px;
+  color: rgb(30, 124, 240);
   color: rgb(30, 124, 240);
   margin-bottom: 15px;
   display: flex;
@@ -333,6 +249,7 @@ footer {
 }
 
 .footer-section i {
+  color: rgb(30, 124, 240);
   color: rgb(30, 124, 240);
 }
 
@@ -347,7 +264,9 @@ footer {
   margin-top: 10px;
   padding: 14px;
   border: 1px solid rgb(30, 124, 240);
+  border: 1px solid rgb(30, 124, 240);
   border-radius: 4px;
+  color: rgb(30, 124, 240);
   color: rgb(30, 124, 240);
   text-decoration: none;
   font-size: 14px;
@@ -357,6 +276,7 @@ footer {
 }
 
 .contact-btn:hover {
+  background-color: rgb(30, 124, 240);
   background-color: rgb(30, 124, 240);
   color: #fff;
 }
@@ -398,4 +318,3 @@ footer {
   font-size: 30px;
 }
 /* footer */
-

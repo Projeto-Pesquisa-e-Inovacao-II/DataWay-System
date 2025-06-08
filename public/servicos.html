@@ -9,6 +9,8 @@
       rel="stylesheet"
       href="./css/responsive/servicos/servicos_responsive.css"
     />
+    <link rel="stylesheet" href="./components/header/header.css" />
+
     <link
       href="https://fonts.cdnfonts.com/css/red-hat-display"
       rel="stylesheet"
@@ -21,14 +23,11 @@
     ></script>
   </head>
   <body>
-  
     <!-- parte do header -->
     <header>
-      <div class="container">
+      <div class="wrapper-header">
         <div class="logo">
-          <a href="/"
-            ><span>Data<b>Way</b></span></a
-          >
+          <span>Data<b>Way</b></span>
         </div>
         <div class="pages">
           <ul>
@@ -38,14 +37,14 @@
             <li><a href="contato">Contato</a></li>
           </ul>
         </div>
-      
+
         <div class="burger" id="burger">
           <div class="line"></div>
           <div class="line"></div>
           <div class="line"></div>
         </div>
       </div>
-      <div class="active-header-response"  style="display: none;">
+      <div class="active-header-response">
         <div class="active-header-response-container">
           <ul>
             <li><a href="/">Home</a></li>
@@ -56,7 +55,7 @@
         </div>
       </div>
     </header>
-    <!-- parte do header  -->
+    <!-- parte do header -->
 
     <!-- title -->
     <section class="title">
@@ -142,21 +141,25 @@
     <section class="sect-idk">
       <div class="container">
         <div class="center">
-        <h1><b>Referência no mercado</b></h1>
-        <p>
-          Somos referência em soluções de análise de dados para o setor de
-          rodovias e pedágios, oferecendo tecnologia inovadora para otimizar
-          suas operações e impulsionar decisões estratégicas.
-        </p>
-      </div>
-      <div class="conteiner-images">  
-      <div class="left">
-          <img src="./images/Service/lider.png" alt="" class="first-image-idk"/>
+          <h1><b>Referência no mercado</b></h1>
+          <p>
+            Somos referência em soluções de análise de dados para o setor de
+            rodovias e pedágios, oferecendo tecnologia inovadora para otimizar
+            suas operações e impulsionar decisões estratégicas.
+          </p>
         </div>
-        <div class="right">
-          <img src="./images/Service/celular.png" alt="" />
+        <div class="conteiner-images">
+          <div class="left">
+            <img
+              src="./images/Service/lider.png"
+              alt=""
+              class="first-image-idk"
+            />
+          </div>
+          <div class="right">
+            <img src="./images/Service/celular.png" alt="" />
+          </div>
         </div>
-      </div>
       </div>
     </section>
 
@@ -182,6 +185,7 @@
           <p>dataway.suporte@gmail.com</p>
           <p>(11) 2718-8029</p>
           <a href="contato" class="contact-btn">Entre em Contato</a>
+          <a href="contato" class="contact-btn">Entre em Contato</a>
         </div>
 
         <div class="footer-section">
@@ -201,13 +205,33 @@
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
         ></iframe>
-      <div class="logo-container">
-        <span>Data<b>Way</b></span>
+        <div class="logo-container">
+          <span>Data<b>Way</b></span>
+        </div>
       </div>
     </footer>
     <!-- footer -->
   </body>
 </html>
+
+<script>
+  const burger = document.getElementById("burger");
+  const pagesHeader = document.querySelector(".active-header-response");
+
+  burger.addEventListener("click", () => {
+    pagesHeader.style.display =
+      pagesHeader.style.display === "flex" ? "none" : "flex";
+  });
+
+  // Adiciona um evento de clique a cada link do menu
+  const links = document.querySelectorAll(".pages ul li a");
+  links.forEach((link) => {
+    link.addEventListener("click", () => {
+      pages.classList.remove("active");
+      burger.classList.remove("active");
+    });
+  });
+</script>
 
 <script>
   const burger = document.getElementById("burger");

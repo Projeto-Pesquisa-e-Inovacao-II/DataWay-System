@@ -28,10 +28,11 @@ var suporteRouter = require("./src/routes/suporte");
 var suporteMessageReceivedRouter = require("./src/routes/suporte-message-received");
 var indexDashboardRouter = require("./src/routes/indexDashboard");
 
-
 var deleteUser = require("./src/routes/deleteUserData")
 var getUserData = require("./src/routes/getUserData");
 var updateUserData = require("./src/routes/updateUserData");
+
+var suport = require("./src/routes/suport");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -55,6 +56,7 @@ app.use("/dashboard/visao-geral", indexDashboardRouter);
 app.use("/get_user_data", getUserData);
 app.use("/update_user_data", updateUserData);
 app.use("/delete_user_data", deleteUser);
+app.use("/suport-send-email", suport);
 
 
 app.set('view engine', 'ejs');
