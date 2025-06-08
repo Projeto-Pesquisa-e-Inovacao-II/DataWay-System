@@ -65,7 +65,7 @@
             Preencha o formulário abaixo, dizendo um pouco sobre a sua dor e conte com 
             nossas soluções inteligentes para transformar informações em decisões estratégicas para o seu negócio. 
           </p>
-          <form action="/contato" method="POST">
+          <form onsubmit="return sendEmail()">
             <input
               type="text"
               id="name"
@@ -81,7 +81,7 @@
               required
             />
             <input
-              type="telefone"
+              type="tel"
               id="telefone"
               name="telefone"
               placeholder="Telefone:"
@@ -164,6 +164,8 @@
 
   </body>
 </html>
+
+<script src="./js/contato.js"></script>
 
 <script>
   const burger = document.getElementById("burger");
