@@ -9,7 +9,7 @@ function sendEmail() {
     return false;
   }
 
-  fetch("http://34.193.231.25:3333/suport-send-email", {
+  fetch("http://localhost:3000/suport-send-email", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
