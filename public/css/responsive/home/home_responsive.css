@@ -173,7 +173,8 @@ arrumar
   .title {
     & .title-text {
       & button {
-        height: 4.5vh;
+        height: 5.5vh;
+        padding: 0 8px;
         width: auto;
       }
     }

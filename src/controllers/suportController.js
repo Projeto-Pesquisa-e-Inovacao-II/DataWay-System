@@ -16,8 +16,8 @@ async function sendEmail(req, res) {
 
     // Wrap in an async IIFE so we can use await.
     const info = await transporter.sendMail({
-      to: '"Suporte Dataway" <suporte.dataway.contato@gmail.com>',
       from: req.body.email,
+      to: '"Suporte Dataway" <suporte.dataway.contato@gmail.com>',
       subject: req.body.userName + " - " + req.body.telefone, // Subject line
       text: req.body.mensagem, // plain‑text body
       html: req.body.html || "", // HTML body
